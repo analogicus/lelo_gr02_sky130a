@@ -25,4 +25,4 @@ W=0.3
 L=0.4
 model=res_generic_m4
 mult=1}
-C {bandgap.sym} 460 -350 0 0 {name=x1}
+C {BANDGAP/BANDGAP.sym} 460 -350 0 0 {name=x1}
