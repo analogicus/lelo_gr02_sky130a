@@ -4,7 +4,7 @@
 [![DOCS](../../actions/workflows/docs.yaml/badge.svg)](../../actions/workflows/docs.yaml)
 
 # Who
-wulff
+Ardit Uka, Jonas Anton Hilbich, Iver Abrahamsen & Simen Eilevstjønn
 
 # Why
 
