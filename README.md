@@ -8,11 +8,11 @@ Ardit Uka, Jonas Anton Hilbich, Iver Abrahamsen & Simen Eilevstjønn
 
 # Why
 
-<explain why you made this module>
+explain why you made this module
 
 # How
 
-<explain short how you made this module>
+explain short how you made this module
 
 
 # What
