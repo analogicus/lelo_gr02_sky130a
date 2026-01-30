@@ -4,8 +4,6 @@ K {}
 V {}
 S {}
 E {}
-N 0 -300 20 -300 {lab=VDD_1V8}
-N 0 0 20 -0 {lab=PWRUP_1V8}
 N 450 -200 450 -140 {lab=Vout}
 N 450 -200 580 -200 {lab=Vout}
 N 280 -200 410 -200 {lab=Vout}
@@ -36,8 +34,6 @@ N 210 150 240 150 {lab=VSS}
 N 210 150 210 220 {lab=VSS}
 N 210 220 240 220 {lab=VSS}
 N 180 220 210 220 {lab=VSS}
-N 10 200 30 200 {lab=VSS}
-N 0 200 10 200 {lab=VSS}
 N 240 100 280 100 {lab=#net2}
 N 280 100 280 150 {lab=#net2}
 N 580 100 620 100 {lab=#net3}
@@ -71,6 +67,9 @@ N 380 80 420 80 {lab=#net2}
 N 580 220 620 220 {lab=VSS}
 N 420 -280 460 -280 {lab=#net1}
 N 410 -200 450 -200 {lab=Vout}
+N 790 -200 820 -200 {lab=#net1}
+N 820 -280 820 -200 {lab=#net1}
+N 790 -280 820 -280 {lab=#net1}
 C {devices/ipin.sym} 0 -300 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 0 200 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} 0 0 0 0 {name=p3 lab=PWRUP_1V8}
@@ -78,9 +77,9 @@ C {BANDGAP_OPAMP/BANDGAP_OPAMP.sym} 420 -110 0 0 {name=x1}
 C {devices/opin.sym} 810 -130 0 0 {name=p4 lab=I_PTAT}
 C {devices/opin.sym} 800 50 0 0 {name=p5 lab=V_CTAT}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym} 580 -200 0 0 {name=xpb3[1:0]}
-C {devices/lab_pin.sym} 20 -300 0 1 {name=p6 sig_type=std_logic lab=VDD_1V8
+C {devices/lab_pin.sym} 0 -300 0 1 {name=p6 sig_type=std_logic lab=VDD_1V8
 }
-C {devices/lab_pin.sym} 20 0 0 1 {name=p7 sig_type=std_logic lab=PWRUP_1V8
+C {devices/lab_pin.sym} 0 0 0 1 {name=p7 sig_type=std_logic lab=PWRUP_1V8
 
 }
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym} 280 -200 0 1 {name=xpb1[1:0]}
@@ -96,7 +95,7 @@ C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 280 150 0 1 {name=x3 }
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 580 150 0 0 {name=x2 }
 C {devices/lab_pin.sym} 180 220 0 0 {name=p10 sig_type=std_logic lab=VSS
 }
-C {devices/lab_pin.sym} 30 200 0 1 {name=p11 sig_type=std_logic lab=VSS
+C {devices/lab_pin.sym} 0 200 0 1 {name=p11 sig_type=std_logic lab=VSS
 }
 C {devices/lab_pin.sym} 530 -20 0 1 {name=p12 sig_type=std_logic lab=VSS
 }

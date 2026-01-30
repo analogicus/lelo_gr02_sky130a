@@ -8,6 +8,14 @@ N 890 -330 910 -330 {lab=OSC_TEMP_1V8}
 N 100 -300 130 -300 {lab=PWRUP_1V8}
 N 190 -300 830 -300 {lab=#net1}
 N 830 -330 830 -300 {lab=#net1}
+N 250 -350 310 -350 {lab=#net1}
+N 250 -350 250 -300 {lab=#net1}
+N 100 -100 290 -100 {lab=VSS}
+N 290 -330 290 -100 {lab=VSS}
+N 290 -330 310 -330 {lab=VSS}
+N 100 -600 300 -600 {lab=VDD_1V8}
+N 300 -600 300 -370 {lab=VDD_1V8}
+N 300 -370 310 -370 {lab=VDD_1V8}
 C {cborder/border_xs.sym} 0 0 0 0 {
 user="wulff"
 company="wulff"}
