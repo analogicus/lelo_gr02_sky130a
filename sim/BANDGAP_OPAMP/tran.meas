@@ -1,0 +1,11 @@
+* Measure BANDGAP_OPAMP
+.control
+
+load {cicname}.raw
+
+echo "MEAS_START"
+
+meas tran vout_at_5n find v(VOUT) at=5n
+
+echo "MEAS_END"
+.endc
