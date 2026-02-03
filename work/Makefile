@@ -12,8 +12,11 @@
 PREFIX=
 LIB=LELO_GR02_SKY130A
 CELL=LELO_GR02
+LIB=BANDGAP_OPAMP
+CELL=BANDGAP_OPAMP
 
 #- Provide cells you want to check for the lvsall drcall commands
 CELLS = LELO_GR02
+CELLS = BANDGAP_OPAMP
 
 include ../tech/make/core.make
