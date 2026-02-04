@@ -3,9 +3,9 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/BANDGAP_OPAMP_lpe.spi
+.include ../../../work/lpe/LELO_GR02_lpe.spi
 #else
-.include ../../../work/xsch/BANDGAP_OPAMP.spice
+.include ../../../work/xsch/LELO_GR02.spice
 #endif
 
 *-----------------------------------------------------------------
@@ -17,17 +17,16 @@
 * PARAMETERS
 *-----------------------------------------------------------------
 .param TRF = 10p
+
 .param AVDD = {vdda}
 
 *-----------------------------------------------------------------
 * FORCE
 *-----------------------------------------------------------------
-VSS    VSS       0    dc 0
-VDD    VDD_1V8   VSS  dc {AVDD}
-VPWR  PWRUP_1V8  VSS  dc pwl(0 {AVDD}, 50n {AVDD}, 50.1n 0)
-V_POS  VIP       VSS  dc 0.5  ac 0.5  sin(0.5 0.1m 100MEG)  
-V_NEG  VIN       VSS  dc 0.5
-*---------------------------------------------------------------
+VSS  VSS  0     dc 0
+VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
+
+*-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------
 .include ../xdut.spi
@@ -36,6 +35,7 @@ V_NEG  VIN       VSS  dc 0.5
 * PROBE
 *----------------------------------------------------------------
 .save all
+
 
 *----------------------------------------------------------------
 * NGSPICE control
@@ -49,7 +49,7 @@ unset askquit
 optran 0 0 0 1n 1u 0
 
 
-tran 1n 300n 1p
+tran 1n 10n 1p
 write
 quit
 
