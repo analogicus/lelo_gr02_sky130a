@@ -5,14 +5,9 @@ load {cicname}.raw
 
 echo "MEAS_START"
 
-meas tran vout_at_10n find v(VOUT)    at=10n
-meas tran vin_p_at_10ns find v(VIN_P) at=10n
-meas tran vin_n_at_10ns find v(VIN_N) at=10n 
-
-meas tran vout_at_50n find v(VOUT)    at=50n
-meas tran vin_p_at_50ns find v(VIN_P) at=50n
-meas tran vin_n_at_50ns find v(VIN_N) at=50n 
-
+meas tran vout_at_10n find v(VOUT) at=10n
+meas tran vip_at_10n find v(VIP) at=10n
+meas tran vin_at_10n find v(VIN) at=10n
 
 echo "MEAS_END"
 .endc

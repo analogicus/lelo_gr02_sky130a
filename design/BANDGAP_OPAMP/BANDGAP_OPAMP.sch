@@ -17,7 +17,7 @@ N 220 440 220 460 {lab=VSS}
 N 550 210 640 210 {lab=VOUT}
 N 260 410 410 410 {lab=#net3}
 N 590 290 610 290 {lab=VIN_N}
-N 300 290 320 290 {lab=VIN_P}
+N 300 290 320 290 {lab=VIP}
 N 180 200 200 200 {lab=VSS}
 N 340 460 340 480 {lab=VSS}
 N 220 460 340 460 {lab=VSS}
@@ -33,7 +33,7 @@ N 220 100 220 110 {lab=top}
 N 550 190 550 230 {lab=VOUT}
 N 360 190 360 230 {lab=#net2}
 N 220 280 220 290 {lab=#net3}
-N 370 50 410 50 {lab=#net4}
+N 370 50 410 50 {lab=PWRUP_1V8}
 N 330 0 450 0 {lab=VDD_1V8}
 N 450 0 450 20 {lab=VDD_1V8}
 N 450 80 450 90 {lab=top}
@@ -70,8 +70,8 @@ C {devices/ipin.sym} 0 70 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 0 90 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} 0 110 0 0 {name=p3 lab=PWRUP_1V8
 }
-C {devices/ipin.sym} 300 290 0 0 {name=p4 lab=VIN_P}
-C {devices/ipin.sym} 610 290 0 1 {name=p5 lab=VIN_N}
+C {devices/ipin.sym} 300 290 0 0 {name=p4 lab=VIP}
+C {devices/ipin.sym} 610 290 0 1 {name=p5 lab=VIN}
 C {devices/opin.sym} 640 210 0 0 {name=p6 lab=VOUT}
 C {devices/lab_pin.sym} 180 200 0 0 {name=p7 sig_type=std_logic lab=VSS
 }

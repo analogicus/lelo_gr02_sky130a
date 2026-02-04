@@ -19,25 +19,3 @@ gs:
   scale: 1
   digits: 3
   unit: V
-
-gs:
-  src:
-    - vin_p_at_10n
-  name: Gate-Source voltage
-  typ: 0.6
-  min: 0.5
-  max: 0.8
-  scale: 1
-  digits: 3
-  unit: V
-
-gs:
-  src:
-    - vin_n_at_10ns
-  name: Gate-Source voltage
-  typ: 0.5
-  min: 0.49
-  max: 0.51
-  scale: 0.01
-  digits: 3
-  unit: V
