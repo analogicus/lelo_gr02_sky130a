@@ -53,7 +53,7 @@ N 240 -20 240 80 {lab=#net2}
 N 830 20 830 50 {lab=V_CTAT}
 N 830 50 830 100 {lab=V_CTAT}
 N 240 300 330 300 {lab=VSS}
-N 510 180 510 200 {lab=VSS}
+N 510 180 510 200 {lab=#net4}
 N 510 80 510 100 {lab=#net3}
 N 240 -100 240 -20 {lab=#net2}
 N 460 -160 480 -160 {lab=Vout}
@@ -98,7 +98,6 @@ C {devices/lab_pin.sym} 870 -200 0 1 {name=p16 sig_type=std_logic lab=Vout
 
 
 }
-C {DIODE_BANDGAP/BANDGAP_DIODE.sym} 350 230 0 0 {name=x8}
 C {devices/lab_pin.sym} 240 300 0 0 {name=p10 sig_type=std_logic lab=VSS
 }
 C {devices/lab_pin.sym} 240 -200 0 0 {name=p17 sig_type=std_logic lab=VDD_1V8
@@ -113,3 +112,4 @@ C {devices/lab_pin.sym} 810 -20 0 0 {name=p21 sig_type=std_logic lab=VSS
 C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} 510 100 1 0 {name=x5 }
 C {devices/lab_pin.sym} 490 140 0 0 {name=p20 sig_type=std_logic lab=VSS
 }
+C {BANDGAP_DIODE/BANDGAP_DIODE.sym} 350 230 0 0 {name=x8}
