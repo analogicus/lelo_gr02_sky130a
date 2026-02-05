@@ -98,7 +98,7 @@ C {devices/lab_pin.sym} 870 -200 0 1 {name=p16 sig_type=std_logic lab=Vout
 
 
 }
-C {DIODE_BANDGAP/BANDGAP_DIODE.sym} 350 230 0 0 {name=x8}
+C {BANDGAP_DIODE/BANDGAP_DIODE.sym} 350 230 0 0 {name=x8}
 C {devices/lab_pin.sym} 240 300 0 0 {name=p10 sig_type=std_logic lab=VSS
 }
 C {devices/lab_pin.sym} 240 -200 0 0 {name=p17 sig_type=std_logic lab=VDD_1V8
