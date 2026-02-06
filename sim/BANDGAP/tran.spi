@@ -25,9 +25,8 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
-* VPWR  PWRUP_1V8  VSS  pwl 0 0 {t_start} 0 {{t_start} + 10p} {AVDD}
-* Force to zero since current OTA has inverted power switch
-VPWR  PWRUP_1V8  0 dc 0
+VPWR  PWRUP_1V8  VSS  pwl 0 0 {t_start} 0 {{t_start} + 10p} {AVDD}
+
 
 *-----------------------------------------------------------------
 * DUT
@@ -37,6 +36,8 @@ VPWR  PWRUP_1V8  0 dc 0
 *----------------------------------------------------------------
 * PROBE
 *----------------------------------------------------------------
+VPTAT I_PTAT VSS 0.5
+
 .save all
 
 
