@@ -82,7 +82,7 @@ N 260 410 280 410 {lab=bottom}
 N 190 410 220 410 {lab=VSS}
 C {devices/ipin.sym} 0 110 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 0 140 0 0 {name=p2 lab=VSS}
-C {devices/ipin.sym} 0 170 0 0 {name=p3 lab=PWRUP_1V8
+C {devices/ipin.sym} 0 170 0 0 {name=p3 lab=PWRUP_N_1V8
 }
 C {devices/ipin.sym} 350 290 0 0 {name=p4 lab=VIP}
 C {devices/ipin.sym} 700 290 0 1 {name=p5 lab=VIN}
@@ -100,10 +100,10 @@ C {devices/lab_pin.sym} 0 110 0 1 {name=p15 sig_type=std_logic lab=VDD_1V8
 C {devices/lab_pin.sym} 440 0 0 0 {name=p14 sig_type=std_logic lab=VDD_1V8
 }
 C {devices/lab_wire.sym} 620 100 0 0 {name=p9 sig_type=std_logic lab=top}
-C {devices/lab_pin.sym} 0 170 0 1 {name=p10 sig_type=std_logic lab=PWRUP_1V8
+C {devices/lab_pin.sym} 0 170 0 1 {name=p10 sig_type=std_logic lab=PWRUP_N_1V8
 
 }
-C {devices/lab_pin.sym} 440 50 0 0 {name=p16 sig_type=std_logic lab=PWRUP_1V8
+C {devices/lab_pin.sym} 440 50 0 0 {name=p16 sig_type=std_logic lab=PWRUP_N_1V8
 
 }
 C {devices/lab_wire.sym} 220 360 0 0 {name=p17 sig_type=std_logic lab=bottom}
