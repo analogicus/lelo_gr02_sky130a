@@ -1,0 +1,24 @@
+* Measure BANDGAP
+.control
+
+load {cicname}.raw
+
+echo "MEAS_START"
+
+
+set fend = .raw
+compose temp_vec values {temperatures}
+compose freq_vec values {temperatures}
+
+let ind=0
+foreach vtemp {temperatures}
+
+load {cicname}_$vtemp$fend
+
+meas tran vctat_$vtemp AVG v(v_ctat) from=12u to=15u
+meas tran iptat_$vtemp AVG i(vptat) from=12u to=15u
+
+end
+
+echo "MEAS_END"
+.endc

@@ -1,0 +1,21 @@
+#<name>:
+#  src:
+#    - <paramters>
+#  typ: <typical spec value>
+#  name: <long name>
+#  min: <minimum spec value>
+#  max: <maximum spec value>
+#  scale: <scale, multiply result by scale>
+#  digits: <significant digits>
+#  unit: Unit
+
+gs:
+  src:
+    - vout_at_10n
+  name: Gate-Source voltage
+  typ: 0.6
+  min: 0.3
+  max: 0.8
+  scale: 1
+  digits: 3
+  unit: V

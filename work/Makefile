@@ -10,10 +10,24 @@
 # -----------------------------------------------------------
 
 PREFIX=
+
+
+
+#CELL=BANDGAP_OPAMP
+
+
+CELL=BANDGAP
+
+#LIB=BANDGAP_DIODE
+
+
 LIB=LELO_GR02_SKY130A
-CELL=LELO_GR02
+#CELL=LELO_GR02
 
 #- Provide cells you want to check for the lvsall drcall commands
-CELLS = LELO_GR02
+CELLS = BANDGAP
+#CELL2 = BANDGAP_DIODE
+#CELLS = LELO_GR02
+#CELLS = BANDGAP_OPAMP
 
 include ../tech/make/core.make
