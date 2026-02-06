@@ -54,7 +54,7 @@ N 240 110 250 110 {lab=V_CTAT}
 C {devices/ipin.sym} 0 -40 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 0 40 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} 0 0 0 0 {name=p3 lab=PWRUP_1V8}
-C {BANDGAP_OPAMP/BANDGAP_OPAMP.sym} 420 -110 0 0 {name=x1}
+C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} 420 -110 0 0 {name=x1}
 C {devices/opin.sym} 860 -140 0 0 {name=p4 lab=I_PTAT}
 C {devices/opin.sym} 250 110 0 0 {name=p5 lab=V_CTAT}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym} 600 -200 0 0 {name=xpb3[1:0]}
@@ -91,7 +91,7 @@ C {devices/lab_pin.sym} 870 -200 0 1 {name=p16 sig_type=std_logic lab=Vout
 
 
 }
-C {BANDGAP_DIODE/BANDGAP_DIODE.sym} 350 230 0 0 {name=x8}
+C {LELO_GR02_SKY130A/BANDGAP_DIODE.sym} 350 230 0 0 {name=x8}
 C {devices/lab_pin.sym} 240 300 0 0 {name=p10 sig_type=std_logic lab=VSS
 }
 C {devices/lab_pin.sym} 240 -200 0 0 {name=p17 sig_type=std_logic lab=VDD_1V8
