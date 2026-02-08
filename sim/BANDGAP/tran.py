@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def main(name):
   # Delete next line if you want to use python post processing
-  return
+  #return
   yamlfile = name + ".yaml"
 
   # Read result yaml file
