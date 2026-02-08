@@ -31,25 +31,23 @@ T {Some commands:
 press ctrl+B on the graph to see voltages
 press ctrl+left_click on "load waves" to see waves
 } 300 280 0 0 0.4 0.4 {}
-N -200 190 -160 190 {lab=TB_VIN}
-N -300 190 -260 190 {lab=TB_VIP}
 N -470 -150 -470 -130 {lab=TB_VIN}
 N -310 -150 -310 -130 {lab=TB_VIP}
 N -140 -150 -140 -130 {lab=TB_VDD}
-N -230 -10 -230 10 {lab=TB_VIN}
-N -230 0 -110 0 {lab=TB_VIN}
-N -110 0 -110 170 {lab=TB_VIN}
-N -160 170 -110 170 {lab=TB_VIN}
-N -160 170 -160 190 {lab=TB_VIN}
-C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} -260 40 0 0 {name=x1}
-C {devices/lab_pin.sym} -150 130 0 1 {name=p1 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} -310 140 0 0 {name=p2 sig_type=std_logic lab=0}
+N -230 -10 -230 10 {lab=TB_VOUT}
+N -250 180 -250 190 {lab=TB_VIN}
+N -260 190 -250 190 {lab=TB_VIN}
+N -210 180 -210 190 {lab=TB_VIP}
+N -210 190 -200 190 {lab=TB_VIP}
+C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} -130 240 0 0 {name=x1}
+C {devices/lab_pin.sym} -180 140 0 1 {name=p1 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} -270 110 0 0 {name=p2 sig_type=std_logic lab=0}
 C {devices/vsource.sym} -310 -100 0 0 {name=V1 value="sin(0.5 0.5m 10k)" savecurrent=false}
 C {devices/lab_pin.sym} -310 -70 0 0 {name=p3 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -310 -150 0 0 {name=p4 sig_type=std_logic lab=TB_VIP}
-C {devices/lab_pin.sym} -310 120 0 0 {name=p5 sig_type=std_logic lab=TB_VDD}
-C {devices/lab_pin.sym} -300 190 0 0 {name=p6 sig_type=std_logic lab=TB_VIP}
-C {devices/lab_pin.sym} -160 190 0 1 {name=p7 sig_type=std_logic lab=TB_VIN}
+C {devices/lab_pin.sym} -280 140 0 0 {name=p5 sig_type=std_logic lab=TB_VDD}
+C {devices/lab_pin.sym} -200 190 0 1 {name=p6 sig_type=std_logic lab=TB_VIP}
+C {devices/lab_pin.sym} -260 190 0 0 {name=p7 sig_type=std_logic lab=TB_VIN}
 C {devices/vsource.sym} -470 -100 0 0 {name=V2 value=0.5 savecurrent=false}
 C {devices/lab_pin.sym} -470 -70 0 0 {name=p8 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -470 -150 0 0 {name=p9 sig_type=std_logic lab=TB_VIN}
