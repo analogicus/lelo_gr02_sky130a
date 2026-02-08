@@ -5,15 +5,15 @@ V {}
 S {}
 E {}
 B 2 160 -170 960 230 {flags=graph
-y1=0
-y2=2
+y1=0.097222222
+y2=1.4861111
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.8402542e-05
-x2=4.3514819e-05
+x1=-0.0014734898
+x2=0.018563505
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -23,8 +23,10 @@ unitx=1
 logx=0
 logy=0
 rawfile=$netlist_dir/TB_LELOGR02_BANDGAP_OPAMP.raw
-color=4
-node=tb_vout}
+color="4 5 6"
+node="tb_vout
+tb_vin
+tb_vip"}
 T {Some commands: 
 press ctrl+B on the graph to see voltages
 press ctrl+left_click on "load waves" to see waves
@@ -34,7 +36,11 @@ N -300 190 -260 190 {lab=TB_VIP}
 N -470 -150 -470 -130 {lab=TB_VIN}
 N -310 -150 -310 -130 {lab=TB_VIP}
 N -140 -150 -140 -130 {lab=TB_VDD}
-N -230 -10 -230 10 {lab=TB_VOUT}
+N -230 -10 -230 10 {lab=TB_VIN}
+N -230 0 -110 0 {lab=TB_VIN}
+N -110 0 -110 170 {lab=TB_VIN}
+N -160 170 -110 170 {lab=TB_VIN}
+N -160 170 -160 190 {lab=TB_VIN}
 C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} -260 40 0 0 {name=x1}
 C {devices/lab_pin.sym} -150 130 0 1 {name=p1 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -310 140 0 0 {name=p2 sig_type=std_logic lab=0}
@@ -69,7 +75,7 @@ C {devices/code_shown.sym} -470 260 0 0 {name=s1 only_toplevel=false value="
 optran 0 0 0 10n 1u 0
 
 
-tran 0.5n 10m
+tran 10n 10m
 write TB_LELOGR02_BANDGAP_OPAMP.raw
 
 exit
