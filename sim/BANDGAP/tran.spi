@@ -25,7 +25,8 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
-VPWR  PWRUP_1V8  VSS  pwl 0 0 {t_start} 0 {{t_start} + 10p} {AVDD}
+VPWR  PWRUP_1V8  VSS  dc 1.8 
+*VPWR  PWRUP_1V8  VSS  pwl 0 0 {t_start} 0 {{t_start} + 10p} {AVDD}
 
 
 *-----------------------------------------------------------------
