@@ -34,7 +34,7 @@ Inside the bandgap symbol, the complete bandgap circuit schematic is shown in th
 
 <img width="1238" height="695" alt="image" src="https://github.com/user-attachments/assets/7b966644-21cf-4beb-a3e8-036cb3784942" />
 
-The operational amplifier used within the bandgap circuit is shown in Figure Z. It consists of an NMOS differential input pair combined with a PMOS current mirror load to provide amplification. Below the differential stage, a simple NMOS current mirror is used as a current source. A 32 kΩ resistor generates the bias current required to properly drive the op-amp. Power gating for the op-amp is implemented using PMOS transistors located above the circuit.
+The operational amplifier used within the bandgap circuit is shown in the figure above. It consists of an NMOS differential input pair combined with a PMOS current mirror load to provide amplification. Below the differential stage, a simple NMOS current mirror is used as a current source. A 32 kΩ resistor generates the bias current required to properly drive the op-amp. Power gating for the op-amp is implemented using PMOS transistors located above the circuit.
 
 <img width="2549" height="1292" alt="image" src="https://github.com/user-attachments/assets/e3747c0a-d1b8-438f-a334-d67553d6d574" />
 
