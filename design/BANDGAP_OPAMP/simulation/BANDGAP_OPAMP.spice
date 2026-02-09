@@ -1,0 +1,82 @@
+** sch_path: /home/ivera/pro/aicex/ip/lelo_gr02_sky130a/design/BANDGAP_OPAMP/BANDGAP_OPAMP.sch
+**.subckt BANDGAP_OPAMP VIN_P VOUT VIN_N VSS PWRUP_1V8
+*.ipin VDD_1V8
+*.ipin VSS
+*.ipin PWRUP_1V8
+*.ipin VIN_P
+*.ipin VIN_N
+*.opin VOUT
+x3 net1 VIN_P net2 VSS JNWATR_NCH_4C5F0
+x4 VOUT VIN_N net2 VSS JNWATR_NCH_4C5F0
+x1 VOUT net1 net5 net5 JNWATR_PCH_4C5F0
+x2 net1 net1 net5 net5 JNWATR_PCH_4C5F0
+x5 net4 net5 VSS JNWTR_RPPO4
+x6 net4 net3 VSS VSS JNWATR_NCH_4C5F0
+x7 net2 net3 VSS VSS JNWATR_NCH_4C5F0
+x8 net5 PWRUP_1V8 VDD_1V8 VDD_1V8 JNWATR_PCH_12C1F2
+**.ends
+
+* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym # of pins=4
+** sym_path: /home/ivera/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym
+** sch_path: /home/ivera/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sch
+.subckt JNWATR_NCH_4C5F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__nfet_01v8 L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym # of pins=4
+** sym_path: /home/ivera/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym
+** sch_path: /home/ivera/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sch
+.subckt JNWATR_PCH_4C5F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RPPO4.sym # of pins=3
+** sym_path: /home/ivera/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO4.sym
+** sch_path: /home/ivera/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO4.sch
+.subckt JNWTR_RPPO4 N P B
+*.iopin P
+*.iopin N
+*.iopin B
+XXA1 N P B JNWTR_RES4
+.ends
+
+
+* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_PCH_12C1F2.sym # of pins=4
+** sym_path: /home/ivera/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_12C1F2.sym
+** sch_path: /home/ivera/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_12C1F2.sch
+.subckt JNWATR_PCH_12C1F2 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.22 W=8.32 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RES4.sym # of pins=3
+** sym_path: /home/ivera/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RES4.sym
+** sch_path: /home/ivera/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RES4.sch
+.subckt JNWTR_RES4 N P B
+*.iopin N
+*.iopin P
+*.iopin B
+XR1_0 INT_0 N B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_1 INT_1 INT_0 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_2 INT_2 INT_1 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_3 P INT_2 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+.ends
+
+.end
