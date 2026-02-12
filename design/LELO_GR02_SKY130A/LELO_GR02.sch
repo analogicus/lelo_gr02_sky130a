@@ -6,16 +6,10 @@ S {}
 E {}
 N 890 -330 910 -330 {lab=OSC_TEMP_1V8}
 N 100 -300 130 -300 {lab=PWRUP_1V8}
-N 830 -330 830 -300 {lab=#net1}
-N 250 -350 310 -350 {lab=#net2}
-N 250 -350 250 -300 {lab=#net2}
-N 100 -100 290 -100 {lab=VSS}
-N 290 -330 290 -100 {lab=VSS}
-N 290 -330 310 -330 {lab=VSS}
-N 100 -600 300 -600 {lab=VDD_1V8}
-N 300 -600 300 -370 {lab=VDD_1V8}
-N 300 -370 310 -370 {lab=VDD_1V8}
-N 190 -300 250 -300 {lab=#net2}
+N 190 -300 800 -300 {lab=#net1}
+N 800 -330 800 -320 {lab=#net1}
+N 800 -330 830 -330 {lab=#net1}
+N 800 -320 800 -300 {lab=#net1}
 C {cborder/border_xs.sym} 0 0 0 0 {
 user="wulff"
 company="wulff"}
@@ -34,3 +28,6 @@ L=0.4
 model=res_generic_m4
 mult=1}
 C {LELO_GR02_SKY130A/BANDGAP.sym} 460 -350 0 0 {name=x1}
+C {devices/lab_pin.sym} 310 -350 0 0 {name=p4 sig_type=std_logic lab=PWRUP_1V8}
+C {devices/lab_pin.sym} 310 -330 0 0 {name=p5 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 310 -370 0 0 {name=p6 sig_type=std_logic lab=VDD_1V8}
