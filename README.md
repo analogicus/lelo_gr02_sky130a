@@ -4,11 +4,13 @@
 [![DOCS](../../actions/workflows/docs.yaml/badge.svg)](../../actions/workflows/docs.yaml)
 
 # Who
-Ardit Uka, Jonas Anton Hilbich, Iver Abrahamsen & Simen Eilevstjønn
+Ardit Uka, Jonas Hilbich, Iver Abrahamsen & Simen Eilevstjønn
 
 # Why
 
-explain why you made this module
+Creating this module is part of the Analog Integrated Circuits course at NTNU.
+The goal is to create a basic temperature sensor and get it to tape out in the TinyTapeout project.
+Along the way we will learn about the analog design and layout required and gain practical experience working with the tools and understanding the design workflow.
 
 # How
 
@@ -22,7 +24,7 @@ The first milestone focuses on the bandgap circuit. Every electronic circuit req
 
 <img width="1089" height="307" alt="image" src="https://github.com/user-attachments/assets/0df39aa2-2bc6-4e3d-830c-2c7ff9f4fa18" />
 
-The bandgap reference symbol is shown the Figure above. It has three inputs and two outputs. The supply voltage VDD_1V8 provides a 1.8 V DC supply to the bandgap circuit, while VSS is the ground reference. The PWRUP_1V8 signal is used to enable the circuit.
+The bandgap reference symbol is shown the figure above. It has three inputs and two outputs. The supply voltage VDD_1V8 provides a 1.8 V DC supply to the bandgap circuit, while VSS is the ground reference. The PWRUP_1V8 signal is used to enable the circuit.
 
 To reduce leakage current and overall power consumption, power gating is implemented. As power consumption becomes increasingly critical when designing ICs, minimizing unnecessary power loss is essential. In this design, power gating is implemented using PMOS transistors, although NMOS transistors could also be used as an alternative.
 
@@ -30,7 +32,18 @@ The bandgap circuit provides two outputs: I_PTAT and V_CTAT. The I_PTAT output i
 
 <img width="2209" height="1230" alt="image" src="https://github.com/user-attachments/assets/1aa2922f-9075-49c0-8a5c-587162f5553b" />
 
-Inside the bandgap symbol, the complete bandgap circuit schematic is shown in the Figure above. (add an explanation)
+Encapsulated inside the bandgap symbol, the complete bandgap circuit schematic is shown in the figure above. 
+Power gating is implemented using a PMOS, controlled by the enable signal PWRUP_1V8.
+This signal first runs through an inverter in order to be referenced against VDD and thus to be compatible with the PMOS.
+
+The heart of the bandgap are two diodes connected BJTs: D1 and Dn.
+D1 is used to generate V_CTAT.
+The nodes at the collector of the diode connected BJTs are kept at the same voltage by the op-amp, which is explained below.
+Because Dn is eight times larger than D1, its current density is different, changing it's V_BE.
+The difference in V_BE between the two diodes drops over the resistor, converting it to I_PTAT.
+This current is mirrored exactly on the two branches and set by the op-amp feedback loop.
+I_PTAT is furthermore mirrored to the current output of the bandgap for further usage.
+A capacitor is used to stabilize the feedback, suppressing oscillations by increasing the phase margin.
 
 <img width="1238" height="695" alt="image" src="https://github.com/user-attachments/assets/7b966644-21cf-4beb-a3e8-036cb3784942" />
 
@@ -38,7 +51,7 @@ The operational amplifier used within the bandgap circuit is shown in the figure
 
 <img width="2549" height="1292" alt="image" src="https://github.com/user-attachments/assets/e3747c0a-d1b8-438f-a334-d67553d6d574" />
 
-Simulation results of the bandgap circuit are shown in Figure W. As observed, there is a proportional relationship between temperature and both the output voltage and current. Although the linearity could be further improved, the performance is sufficient to meet the specified design criteria.
+Simulation results of the bandgap circuit are shown in the figure above. As observed, there is a proportional relationship between temperature and both the output voltage and current. Although the linearity could be further improved, the performance is sufficient to meet the specified design criteria.
 
 
 
