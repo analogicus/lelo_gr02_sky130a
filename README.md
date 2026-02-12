@@ -69,8 +69,8 @@ Simulation results of the bandgap circuit are shown in the figure above. As obse
 
 | What            |        Cell/Name |
 | :----           |  :----:       |
-| Schematic       | design/LELO_GR02_SKY130A/LELO_GR02.sch |
-| Layout          | design/LELO_GR02_SKY130A/LELO_GR02.mag |
+| Schematic       | design/LELO_GR02_SKY130A/BANDGAP.sch |
+| Schematic       | design/LELO_GR02_SKY130A/BANDGAP_OPAMP.sch |
 
 
 
