@@ -15,6 +15,8 @@ iptat_intercept:
   name: Current proportial to temperature, offset at zero celsius
   scale: 1e6
   digits: 3
+  min: 10
+  max: 200
   unit: uA
 
 iptat_slope:
@@ -23,7 +25,9 @@ iptat_slope:
   name: Current proportial to temperature, increase per kelvin
   scale: 1e6
   digits: 3
-  unit: uA
+  min: 0.1
+  max: 0.9
+  unit: uA/K
 
 iptat_rvalue:
   src:
@@ -33,6 +37,7 @@ iptat_rvalue:
   typ: 1
   max: 5%
   digits: 3
+  unit: ""
 
 vctat_intercept:
   src:
@@ -40,6 +45,8 @@ vctat_intercept:
   name: Voltage complementary to temperature, offset at zero celsius
   scale: 1e3
   digits: 3
+  min: 200
+  max: 1200
   unit: mV
 
 vctat_slope:
@@ -48,7 +55,9 @@ vctat_slope:
   name: Voltage complementary to temperature, increase per kelvin
   scale: 1e3
   digits: 3
-  unit: mV
+  min: 0.5
+  max: 2
+  unit: mV/K
 
 vctat_rvalue:
   src:
@@ -58,3 +67,4 @@ vctat_rvalue:
   typ: 1
   max: 5%
   digits: 3
+  unit: ""
