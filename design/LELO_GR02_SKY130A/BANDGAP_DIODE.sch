@@ -24,7 +24,7 @@ C {sky130_fd_pr/pnp_05v5.sym} -120 -10 0 0 {name=Q1
 model=pnp_05v5_W3p40L3p40
 spiceprefix=X
 }
-C {sky130_fd_pr/pnp_05v5.sym} 80 -10 0 0 {name=Q2[7:0]
+C {sky130_fd_pr/pnp_05v5.sym} 80 -10 0 0 {name=Q2[8:0]
 model=pnp_05v5_W3p40L3p40
 spiceprefix=X
 }
