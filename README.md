@@ -64,45 +64,15 @@ To be continued... hopefully before GTA 6
 
 # Signal interface
 
-## Temperature Sensor
-
 | Signal       | Direction | Domain  | Description                                |
 | :---         | :---:     | :---:   | :---                                       |
 | VDD_1V8      | Input     | VDD_1V8 | Main supply                                |
 | OSC_TEMP_1V8 | Output    | VDD_1V8 | Temperature dependent oscillation frequency|
 | PWRUP_1V8    | Input     | VDD_1V8 | Power up the circuit                       |
-| VSS          | Input     | Ground  |                                            |
-
-## Bandgap
-
-| Signal       | Direction | Domain  | Description                                |
-| :---         | :---:     | :---:   | :---                                       |
-| VDD_1V8      | Input     | VDD_1V8 | Main supply                                |
 | PWRUP_N_1V8  | Input     | VDD_1V8 | Power up the circuit                       |
 | V_PTAT       | Output    | VDD_1V8 | Voltage Proportional To Absolute Temperature |
 | I_PTAT       | Output    | VDD_1V8 | Current Proportional To Absolute Temperature |
 | VOUT         | Output    | VDD_1V8 | Output signal of the operational amplifier |
-| VSS          | Input     | Ground  |                                            |
-
-## Opamp - Bandgap
-
-| Signal       | Direction | Domain  | Description                                |
-| :---         | :---:     | :---:   | :---                                       |
-| VDD_1V8      | Input     | VDD_1V8 | Main supply                                |
-| PWRUP_N_1V8  | Input     | VDD_1V8 | Power up the circuit                       |
-| V_PTAT       | Output    | VDD_1V8 | Voltage Proportional To Absolute Temperature |
-| I_PTAT       | Output    | VDD_1V8 | Current Proportional To Absolute Temperature |
-| VIP          | Input     | VDD_1V8 | Operational amplifiers positive input                  |
-| VIN          | Input     | VDD_1V8 | Operational amplifiers negative input                  |
-| VOUT         | Output    | VDD_1V8 | Output signal of the operational amplifier |
-| VSS          | Input     | Ground  |                                            |
-
-## Diode - Bandgap
-
-| Signal       | Direction | Domain  | Description                                |
-| :---         | :---:     | :---:   | :---                                       |
-| D1           | Inout     | VDD_1V8 | Input for diode D1                         |
-| D1           | Inout     | VDD_1V8 | Input for diodes Dn                        |
 | VSS          | Input     | Ground  |                                            |
 
 
