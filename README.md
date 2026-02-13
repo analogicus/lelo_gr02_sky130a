@@ -25,6 +25,13 @@ explain short how you made this module
 
 
 
+```python
+import cicsim as cs
+fname = name + ".png"
+print(f"Saving {fname}")
+cs.rawplot(name + ".raw","time","v(ibps_5u),i(v0)" \
+  ,ptype="",fname=fname)
+```
 
 
 # Signal interface
