@@ -27,8 +27,16 @@ The operational amplifier used within the bandgap circuit is shown in the figure
 
 Simulation results of the bandgap circuit are shown in the figure above. As observed, there is a proportional relationship between temperature and both the output voltage and current. Although the linearity could be further improved, the performance is sufficient to meet the criteria for milestone 1.
 
+To simulate the bandgap and achieve the graphs above, run the following commands from the /lelo_gr02_sky130a directory:
+
+```bash
+cd sim/BANDGAP/
+cd make typical
+```
+
 ## Milestone 2 - The Oscillator
 
+To be continued
 
 
 
