@@ -49,7 +49,7 @@ A capacitor is used to stabilize the feedback, suppressing oscillations by incre
 
 The operational amplifier used within the bandgap circuit is shown in the figure above. It consists of an NMOS differential input pair combined with a PMOS current mirror load to provide amplification. Below the differential stage, a simple NMOS current mirror is used as a current source. A 32 kΩ resistor generates the bias current required to properly drive the op-amp. Power gating for the op-amp is implemented using PMOS transistors located above the circuit.
 
-<img alt="image" src="https://github.com/user-attachments/assets e3747c0a-d1b8-438f-a334-d67553d6d574" />
+<img alt="image" src="https://github.com/user-attachments/assets/e3747c0a-d1b8-438f-a334-d67553d6d574" />
 
 Simulation results of the bandgap circuit are shown in the figure above. As observed, there is a proportional relationship between temperature and both the output voltage and current. Although the linearity could be further improved, the performance is sufficient to meet the specified design criteria.
 
