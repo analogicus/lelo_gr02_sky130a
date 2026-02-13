@@ -57,7 +57,7 @@ N 640 -160 640 -140 {lab=VSS}
 N 580 -140 640 -140 {lab=VSS}
 N 580 -240 640 -240 {lab=VDD_1V8}
 N 580 -90 640 -90 {lab=VDD_1V8}
-C {devices/ipin.sym} -150 -60 0 0 {name=p1 lab=PWRUP_1V8}
+C {devices/ipin.sym} -150 -60 0 0 {name=p1 lab=PWRUP_B_1V8}
 C {devices/opin.sym} 820 -60 0 0 {name=p2 lab=OSC_TEMP_1V8}
 C {devices/ipin.sym} -150 -180 0 0 {name=p3 lab=PWRUP_N_1V8}
 C {devices/ipin.sym} -150 -110 0 0 {name=p4 lab=VDD_1V8}
