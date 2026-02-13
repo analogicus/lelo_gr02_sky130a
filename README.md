@@ -65,6 +65,7 @@ To be continued... hopefully before GTA 6
 # Signal interface
 
 ## Temperature Sensor
+
 | Signal       | Direction | Domain  | Description                                |
 | :---         | :---:     | :---:   | :---                                       |
 | VDD_1V8      | Input     | VDD_1V8 | Main supply                                |
@@ -73,6 +74,7 @@ To be continued... hopefully before GTA 6
 | VSS          | Input     | Ground  |                                            |
 
 ## Bandgap
+
 | Signal       | Direction | Domain  | Description                                |
 | :---         | :---:     | :---:   | :---                                       |
 | VDD_1V8      | Input     | VDD_1V8 | Main supply                                |
@@ -83,6 +85,7 @@ To be continued... hopefully before GTA 6
 | VSS          | Input     | Ground  |                                            |
 
 ## Opamp - Bandgap
+
 | Signal       | Direction | Domain  | Description                                |
 | :---         | :---:     | :---:   | :---                                       |
 | VDD_1V8      | Input     | VDD_1V8 | Main supply                                |
@@ -95,6 +98,7 @@ To be continued... hopefully before GTA 6
 | VSS          | Input     | Ground  |                                            |
 
 ## Diode - Bandgap
+
 | Signal       | Direction | Domain  | Description                                |
 | :---         | :---:     | :---:   | :---                                       |
 | D1           | Inout     | VDD_1V8 | Input for diode D1                         |
