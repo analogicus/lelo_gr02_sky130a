@@ -47,7 +47,7 @@ Simulation results of the bandgap circuit are shown in the figure above. As obse
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP.sch |
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP_OPAMP.sch |
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP_DIODE.sch |
-| 
+
 
 
 
