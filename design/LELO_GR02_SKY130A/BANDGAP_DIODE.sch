@@ -28,3 +28,6 @@ C {sky130_fd_pr/pnp_05v5.sym} 80 -10 0 0 {name=Q2[7:0]
 model=pnp_05v5_W3p40L3p40
 spiceprefix=X
 }
+C {cborder/border_xs.sym} -540 120 0 0 {
+user="Group 2"
+company=""}

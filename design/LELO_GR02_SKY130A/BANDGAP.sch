@@ -4,6 +4,7 @@ K {}
 V {}
 S {}
 E {}
+B 5 -432.5 277.5 -427.5 282.5 {name=VDD_1V8 dir=in}
 N 450 -200 450 -140 {lab=Vout}
 N 450 -190 580 -190 {lab=Vout}
 N 280 -190 410 -190 {lab=Vout}
@@ -133,3 +134,6 @@ C {devices/lab_pin.sym} 0 80 0 1 {name=p22 sig_type=std_logic lab=PWRUP_N_1V8
 
 }
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 450 -260 2 1 {name=xd1[4:0]}
+C {cborder/border_xs.sym} -140 400 0 0 {
+user="Group 2"
+company=""}

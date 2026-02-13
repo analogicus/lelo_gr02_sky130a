@@ -124,3 +124,6 @@ C {LELO_ATR_SKY130A/LELOATR_LVT_NCH_4C5F0.sym} 710 290 0 1 {name=x4[3:0]}
 C {LELO_ATR_SKY130A/LELOATR_LVT_PCH_12C5F0.sym} 470 160 0 1 {name=x2[3:0]}
 C {LELO_ATR_SKY130A/LELOATR_LVT_PCH_12C5F0.sym} 630 160 0 0 {name=x3[3:0]
 }
+C {cborder/border_xs.sym} -100 660 0 0 {
+user="Group 2"
+company=""}
