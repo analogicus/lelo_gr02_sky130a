@@ -1,0 +1,8 @@
+The first milestone focuses on the bandgap circuit. Every electronic circuit requires a stable supply to function as intended, such as current and voltage sources. While ideal sources provide constant outputs regardless of external factors like load, noise, or temperature, real-world sources are affected by these conditions. The bandgap circuit is therefore used to generate a stable reference that is largely independent of such variations.
+image
+
+The bandgap has three inputs and two outputs. The supply voltage VDD_1V8 provides a 1.8 V DC supply to the bandgap circuit, while VSS is the ground reference. The PWRUP_1V8 signal is used to enable the circuit.
+
+To reduce leakage current and overall power consumption, power gating is implemented. As power consumption becomes increasingly critical when designing ICs, minimizing unnecessary power loss is essential. In this design, power gating is implemented using PMOS transistors, although NMOS transistors could also be used as an alternative.
+
+The bandgap circuit provides two outputs: I_PTAT and V_CTAT. The I_PTAT output is a current proportional to absolute temperature (PTAT), while V_CTAT is a voltage complementary to absolute temperature (CTAT). These temperature-dependent signals will be used later in the implementation of an oscillator.
