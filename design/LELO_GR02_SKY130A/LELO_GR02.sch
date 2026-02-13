@@ -10,6 +10,8 @@ N 190 -300 800 -300 {lab=#net1}
 N 800 -330 800 -320 {lab=#net1}
 N 800 -330 830 -330 {lab=#net1}
 N 800 -320 800 -300 {lab=#net1}
+N 610 -420 710 -420 {lab=#net2}
+N 610 -440 710 -440 {lab=#net3}
 C {cborder/border_xs.sym} 0 0 0 0 {
 user="wulff"
 company="wulff"}
@@ -27,7 +29,8 @@ W=0.3
 L=0.4
 model=res_generic_m4
 mult=1}
-C {LELO_GR02_SKY130A/BANDGAP.sym} 460 -350 0 0 {name=x1}
-C {devices/lab_pin.sym} 310 -350 0 0 {name=p4 sig_type=std_logic lab=PWRUP_1V8}
-C {devices/lab_pin.sym} 310 -330 0 0 {name=p5 sig_type=std_logic lab=VSS}
-C {devices/lab_pin.sym} 310 -370 0 0 {name=p6 sig_type=std_logic lab=VDD_1V8}
+C {LELO_GR02_SKY130A/BANDGAP.sym} 460 -420 0 0 {name=x1}
+C {devices/lab_pin.sym} 310 -420 0 0 {name=p4 sig_type=std_logic lab=PWRUP_1V8}
+C {devices/lab_pin.sym} 310 -400 0 0 {name=p5 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 310 -440 0 0 {name=p6 sig_type=std_logic lab=VDD_1V8}
+C {LELO_GR02_SKY130A/OSCILLATOR.sym} 860 -450 0 0 {name=x2}
