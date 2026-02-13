@@ -12,7 +12,9 @@ email: anon@anon.com
 url: analogicus.github.io
 doc:
   # Make docs
-  #libraries:
-  #   <library>:
-  #       - <cell>
-  #       - <cell>
+  libraries:
+    LELO_GR02_SKY130A:
+        - LELO_GR02
+        - BANDGAP
+        - BANDGAP_OPAMP
+        - BANDGAP_DIODE
