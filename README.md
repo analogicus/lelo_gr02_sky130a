@@ -22,7 +22,7 @@ This module was developed through four separate milestones, each building on the
 
 The first milestone focuses on the bandgap circuit. Every electronic circuit requires a stable supply to function as intended, such as current and voltage sources. While ideal sources provide constant outputs regardless of external factors like load, noise, or temperature, real-world sources are affected by these conditions. The bandgap circuit is therefore used to generate a stable reference that is largely independent of such variations.
 
-<img width="1089" height="307" alt="image" src="https://github.com/user-attachments/assets/0df39aa2-2bc6-4e3d-830c-2c7ff9f4fa18" />
+<img alt="image" src="https://github.com/user-attachments/assets/0df39aa2-2bc6-4e3d-830c-2c7ff9f4fa18" />
 
 The bandgap reference symbol is shown the figure above. It has three inputs and two outputs. The supply voltage VDD_1V8 provides a 1.8 V DC supply to the bandgap circuit, while VSS is the ground reference. The PWRUP_1V8 signal is used to enable the circuit.
 
@@ -30,7 +30,7 @@ To reduce leakage current and overall power consumption, power gating is impleme
 
 The bandgap circuit provides two outputs: I_PTAT and V_CTAT. The I_PTAT output is a current proportional to absolute temperature (PTAT), while V_CTAT is a voltage complementary to absolute temperature (CTAT). These temperature-dependent signals will be used later in the implementation of an oscillator.
 
-<img width="2209" height="1230" alt="image" src="https://github.com/user-attachments/assets/1aa2922f-9075-49c0-8a5c-587162f5553b" />
+<img alt="image" src="https://github.com/user-attachments/assets/1aa2922f-9075-49c0-8a5c-587162f5553b" />
 
 Encapsulated inside the bandgap symbol, the complete bandgap circuit schematic is shown in the figure above. 
 Power gating is implemented using a PMOS, controlled by the enable signal PWRUP_1V8.
@@ -45,11 +45,11 @@ This current is mirrored exactly on the two branches and set by the op-amp feedb
 I_PTAT is furthermore mirrored to the current output of the bandgap for further usage.
 A capacitor is used to stabilize the feedback, suppressing oscillations by increasing the phase margin.
 
-<img width="1238" height="695" alt="image" src="https://github.com/user-attachments/assets/7b966644-21cf-4beb-a3e8-036cb3784942" />
+<img alt="image" src="https://github.com/user-attachments/assets/7b966644-21cf-4beb-a3e8-036cb3784942" />
 
 The operational amplifier used within the bandgap circuit is shown in the figure above. It consists of an NMOS differential input pair combined with a PMOS current mirror load to provide amplification. Below the differential stage, a simple NMOS current mirror is used as a current source. A 32 kΩ resistor generates the bias current required to properly drive the op-amp. Power gating for the op-amp is implemented using PMOS transistors located above the circuit.
 
-<img width="2549" height="1292" alt="image" src="https://github.com/user-attachments/assets/e3747c0a-d1b8-438f-a334-d67553d6d574" />
+<img alt="image" src="https://github.com/user-attachments/assets e3747c0a-d1b8-438f-a334-d67553d6d574" />
 
 Simulation results of the bandgap circuit are shown in the figure above. As observed, there is a proportional relationship between temperature and both the output voltage and current. Although the linearity could be further improved, the performance is sufficient to meet the specified design criteria.
 
