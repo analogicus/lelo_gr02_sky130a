@@ -11,8 +11,8 @@ N 800 -330 800 -320 {lab=#net1}
 N 800 -330 830 -330 {lab=#net1}
 N 800 -320 800 -300 {lab=#net1}
 C {cborder/border_xs.sym} 0 0 0 0 {
-user="wulff"
-company="wulff"}
+user="Group 2"
+company=""}
 C {devices/ipin.sym} 100 -600 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 100 -100 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} 100 -300 0 0 {name=p3 lab=PWRUP_1V8}
