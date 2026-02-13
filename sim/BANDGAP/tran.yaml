@@ -13,9 +13,6 @@ iptat_intercept:
   src:
     - iptat_intercept
   name: Current proportial to temperature, offset at zero celsius
-  min: -5%
-  typ: 20
-  max: 5%
   scale: 1e6
   digits: 3
   unit: uA
@@ -24,9 +21,6 @@ iptat_slope:
   src:
     - iptat_slope
   name: Current proportial to temperature, increase per kelvin
-  min: -5%
-  typ: 20
-  max: 5%
   scale: 1e6
   digits: 3
   unit: uA
@@ -36,7 +30,7 @@ iptat_rvalue:
     - iptat_rvalue
   name: Current proportial to temperature, Pearson correlation coefficient
   min: -5%
-  typ: 20
+  typ: 1
   max: 5%
   digits: 3
 
@@ -44,9 +38,6 @@ vctat_intercept:
   src:
     - vctat_intercept
   name: Voltage complementary to temperature, offset at zero celsius
-  min: -5%
-  typ: 20
-  max: 5%
   scale: 1e3
   digits: 3
   unit: mV
@@ -55,9 +46,6 @@ vctat_slope:
   src:
     - vctat_slope
   name: Voltage complementary to temperature, increase per kelvin
-  min: -5%
-  typ: 20
-  max: 5%
   scale: 1e3
   digits: 3
   unit: mV
@@ -67,6 +55,6 @@ vctat_rvalue:
     - vctat_rvalue
   name: Voltage complementary to temperature, Pearson correlation coefficient
   min: -5%
-  typ: 20
+  typ: 1
   max: 5%
   digits: 3
