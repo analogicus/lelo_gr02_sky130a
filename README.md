@@ -36,7 +36,7 @@ cd make typical
 
 ## Milestone 2 - The Oscillator
 
-To be continued
+To be continued... hopefully before GTA 6
 
 
 
