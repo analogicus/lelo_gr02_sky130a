@@ -43,24 +43,31 @@ Simulation results of the bandgap circuit are shown in the figure above. As obse
 
 | What            |        Cell/Name |
 | :----           |  :----:       |
+| Schematic       | design/LELO_GR02_SKY130A/LELO_GR02.sch |
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP.sch |
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP_OPAMP.sch |
+| Schematic       | design/LELO_GR02_SKY130A/BANDGAP_DIODE.sch |
+| 
 
 
 
 # Signal interface
 
 
-| Signal       | Direction | Domain  | Description                               |
-| :---         | :---:     | :---:   | :---                                      |
-| VDD_1V8      | Input     | VDD_1V8 | Main supply                               |
+| Signal       | Direction | Domain  | Description                                |
+| :---         | :---:     | :---:   | :---                                       |
+| VDD_1V8      | Input     | VDD_1V8 | Main supply                                |
 | OSC_TEMP_1V8 | Output    | VDD_1V8 | Temperature dependent oscillation frequency|
-| PWRUP_1V8    | Input     | VDD_1V8 | Power up the circuit
-| VSS          | Input     | Ground  |                                           |
+| PWRUP_1V8    | Input     | VDD_1V8 | Power up the circuit                       |
+| PWRUP_N_1V8  | Input     | VDD_1V8 | Power up the circuit                       |
+| I_PTAT       | Input     | VDD_1V8 | Power up the circuit                       |
+| V_PTAT       | Output    | VDD_1V8 | Voltage Proportional To Absolute Temperature |
+| I_PTAT       | Output    | VDD_1V8 | Current Proportional To Absolute Temperature |
+| VOUT         | Output    | VDD_1V8 | Output signal of the operational amplifier |
+| VSS          | Input     | Ground  |                                            |
 
 
 # Key parameters
-
 
 | Parameter           | Min     | Typ             | Max     | Unit  |
 | :---                | :---:   | :---:           | :---:   | :---: |
