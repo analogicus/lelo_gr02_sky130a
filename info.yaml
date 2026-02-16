@@ -18,3 +18,4 @@ doc:
         - BANDGAP
         - BANDGAP_OPAMP
         - BANDGAP_DIODE
+        - OSCILLATOR
