@@ -31,7 +31,7 @@ To simulate the bandgap and achieve the graphs above, run the following commands
 
 ```bash
 cd sim/BANDGAP/
-cd make typical
+make typical
 ```
 
 ## Milestone 2 - The Oscillator
