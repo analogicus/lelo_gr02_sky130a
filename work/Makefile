@@ -12,10 +12,10 @@
 PREFIX=
 
 LIB=LELO_GR02_SKY130A
-CELL=LELO_GR02
 CELL=BANDGAP_OPAMP
 CELL=BANDGAP
 CELL=BANDGAP_DIODE
+CELL=LELO_GR02
 
 #- Provide cells you want to check for the lvsall drcall commands
 #CELLS = BANDGAP

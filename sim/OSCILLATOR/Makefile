@@ -46,6 +46,8 @@ summary:
 slide:
 	pandoc -s  -t slidy README.md -o README.html
 
+wave:
+	cicsim wave output_tran/tran_SchGtKttTtVt.raw &
 
 clean:
 	-rm -rf output_*
