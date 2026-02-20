@@ -64,7 +64,6 @@ C {devices/ipin.sym} -150 -110 0 0 {name=p4 lab=VDD_1V8}
 C {devices/ipin.sym} -150 150 0 0 {name=p5 lab=VSS}
 C {devices/ipin.sym} -150 -20 0 0 {name=p6 lab=V_CTAT}
 C {devices/ipin.sym} -150 20 0 0 {name=p7 lab=I_PTAT}
-C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} 0 100 1 0 {name=x1}
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 270 0 0 0 {name=x5 }
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 380 0 0 0 {name=x3 }
 C {LELO_ATR_SKY130A/LELOATR_NCH_2C5F0.sym} 50 90 0 1 {name=x4 }
@@ -74,3 +73,4 @@ C {devices/lab_wire.sym} 620 -140 0 0 {name=p8 lab=VSS}
 C {devices/lab_wire.sym} 620 -240 0 0 {name=p9 lab=VDD_1V8}
 C {devices/lab_wire.sym} 630 -90 0 0 {name=p10 lab=VDD_1V8}
 C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} -120 80 0 0 {name=x2 }
+C {LELO_GR02_SKY130A/OPAMP_iver.sym} -60 -90 1 0 {name=x1}
