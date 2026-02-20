@@ -56,13 +56,13 @@ optran 0 0 0 1n 1u 0
 ptran 0 0 0 1n 1u 0
 
 #ifdef Nosweep
-tran 10n {t_stop}
+tran 0.1n {t_stop}
 write {cicname}.raw
 #else
 set fend = .raw
 foreach vtemp {temperatures}
   option temp=$vtemp
-  tran 10n {t_stop}
+  tran 1n {t_stop}
   write {cicname}_$vtemp$fend
 end
 
