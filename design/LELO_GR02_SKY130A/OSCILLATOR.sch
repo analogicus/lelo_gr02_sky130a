@@ -7,9 +7,6 @@ E {}
 N -70 -20 60 -20 {lab=V_CTAT}
 N -70 -110 100 -110 {lab=VDD_1V8}
 N 100 -110 100 -50 {lab=VDD_1V8}
-N 80 -180 130 -180 {lab=PWRUP_N_1V8}
-N 130 -180 130 -40 {lab=PWRUP_N_1V8}
-N -70 -180 80 -180 {lab=PWRUP_N_1V8}
 N 100 50 100 110 {lab=VSS}
 N -70 150 100 150 {lab=VSS}
 N -70 20 -40 20 {lab=I_PTAT}
@@ -33,7 +30,6 @@ N -120 20 -70 20 {lab=I_PTAT}
 N -150 20 -120 20 {lab=I_PTAT}
 N -150 -20 -70 -20 {lab=V_CTAT}
 N -150 -110 -70 -110 {lab=VDD_1V8}
-N -150 -180 -70 -180 {lab=PWRUP_N_1V8}
 N 10 120 10 150 {lab=VSS}
 N -120 90 -120 150 {lab=VSS}
 N -20 90 10 90 {lab=VSS}
@@ -57,6 +53,8 @@ N 640 -160 640 -140 {lab=VSS}
 N 580 -140 640 -140 {lab=VSS}
 N 580 -240 640 -240 {lab=VDD_1V8}
 N 580 -90 640 -90 {lab=VDD_1V8}
+N -150 -60 130 -60 {lab=PWRUP_B_1V8}
+N 130 -60 130 -40 {lab=PWRUP_B_1V8}
 C {devices/ipin.sym} -150 -60 0 0 {name=p1 lab=PWRUP_B_1V8}
 C {devices/opin.sym} 820 -60 0 0 {name=p2 lab=OSC_TEMP_1V8}
 C {devices/ipin.sym} -150 -180 0 0 {name=p3 lab=PWRUP_N_1V8}
