@@ -72,7 +72,7 @@ N 370 20 370 80 {lab=VOUT}
 N 370 -60 370 20 {lab=VOUT}
 C {devices/ipin.sym} -180 -290 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -460 230 0 0 {name=p2 lab=VSS}
-C {devices/ipin.sym} -150 -240 0 0 {name=p3 lab=PWRUP_1V8}
+C {devices/ipin.sym} -150 -240 0 0 {name=p3 lab=PWRUP_N_1V8}
 C {devices/ipin.sym} 150 20 0 1 {name=p4 lab=VIN_P}
 C {devices/opin.sym} 420 0 0 0 {name=p6 lab=VOUT}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym} -100 -240 0 0 {name=x8 }
