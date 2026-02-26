@@ -1,5 +1,5 @@
 t_start: 2us
-t_stop: 2us
-t_step: 0.5ns
-v_ctat: 0.79423
-i_ptat: 8.44747e-05
+t_stop: 1us
+t_step: 0.1ns
+v_ctat: 0.7
+i_ptat: 2.44747e-06

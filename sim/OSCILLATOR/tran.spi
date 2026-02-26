@@ -28,7 +28,8 @@ VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
 VPWRUP  PWRUP_B_1V8  VSS  dc 1.8
 VPWRUP_N  PWRUP_N_1V8  VSS  dc 0
 VCTAT V_CTAT VSS dc {v_ctat}
-IPTAT I_PTAT VSS dc {i_ptat}
+*IPTAT I_PTAT VSS dc {i_ptat}
+VTB_BIAS TB_BIAS VSS dc 0.8
 
 *-----------------------------------------------------------------
 * DUT
