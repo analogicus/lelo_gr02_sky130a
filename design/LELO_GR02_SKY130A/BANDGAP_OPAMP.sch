@@ -20,7 +20,6 @@ N 480 100 670 100 {lab=top
 }
 N 670 100 670 110 {lab=top}
 N 520 90 520 100 {lab=top}
-N 670 190 670 230 {lab=VOUT}
 N 430 190 430 230 {lab=DIFF_TOP}
 N 440 50 480 50 {lab=PWRUP_N_1V8}
 N 520 0 520 20 {lab=VDD_1V8}
@@ -45,7 +44,6 @@ N 550 0 580 0 {lab=VDD_1V8}
 N 430 320 430 360 {lab=DIFF_BOTTOM}
 N 430 230 430 260 {lab=DIFF_TOP}
 N 670 320 670 330 {lab=DIFF_BOTTOM}
-N 670 230 670 260 {lab=VOUT}
 N 430 290 440 290 {lab=VSS}
 N 660 290 670 290 {lab=VSS}
 N 230 370 230 380 {lab=bottom}
@@ -54,7 +52,6 @@ N 200 330 210 330 {lab=VSS}
 N 190 280 200 280 {lab=VSS}
 N 440 0 520 0 {lab=VDD_1V8}
 N 290 440 420 440 {lab=bottom}
-N 670 230 800 230 {lab=VOUT}
 N 350 290 390 290 {lab=VIP}
 N 360 100 430 100 {lab=top}
 N 340 490 410 490 {lab=VSS}
@@ -80,13 +77,15 @@ N 410 490 450 490 {lab=VSS}
 N 450 490 550 490 {lab=VSS}
 N 430 100 480 100 {lab=top}
 N 470 160 520 160 {lab=DIFF_TOP}
+N 670 190 670 260 {lab=VOUT}
+N 670 210 730 210 {lab=VOUT}
 C {devices/ipin.sym} 0 110 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 0 140 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} 0 170 0 0 {name=p3 lab=PWRUP_N_1V8
 }
 C {devices/ipin.sym} 350 290 0 0 {name=p4 lab=VIP}
 C {devices/ipin.sym} 750 290 0 1 {name=p5 lab=VIN}
-C {devices/opin.sym} 800 230 0 0 {name=p6 lab=VOUT}
+C {devices/opin.sym} 730 210 0 0 {name=p6 lab=VOUT}
 C {devices/lab_pin.sym} 170 280 0 0 {name=p7 sig_type=std_logic lab=VSS
 }
 C {devices/lab_pin.sym} 410 510 0 0 {name=p8 sig_type=std_logic lab=VSS
