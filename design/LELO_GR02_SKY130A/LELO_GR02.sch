@@ -5,23 +5,20 @@ V {}
 S {}
 E {}
 N 1380 -380 1400 -380 {lab=OSC_TEMP_1V8}
-N 870 -380 940 -380 {lab=#net1}
-N 870 -350 940 -350 {lab=#net2}
-N 270 -380 310 -380 {lab=VDD_1V8}
-N 310 -380 320 -380 {lab=VDD_1V8}
+N 270 -380 320 -380 {lab=VDD_1V8}
 N 270 -350 320 -350 {lab=PWRUP_N_1V8}
 N 270 -290 320 -290 {lab=VSS}
-N 890 -320 930 -320 {lab=VDD_1V8}
-N 930 -320 940 -320 {lab=VDD_1V8}
+N 890 -320 940 -320 {lab=VDD_1V8}
 N 890 -290 940 -290 {lab=PWRUP_N_1V8}
 N 890 -240 940 -240 {lab=VSS}
-N 760 -350 870 -350 {lab=#net2}
-N 760 -380 870 -380 {lab=#net1}
-N 630 -510 670 -510 {lab=PWRUP_N_1V8}
+N 760 -350 940 -350 {lab=#net1}
+N 760 -380 940 -380 {lab=#net2}
+N 650 -510 670 -510 {lab=PWRUP_N_1V8}
 N 750 -510 770 -510 {lab=PWRUP_B_1V8}
 N 650 -510 650 -440 {lab=PWRUP_N_1V8}
 N 270 -320 320 -320 {lab=PWRUP_B_1V8}
 N 890 -260 890 -240 {lab=VSS}
+N 630 -510 650 -510 {lab=PWRUP_N_1V8}
 C {cborder/border_xs.sym} 430 -40 0 0 {
 user="Group 2"
 company=""}
