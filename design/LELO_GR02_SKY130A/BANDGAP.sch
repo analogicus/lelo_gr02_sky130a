@@ -4,7 +4,6 @@ K {}
 V {}
 S {}
 E {}
-B 5 -432.5 277.5 -427.5 282.5 {name=VDD_1V8 dir=in}
 N 450 -200 450 -140 {lab=Vout}
 N 450 -190 580 -190 {lab=Vout}
 N 280 -190 410 -190 {lab=Vout}
@@ -18,9 +17,9 @@ N 450 -330 480 -330 {lab=VDD_1V8}
 N 480 -380 480 -330 {lab=VDD_1V8}
 N 450 -380 480 -380 {lab=VDD_1V8}
 N 240 80 380 80 {lab=V_CTAT}
-N 480 80 620 80 {lab=#net2}
+N 480 80 620 80 {lab=V_CTAT}
 N 450 -160 460 -160 {lab=Vout}
-N 640 20 640 80 {lab=#net2}
+N 640 20 640 80 {lab=V_CTAT}
 N 380 80 420 80 {lab=V_CTAT}
 N 420 -280 460 -280 {lab=#net1}
 N 410 -190 450 -190 {lab=Vout}
@@ -30,13 +29,13 @@ N 390 130 390 160 {lab=V_CTAT}
 N 390 160 390 200 {lab=V_CTAT}
 N 330 300 460 300 {lab=VSS}
 N 460 280 460 300 {lab=VSS}
-N 620 80 640 80 {lab=#net2}
+N 620 80 640 80 {lab=V_CTAT}
 N 640 -280 640 -230 {lab=#net1}
 N 380 -380 420 -380 {lab=VDD_1V8}
 N 240 -20 240 80 {lab=V_CTAT}
 N 240 300 330 300 {lab=VSS}
-N 510 180 510 200 {lab=#net3}
-N 510 80 510 100 {lab=#net2}
+N 510 180 510 200 {lab=#net2}
+N 510 80 510 100 {lab=V_CTAT}
 N 240 -100 240 -20 {lab=V_CTAT}
 N 460 -160 480 -160 {lab=Vout}
 N 460 -280 640 -280 {lab=#net1}
@@ -46,19 +45,19 @@ N 830 -140 850 -140 {lab=I_PTAT}
 N 850 -140 860 -140 {lab=I_PTAT}
 N 240 80 240 110 {lab=V_CTAT}
 N 240 110 250 110 {lab=V_CTAT}
-N 470 80 480 80 {lab=#net2}
+N 470 80 480 80 {lab=V_CTAT}
 N 420 80 430 80 {lab=V_CTAT}
 N 450 -140 450 -130 {lab=Vout}
 N 240 -160 240 -100 {lab=V_CTAT}
 N 240 -230 240 -220 {lab=#net1}
-N 640 -160 640 20 {lab=#net2}
+N 640 -160 640 20 {lab=V_CTAT}
 N 580 -190 600 -190 {lab=Vout}
 N 640 -230 640 -220 {lab=#net1}
 N 450 -280 450 -270 {lab=#net1}
 N 830 -230 830 -220 {lab=#net1}
 N 830 -160 830 -140 {lab=I_PTAT}
-N 430 40 470 80 {lab=#net2}
-N 430 80 470 40 {lab=V_CTAT}
+N 430 40 430 80 {lab=V_CTAT}
+N 470 40 470 80 {lab=V_CTAT}
 C {devices/ipin.sym} 0 -300 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 0 300 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} 0 -260 0 0 {name=p3 lab=PWRUP_B_1V8}
@@ -111,9 +110,8 @@ C {devices/ipin.sym} 0 -220 0 0 {name=p21 lab=PWRUP_N_1V8}
 C {devices/lab_pin.sym} 0 -220 0 1 {name=p22 sig_type=std_logic lab=PWRUP_N_1V8
 
 }
-C {LELO_GR02_SKY130A/OPAMP_iver.sym} 360 160 0 0 {name=x2}
 C {devices/lab_pin.sym} 410 -30 0 0 {name=p13 sig_type=std_logic lab=PWRUP_N_1V8}
-<<<<<<< HEAD
-=======
 C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} 360 160 0 0 {name=x2}
->>>>>>> ec442a7 (Milestone 2: bandgap, opamp, oscillator updates)
+C {cborder/border_xs.sym} -110 370 0 0 {
+user="Group 2"
+company=""}

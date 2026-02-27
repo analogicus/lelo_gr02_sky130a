@@ -21,12 +21,8 @@ N 630 -510 670 -510 {lab=PWRUP_N_1V8}
 N 750 -510 770 -510 {lab=PWRUP_B_1V8}
 N 650 -510 650 -440 {lab=PWRUP_N_1V8}
 N 270 -320 320 -320 {lab=PWRUP_B_1V8}
-<<<<<<< HEAD
-N 890 -260 890 -240 {lab=VSS}
-=======
 N 630 -510 650 -510 {lab=PWRUP_N_1V8}
 N 890 -260 940 -260 {lab=PWRUP_B_1V8}
->>>>>>> ec442a7 (Milestone 2: bandgap, opamp, oscillator updates)
 C {cborder/border_xs.sym} 430 -40 0 0 {
 user="Group 2"
 company=""}
