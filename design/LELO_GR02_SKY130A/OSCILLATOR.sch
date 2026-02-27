@@ -48,7 +48,6 @@ N -120 20 -120 50 {lab=I_PTAT}
 N -120 120 -120 150 {lab=VSS}
 N -150 20 -120 20 {lab=I_PTAT}
 N -40 20 10 20 {lab=I_PTAT}
-N -20 120 10 120 {lab=VSS}
 N 250 0 270 0 {lab=OTA_OUTPUT}
 N 230 0 250 -0 {lab=OTA_OUTPUT}
 N 10 20 60 20 {lab=I_PTAT}
@@ -85,6 +84,7 @@ N 940 -180 1030 -180 {lab=VSS}
 N 1030 -180 1070 -180 {lab=VSS}
 N 1070 -180 1070 150 {lab=VSS}
 N 1000 150 1070 150 {lab=VSS}
+N -20 120 -20 150 {lab=VSS}
 C {devices/ipin.sym} -150 -160 0 0 {name=p1 lab=PWRUP_B_1V8}
 C {devices/opin.sym} 1180 0 0 0 {name=p2 lab=OSC_TEMP_1V8}
 C {devices/ipin.sym} -150 -60 0 0 {name=p3 lab=PWRUP_N_1V8}
@@ -101,11 +101,11 @@ C {devices/lab_wire.sym} 250 0 1 0 {name=p8 sig_type=std_logic lab=OTA_OUTPUT}
 C {devices/lab_wire.sym} 360 0 1 0 {name=p9 sig_type=std_logic lab=INV1_OUTPUT}
 C {devices/lab_wire.sym} 840 0 1 0 {name=p12 sig_type=std_logic lab=INV2_OUTPUT}
 C {LELO_ATR_SKY130A/LELOATR_LVT_NCH_2C5F0.sym} 50 90 0 1 {name=x4 }
-C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} 0 100 1 0 {name=x1}
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 470 0 0 0 {name=x2 }
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 560 0 0 0 {name=x8 }
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 650 0 0 0 {name=x9 }
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 750 0 0 0 {name=x10 }
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 1070 -220 0 1 {name=x11 }
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 980 -220 0 1 {name=x12 }
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -120 110 0 0 {name=x13 }
+C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} -120 60 2 0 {name=x13[1:0]}
+C {LELO_GR02_SKY130A/OPAMP_iver.sym} -60 -90 1 0 {name=x7}
