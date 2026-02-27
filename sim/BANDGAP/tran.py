@@ -4,7 +4,7 @@ import yaml
 import matplotlib.pyplot as plt
 import scipy as sp
 
-DO_PLOT = False
+DO_PLOT = True
 
 def main(name):
   yamlfile = name + ".yaml"
