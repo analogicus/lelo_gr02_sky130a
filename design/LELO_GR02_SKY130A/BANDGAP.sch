@@ -111,4 +111,4 @@ C {devices/lab_pin.sym} 0 -220 0 1 {name=p22 sig_type=std_logic lab=PWRUP_N_1V8
 
 }
 C {devices/lab_pin.sym} 410 -30 0 0 {name=p13 sig_type=std_logic lab=PWRUP_N_1V8}
-C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} 550 100 0 0 {name=x1}
+C {LELO_GR02_SKY130A/OPAMP_iver.sym} 360 160 0 0 {name=x1}
