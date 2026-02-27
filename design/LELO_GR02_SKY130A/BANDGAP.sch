@@ -46,9 +46,7 @@ N 830 -140 850 -140 {lab=I_PTAT}
 N 850 -140 860 -140 {lab=I_PTAT}
 N 240 80 240 110 {lab=V_CTAT}
 N 240 110 250 110 {lab=V_CTAT}
-N 470 40 470 80 {lab=#net2}
 N 470 80 480 80 {lab=#net2}
-N 430 40 430 80 {lab=V_CTAT}
 N 420 80 430 80 {lab=V_CTAT}
 N 450 -140 450 -130 {lab=Vout}
 N 240 -160 240 -100 {lab=V_CTAT}
@@ -59,6 +57,8 @@ N 640 -230 640 -220 {lab=#net1}
 N 450 -280 450 -270 {lab=#net1}
 N 830 -230 830 -220 {lab=#net1}
 N 830 -160 830 -140 {lab=I_PTAT}
+N 430 40 470 80 {lab=#net2}
+N 430 80 470 40 {lab=V_CTAT}
 C {devices/ipin.sym} 0 -300 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 0 300 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} 0 -260 0 0 {name=p3 lab=PWRUP_B_1V8}
@@ -71,7 +71,7 @@ C {devices/lab_pin.sym} 0 -260 0 1 {name=p7 sig_type=std_logic lab=PWRUP_B_1V8
 
 }
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym} 280 -190 0 1 {name=xpb1[1:0]}
-C {JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym} 870 -190 0 1 {name=xpb2[1:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym} 870 -190 0 1 {name=xpb2[4:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym} 410 -330 0 0 {name=xpb4[1:0]}
 C {devices/lab_pin.sym} 380 -330 0 0 {name=p8 sig_type=std_logic lab=PWRUP_N_1V8
 
@@ -113,3 +113,7 @@ C {devices/lab_pin.sym} 0 -220 0 1 {name=p22 sig_type=std_logic lab=PWRUP_N_1V8
 }
 C {LELO_GR02_SKY130A/OPAMP_iver.sym} 360 160 0 0 {name=x2}
 C {devices/lab_pin.sym} 410 -30 0 0 {name=p13 sig_type=std_logic lab=PWRUP_N_1V8}
+<<<<<<< HEAD
+=======
+C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} 360 160 0 0 {name=x2}
+>>>>>>> ec442a7 (Milestone 2: bandgap, opamp, oscillator updates)
