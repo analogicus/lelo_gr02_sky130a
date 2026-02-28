@@ -12,8 +12,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-0.033908755
-x2=0.066091248
+x1=-3.4125684e-07
+x2=1.7990783e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -22,39 +22,53 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-rawfile=$netlist_dir/TB_LELOGR02_BANDGAP_OPAMP.raw
-color="4 5 6"
-node="tb_vout
-tb_vin
-tb_vip"}
-B 5 -372.5 47.5 -367.5 52.5 {name=VDD_1V8 dir=in}
-B 5 -72.5 47.5 -67.5 52.5 {name=I_PTAT dir=out}
-B 5 -72.5 67.5 -67.5 72.5 {name=V_CTAT dir=out}
-B 5 -372.5 67.5 -367.5 72.5 {name=PWRUP_1V8 dir=in}
-B 5 -372.5 87.5 -367.5 92.5 {name=VSS dir=in}
+rawfile=$netlist_dir/TB_BANDGAP.raw
+color=4
+node=tb_vctat}
 T {Some commands: 
 press ctrl+B on the graph to see voltages
 press ctrl+left_click on "load waves" to see waves
 } 300 280 0 0 0.4 0.4 {}
-N -330 -150 -330 -130 {lab=TB_VCTAT}
-N -140 -150 -140 -130 {lab=TB_VDD}
-N -400 70 -380 70 {lab=0}
-N -400 50 -370 50 {lab=TB_VDD}
-N -380 70 -370 70 {lab=0}
-N -70 50 0 50 {lab=TB_IPTAT}
-N -70 70 -0 70 {lab=TB_VCTAT}
-C {devices/lab_pin.sym} -370 90 0 0 {name=p2 sig_type=std_logic lab=0}
-C {devices/vsource.sym} -330 -100 0 1 {name=V1 value=1.8 savecurrent=false}
+N -330 -150 -330 -130 {lab=TB_PWRUP_N}
+N -120 -150 -120 -130 {lab=TB_VDD}
+N -530 60 -510 60 {lab=TB_PWRUP_N}
+N -540 30 -510 30 {lab=TB_VDD}
+N -510 60 -500 60 {lab=TB_PWRUP_N}
+N -60 30 10 30 {lab=TB_IPTAT}
+N -60 60 10 60 {lab=TB_VCTAT}
+N -510 30 -500 30 {lab=TB_VDD}
+N -530 90 -510 90 {lab=TB_PWRUP_B}
+N -510 90 -500 90 {lab=TB_PWRUP_B}
+N -530 120 -510 120 {lab=0}
+N -510 120 -500 120 {lab=0}
+N -670 -140 -670 -120 {lab=TB_PWRUP_B}
+C {devices/vsource.sym} -330 -100 0 1 {name=V1 value=0 savecurrent=false}
 C {devices/lab_pin.sym} -330 -70 0 1 {name=p3 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} -330 -150 0 1 {name=p4 sig_type=std_logic lab=TB_VCTAT}
-C {devices/lab_pin.sym} -400 50 0 0 {name=p5 sig_type=std_logic lab=TB_VDD}
+C {devices/lab_pin.sym} -330 -150 0 1 {name=p4 sig_type=std_logic lab=TB_PWRUP_N}
+C {devices/lab_pin.sym} -540 30 0 0 {name=p5 sig_type=std_logic lab=TB_VDD}
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -10 -90 0 0 {name=x5 }
 C {devices/lab_pin.sym} -10 -80 0 1 {name=p10 sig_type=std_logic lab=0}
 C {devices/launcher.sym} 230 -200 0 0 {name=h5
 descr="load waves" 
-tclcommand="xschem raw_read $netlist_dir/TB_LELOGR02_BANDGAP.raw tran"
+tclcommand="xschem raw_read $netlist_dir/TB_BANDGAP.raw tran"
 }
-C {devices/code_shown.sym} -470 260 0 0 {name=s1 only_toplevel=false value="
+C {devices/vsource.sym} -120 -100 0 0 {name=V3 value= 1.8 savecurrent=false}
+C {devices/lab_pin.sym} -120 -70 0 0 {name=p11 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} -120 -150 0 0 {name=p12 sig_type=std_logic lab=TB_VDD}
+C {devices/lab_pin.sym} -10 -150 0 1 {name=p13 sig_type=std_logic lab=TB_IPTAT}
+C {devices/lab_pin.sym} 10 30 0 1 {name=p1 sig_type=std_logic lab=TB_IPTAT}
+C {devices/lab_pin.sym} 10 60 0 1 {name=p6 sig_type=std_logic lab=TB_VCTAT}
+C {LELO_GR02_SKY130A/BANDGAP.sym} -280 270 0 0 {name=x1}
+C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -500 -80 0 0 {name=x2 }
+C {devices/lab_pin.sym} -500 -70 0 1 {name=p14 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} -500 -140 0 1 {name=p15 sig_type=std_logic lab=TB_IPTAT}
+C {devices/lab_pin.sym} -530 60 0 0 {name=p7 sig_type=std_logic lab=TB_PWRUP_N}
+C {devices/lab_pin.sym} -530 120 0 0 {name=p8 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} -530 90 0 0 {name=p9 sig_type=std_logic lab=TB_PWRUP_B}
+C {devices/vsource.sym} -670 -90 0 1 {name=V2 value=1.8 savecurrent=false}
+C {devices/lab_pin.sym} -670 -60 0 1 {name=p2 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} -670 -140 0 1 {name=p16 sig_type=std_logic lab=TB_PWRUP_B}
+C {devices/code_shown.sym} -720 240 0 0 {name=s2 only_toplevel=false value="
 .param mc_mm_switch=0
 .param mc_pr_switch=0
 
@@ -64,25 +78,16 @@ C {devices/code_shown.sym} -470 260 0 0 {name=s1 only_toplevel=false value="
 .include ../../../../cpdk/ngspice/ideal_circuits.spi
 
 .option SEED=1
+.option savecurrents
+.save all
 .control
 optran 0 0 0 10n 1u 0
-.save V(TB_VCTAT) V(VOUT) I(TB_IPTAT)
 
-tran 0.1m 20m
-write TB_LELOGR02_BANDGAP.raw
+
+tran 0.5n 6u
+write TB_BANDGAP.raw
 
 exit
 .endc
 
 "}
-C {devices/vsource.sym} -140 -100 0 0 {name=V3 value= 1.8 savecurrent=false}
-C {devices/lab_pin.sym} -140 -70 0 0 {name=p11 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} -140 -150 0 0 {name=p12 sig_type=std_logic lab=TB_VDD}
-C {devices/lab_pin.sym} -10 -150 0 1 {name=p13 sig_type=std_logic lab=TB_IPTAT}
-C {devices/lab_pin.sym} 0 50 0 1 {name=p1 sig_type=std_logic lab=TB_IPTAT}
-C {devices/lab_pin.sym} 0 70 0 1 {name=p6 sig_type=std_logic lab=TB_VCTAT}
-C {LELO_GR02_SKY130A/BANDGAP.sym} -220 70 0 0 {name=x1}
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -500 -80 0 0 {name=x2 }
-C {devices/lab_pin.sym} -500 -70 0 1 {name=p14 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} -500 -140 0 1 {name=p15 sig_type=std_logic lab=TB_IPTAT}
-C {devices/lab_pin.sym} -400 70 0 0 {name=p7 sig_type=std_logic lab=0}

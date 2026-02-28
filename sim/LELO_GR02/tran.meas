@@ -5,5 +5,25 @@ load {cicname}.raw
 
 echo "MEAS_START"
 
+set fend = .raw
+compose temp_vec values {temperatures}
+compose freq_vec values {temperatures}
+
+let ind=0
+foreach vtemp {temperatures}
+
+load {cicname}_$vtemp$fend
+
+*meas tran vctat_$vtemp AVG v(v_ctat) from={t_start} to={t_stop}
+meas tran i_vdd_$vtemp AVG i(vdd) from={t_start} to={t_stop}
+meas tran vdd_$vtemp AVG v(VDD_1V8) from={t_start} to={t_stop}
+
+meas TRAN Vpmx_$vtemp max V(osc_temp_1v8) from={t_start} to={t_stop}
+meas TRAN Vpmn_$vtemp min V(osc_temp_1v8) from={t_start} to={t_stop}
+meas TRAN T1_$vtemp when V(osc_temp_1v8)=("Vpmx_$vtemp"+"VPmn_$vtemp")/2 from={t_start} rise=1
+meas TRAN T2_$vtemp when V(osc_temp_1v8)=("Vpmx_$vtemp"+"VPmn_$vtemp")/2 from={t_start} rise=11
+
+end
+
 echo "MEAS_END"
 .endc
