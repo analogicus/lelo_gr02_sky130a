@@ -42,8 +42,8 @@ freq_rvalue:
 
 pwr:
   src:
-    - pwr_27
-  name: Power usage at 27 C
+    - pwr_25
+  name: Power usage at 25 C
   min: -5%
   typ: 1
   max: 5%
