@@ -48,9 +48,21 @@ unset askquit
 
 optran 0 0 0 1n 1u 0
 
+ptran 0 0 0 1n 1u 0
 
-tran 1n 10n 1p
-write
+#ifdef Nosweep
+tran {t_step} {t_stop}
+write {cicname}.raw
+#else
+set fend = .raw
+foreach vtemp {temperatures}
+  option temp=$vtemp
+  tran {t_step} {t_stop}
+  write {cicname}_$vtemp$fend
+end
+
+#endif
+
 quit
 
 
