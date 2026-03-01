@@ -49,8 +49,6 @@ N 640 80 660 80 {lab=VIN_Voltage}
 N 460 420 510 420 {lab=POWERGATING_NMOS}
 N 870 -190 900 -190 {lab=Vout}
 N 220 -190 240 -190 {lab=VDD_1V8}
-N 420 60 420 80 {lab=V_CTAT}
-N 480 60 480 80 {lab=VIN_Voltage}
 N 450 -200 450 -190 {lab=Vout}
 N 450 -190 450 -170 {lab=Vout}
 N 510 310 510 320 {lab=DIODE_VOLTAGE}
@@ -59,6 +57,11 @@ N 510 100 510 120 {lab=VIN_Voltage}
 N 510 200 510 230 {lab=DIODE_VOLTAGE}
 N 390 80 390 210 {lab=V_CTAT}
 N 510 230 510 310 {lab=DIODE_VOLTAGE}
+N 430 70 430 80 {lab=V_CTAT}
+N 420 80 430 80 {lab=V_CTAT}
+N 430 60 430 70 {lab=V_CTAT}
+N 470 60 470 80 {lab=VIN_Voltage}
+N 470 80 480 80 {lab=VIN_Voltage}
 C {devices/ipin.sym} 0 -300 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 0 480 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} 0 -260 0 0 {name=p3 lab=PWRUP_B_1V8}

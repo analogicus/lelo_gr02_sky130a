@@ -8,7 +8,7 @@ N -590 -470 -530 -470 {lab=PMOS_GATE}
 N -630 -410 -630 -350 {lab=PMOS_GATE}
 N -360 -400 -360 -350 {lab=#net1}
 N -630 -410 -530 -410 {lab=PMOS_GATE}
-N -320 -320 -280 -320 {lab=VIN}
+N -320 -320 -280 -320 {lab=VIP}
 N -630 -290 -630 -260 {lab=BOTTOM}
 N -360 -290 -360 -260 {lab=BOTTOM}
 N -530 -470 -530 -410 {lab=PMOS_GATE}
@@ -36,7 +36,7 @@ N -120 -520 -120 -500 {lab=SUPPLY}
 N -120 -470 -100 -470 {lab=VDD_1V8}
 N -120 -170 -90 -170 {lab=VSS}
 N -120 -340 -70 -340 {lab=VOUT}
-N -710 -320 -670 -320 {lab=VIP}
+N -710 -320 -670 -320 {lab=VIN}
 N -890 -220 -890 -200 {lab=V_IB}
 N -920 -370 -910 -370 {lab=VSS}
 N -120 -440 -120 -400 {lab=VOUT}
@@ -99,7 +99,7 @@ user="Group 2"
 company=""}
 C {devices/ipin.sym} -940 -30 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} -970 -580 0 0 {name=p3 lab=PWRUP_N_1V8}
-C {devices/ipin.sym} -710 -320 0 0 {name=p4 lab=VIP}
+C {devices/ipin.sym} -710 -320 0 0 {name=p4 lab=VIN}
 C {devices/opin.sym} -70 -340 0 0 {name=p6 lab=VOUT}
 C {devices/lab_wire.sym} -480 -520 0 0 {name=p7 sig_type=std_logic lab=SUPPLY}
 C {devices/lab_wire.sym} -530 -410 2 0 {name=p8 sig_type=std_logic lab=PMOS_GATE}
@@ -109,7 +109,7 @@ C {devices/lab_wire.sym} -610 -320 0 1 {name=p13 sig_type=std_logic lab=VSS}
 C {devices/lab_wire.sym} -380 -320 0 0 {name=p14 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} -100 -470 0 1 {name=p15 sig_type=std_logic lab=VDD_1V8}
 C {devices/lab_wire.sym} -670 -220 0 0 {name=p19 sig_type=std_logic lab=V_IB}
-C {devices/ipin.sym} -280 -320 0 1 {name=p11 lab=VIN}
+C {devices/ipin.sym} -280 -320 0 1 {name=p11 lab=VIP}
 C {devices/lab_wire.sym} -920 -370 0 0 {name=p5 sig_type=std_logic lab=VSS}
 C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} -160 -400 3 1 {name=x2[1:0]}
 C {devices/ipin.sym} -970 -610 0 0 {name=p20 lab=PWRUP_B_1V8}
