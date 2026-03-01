@@ -53,7 +53,7 @@ C {devices/lab_pin.sym} 230 -140 0 0 {name=p12 sig_type=std_logic lab=TB_VDD}
 C {devices/lab_pin.sym} 340 -140 0 1 {name=p13 sig_type=std_logic lab=TB_IPTAT}
 C {devices/lab_pin.sym} -10 30 0 1 {name=p1 sig_type=std_logic lab=TB_IPTAT}
 C {devices/lab_pin.sym} -10 60 0 1 {name=p6 sig_type=std_logic lab=TB_VCTAT}
-C {LELO_GR02_SKY130A/BANDGAP.sym} -310 270 0 0 {name=x1}
+C {LELO_GR02_SKY130A/BANDGAP.sym} -300 270 0 0 {name=x1}
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -150 -70 0 0 {name=x2 }
 C {devices/lab_pin.sym} -150 -60 0 1 {name=p14 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -150 -130 0 1 {name=p15 sig_type=std_logic lab=TB_IPTAT}
