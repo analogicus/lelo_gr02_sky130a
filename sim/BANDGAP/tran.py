@@ -4,7 +4,8 @@ import yaml
 import matplotlib.pyplot as plt
 import scipy as sp
 
-DO_PLOT = True
+DO_PLOT = False
+DO_COMPLEX_PLOT = True
 
 def main(name):
   yamlfile = name + ".yaml"
@@ -26,7 +27,7 @@ def main(name):
   iptat.sort(key=lambda x : x[0])
   vctat.sort(key=lambda x : x[1])
 
-  if DO_PLOT:
+  if DO_COMPLEX_PLOT:
     # original data
     temps = [t for t, v in iptat]
     ipvals = [v for t, v in iptat]
@@ -52,17 +53,17 @@ def main(name):
     plt.show()
 
 
- # if DO_PLOT:
-  #  plt.plot([temp for temp, val in iptat], [val for temp, val in iptat])
-  #  plt.title("I PTAT")
-  #  plt.xlabel("Temperature [C]")
-  #  plt.ylabel("Current [A]")
-  #  plt.figure()
-  #  plt.plot([temp for temp, val in vctat], [val for temp, val in vctat])
-  #  plt.title("V CTAT")
-  #  plt.xlabel("Temperature [C]")
-  #  plt.ylabel("Voltage [V]")
-  #  plt.show()
+  if DO_PLOT:
+   plt.plot([temp for temp, val in iptat], [val for temp, val in iptat])
+   plt.title("I PTAT")
+   plt.xlabel("Temperature [C]")
+   plt.ylabel("Current [A]")
+   plt.figure()
+   plt.plot([temp for temp, val in vctat], [val for temp, val in vctat])
+   plt.title("V CTAT")
+   plt.xlabel("Temperature [C]")
+   plt.ylabel("Voltage [V]")
+   plt.show()
   
 
   temps = [temp for temp, val in iptat]
