@@ -26,6 +26,10 @@
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
 
+set pwrup_voltage {AVDD}
+
+VPWRUP PWRUP_1V8 VSS DC $pwrup_voltage
+
 *-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------
@@ -60,8 +64,14 @@ foreach vtemp {temperatures}
   tran {t_step} {t_stop}
   write {cicname}_$vtemp$fend
 end
-
 #endif
+
+* Measure leakage current
+set pwrup_voltage 0
+option temp={leak_temp}
+tran {t_step} {t_stop}
+write {cicname}_leak$fend
+
 
 quit
 
