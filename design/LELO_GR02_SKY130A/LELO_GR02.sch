@@ -5,24 +5,26 @@ V {}
 S {}
 E {}
 N 1380 -380 1400 -380 {lab=OSC_TEMP_1V8}
-N 870 -380 940 -380 {lab=#net1}
-N 870 -350 940 -350 {lab=#net2}
-N 270 -320 310 -320 {lab=VDD_1V8}
-N 310 -320 320 -320 {lab=VDD_1V8}
-N 270 -290 320 -290 {lab=PWRUP_N_1V8}
-N 270 -230 320 -230 {lab=VSS}
-N 890 -320 930 -320 {lab=VDD_1V8}
-N 930 -320 940 -320 {lab=VDD_1V8}
-N 890 -290 940 -290 {lab=PWRUP_N_1V8}
-N 890 -230 940 -230 {lab=#net3}
-N 760 -350 870 -350 {lab=#net2}
-N 760 -380 870 -380 {lab=#net1}
+N 760 -350 870 -350 {lab=#net1}
+N 760 -380 870 -380 {lab=#net2}
 N 630 -510 670 -510 {lab=PWRUP_N_1V8}
 N 750 -510 770 -510 {lab=PWRUP_B_1V8}
 N 650 -510 650 -440 {lab=PWRUP_N_1V8}
-N 270 -260 320 -260 {lab=PWRUP_B_1V8}
 N 630 -510 650 -510 {lab=PWRUP_N_1V8}
+N 870 -380 940 -380 {lab=#net2}
+N 870 -350 940 -350 {lab=#net1}
+N 890 -320 930 -320 {lab=VDD_1V8}
+N 930 -320 940 -320 {lab=VDD_1V8}
+N 890 -290 940 -290 {lab=PWRUP_N_1V8}
 N 890 -260 940 -260 {lab=PWRUP_B_1V8}
+N 890 -230 940 -230 {lab=VSS}
+N 270 -320 320 -320 {lab=VDD_1V8}
+N 270 -290 320 -290 {lab=PWRUP_N_1V8}
+N 270 -260 320 -260 {lab=PWRUP_B_1V8}
+N 270 -230 320 -230 {lab=VSS}
+N 270 -540 290 -540 {lab=VDD_1V8}
+N 270 -510 290 -510 {lab=PWRUP_1V8}
+N 270 -480 290 -480 {lab=VSS}
 C {cborder/border_xs.sym} 430 -40 0 0 {
 user="Group 2"
 company=""}
@@ -49,12 +51,12 @@ C {devices/lab_pin.sym} 890 -290 0 0 {name=p1 sig_type=std_logic lab=PWRUP_N_1V8
 C {devices/lab_pin.sym} 890 -230 0 0 {name=p7 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 890 -320 0 0 {name=p8 sig_type=std_logic lab=VDD_1V8}
 C {devices/ipin.sym} 270 -540 0 0 {name=p9 lab=VDD_1V8}
-C {devices/lab_pin.sym} 270 -480 0 1 {name=l1 sig_type=std_logic lab=VSS}
-C {devices/lab_pin.sym} 270 -510 0 1 {name=p10 sig_type=std_logic lab=PWRUP_1V8
+C {devices/lab_pin.sym} 290 -480 0 1 {name=l1 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 290 -510 0 1 {name=p10 sig_type=std_logic lab=PWRUP_1V8
 
 
 }
-C {devices/lab_pin.sym} 270 -540 0 1 {name=l2 sig_type=std_logic lab=VDD_1V8}
+C {devices/lab_pin.sym} 290 -540 0 1 {name=l2 sig_type=std_logic lab=VDD_1V8}
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 670 -510 0 0 {name=x3 }
 C {devices/lab_pin.sym} 710 -470 0 1 {name=l3 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 710 -550 0 1 {name=l4 sig_type=std_logic lab=VDD_1V8}
