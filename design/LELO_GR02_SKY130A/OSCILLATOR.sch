@@ -122,7 +122,6 @@ C {devices/lab_wire.sym} 950 60 0 0 {name=p11 sig_type=std_logic lab=VDD_1V8}
 C {devices/lab_wire.sym} 250 0 1 0 {name=p8 sig_type=std_logic lab=OTA_OUTPUT}
 C {devices/lab_wire.sym} 360 0 1 0 {name=p9 sig_type=std_logic lab=INV1_OUTPUT}
 C {devices/lab_wire.sym} 840 0 1 0 {name=p12 sig_type=std_logic lab=INV2_OUTPUT}
-C {LELO_ATR_SKY130A/LELOATR_LVT_NCH_2C5F0.sym} 50 90 0 1 {name=x4 }
 C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} -60 -90 1 0 {name=x1}
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 470 0 0 0 {name=x2 }
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 560 0 0 0 {name=x8 }
@@ -133,3 +132,4 @@ C {LELO_ATR_SKY130A/LELOATR_LVT_NCH_12C5F0.sym} -80 220 0 0 {name=x7[10:0]}
 C {LELO_ATR_SKY130A/LELOATR_PCH_12C5F0.sym} 90 -180 0 0 {name=x11[10:0]}
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 990 -210 0 1 {name=x7 }
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 1090 -210 0 1 {name=x11 }
+C {LELO_ATR_SKY130A/LELOATR_NCH_12C5F0.sym} 50 90 0 1 {name=x4 }
