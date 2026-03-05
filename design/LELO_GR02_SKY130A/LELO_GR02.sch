@@ -6,12 +6,12 @@ S {}
 E {}
 N 1380 -380 1400 -380 {lab=OSC_TEMP_1V8}
 N 760 -350 870 -350 {lab=#net1}
-N 760 -380 870 -380 {lab=#net2}
+N 760 -380 870 -380 {lab=I_PTAT}
 N 630 -510 670 -510 {lab=PWRUP_N_1V8}
 N 750 -510 770 -510 {lab=PWRUP_B_1V8}
 N 650 -510 650 -440 {lab=PWRUP_N_1V8}
 N 630 -510 650 -510 {lab=PWRUP_N_1V8}
-N 870 -380 940 -380 {lab=#net2}
+N 870 -380 940 -380 {lab=I_PTAT}
 N 870 -350 940 -350 {lab=#net1}
 N 890 -320 930 -320 {lab=VDD_1V8}
 N 930 -320 940 -320 {lab=VDD_1V8}
@@ -66,3 +66,7 @@ C {devices/lab_pin.sym} 650 -440 0 1 {name=p11 sig_type=std_logic lab=PWRUP_N_1V
 }
 C {devices/lab_pin.sym} 270 -260 0 0 {name=p12 sig_type=std_logic lab=PWRUP_B_1V8}
 C {devices/lab_pin.sym} 890 -260 0 0 {name=p13 sig_type=std_logic lab=PWRUP_B_1V8}
+C {devices/lab_wire.sym} 870 -380 0 0 {name=p14 sig_type=std_logic lab=I_PTAT
+}
+C {devices/lab_wire.sym} 870 -350 0 0 {name=p15 sig_type=std_logic lab=V_CTAT
+}
