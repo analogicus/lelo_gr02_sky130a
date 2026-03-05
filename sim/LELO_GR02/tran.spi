@@ -25,6 +25,7 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
+VPWRUP PWRUP_1V8 VSS DC {AVDD}
 
 *-----------------------------------------------------------------
 * DUT
@@ -60,8 +61,15 @@ foreach vtemp {temperatures}
   tran {t_step} {t_stop}
   write {cicname}_$vtemp$fend
 end
-
 #endif
+
+* Measure leakage current
+option temp={leak_temp}
+* Disable power-up rail only for leakage run
+alter @VPWRUP[dc]=0
+tran {t_step} {t_stop}
+write {cicname}_leak$fend
+
 
 quit
 
