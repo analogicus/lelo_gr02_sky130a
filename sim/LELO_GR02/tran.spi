@@ -65,6 +65,8 @@ end
 
 * Measure leakage current
 option temp={leak_temp}
+* Disable power-up rail only for leakage run
+alter @VPWRUP[dc]=0
 tran {t_step} {t_stop}
 write {cicname}_leak$fend
 
