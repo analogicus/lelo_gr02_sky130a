@@ -67,8 +67,6 @@ N 480 0 480 90 {lab=INV2_OUTPUT}
 N 470 0 480 0 {lab=INV2_OUTPUT}
 N 480 -0 490 -0 {lab=INV2_OUTPUT}
 N 610 -110 610 -90 {lab=VDD_GATED}
-N 520 -110 520 60 {lab=VDD_GATED}
-N 520 60 580 60 {lab=VDD_GATED}
 N 580 30 580 60 {lab=VDD_GATED}
 N 610 30 610 150 {lab=VSS_GATED}
 N 420 150 610 150 {lab=VSS_GATED}
@@ -80,17 +78,14 @@ N 670 -190 670 -60 {lab=OSC_TEMP_1V8}
 N 650 -60 670 -60 {lab=OSC_TEMP_1V8}
 N 670 -60 720 -60 {lab=OSC_TEMP_1V8}
 N 640 -190 670 -190 {lab=OSC_TEMP_1V8}
-N 530 -190 560 -190 {lab=d_in}
-N 530 -190 530 -60 {lab=d_in}
-N 530 -60 550 -60 {lab=d_in}
-N 470 -250 470 -110 {lab=VDD_GATED}
-N 470 -250 600 -250 {lab=VDD_GATED}
+N 530 -190 560 -190 {lab=D_IN}
+N 530 -190 530 -60 {lab=D_IN}
+N 530 -60 550 -60 {lab=D_IN}
 N 600 -250 600 -230 {lab=VDD_GATED}
-N 610 150 840 150 {lab=VSS_GATED}
-N 840 -150 840 150 {lab=VSS_GATED}
-N 600 -150 840 -150 {lab=VSS_GATED}
 N 360 -50 530 -50 {lab=INV1_OUTPUT}
 N 360 -50 360 -0 {lab=INV1_OUTPUT}
+N 600 -150 600 -140 {lab=VSS_GATED}
+N 580 60 580 110 {lab=VDD_GATED}
 C {devices/ipin.sym} -150 -110 0 0 {name=p1 lab=PWRUP_B_1V8}
 C {devices/opin.sym} 720 -60 0 0 {name=p2 lab=OSC_TEMP_1V8}
 C {devices/ipin.sym} -150 -70 0 0 {name=p3 lab=PWRUP_N_1V8}
@@ -113,5 +108,11 @@ C {devices/lab_wire.sym} 410 -110 0 0 {name=p10 sig_type=std_logic lab=VDD_GATED
 C {devices/lab_wire.sym} 240 150 0 0 {name=p13 sig_type=std_logic lab=VSS_GATED}
 C {LELO_ATR_SKY130A/LELOATR_LVT_NCH_12C5F0.sym} 50 90 0 1 {name=x4 }
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 640 -190 0 1 {name=x2 }
-C {devices/lab_pin.sym} 530 -150 0 0 {name=p11 sig_type=std_logic lab=d_in
+C {devices/lab_pin.sym} 530 -190 0 0 {name=p11 sig_type=std_logic lab=D_IN
+
+}
+C {devices/lab_pin.sym} 600 -140 0 0 {name=p14 sig_type=std_logic lab=VSS_GATED}
+C {devices/lab_pin.sym} 600 -250 0 0 {name=p15 sig_type=std_logic lab=VDD_GATED
+}
+C {devices/lab_pin.sym} 580 110 0 0 {name=p16 sig_type=std_logic lab=VDD_GATED
 }
