@@ -12,7 +12,7 @@ For details see <a href='tran_Sch_mc.html'>tran_Sch_mc.html</a>
 | | | ('Sch',)|0.994  | 0.998  | 0.999  |
 |Maximum error from straight line, relative to full scale|freq\_max\_abs\_err\_per\_fs | Spec |  |  | 1.010  |
 | | | ('Sch',)|0.015  | 0.038  | 0.062  |
-|Active current at 70 C|i\_vdd\_70 | Spec |  |  | 100.000 µA |
+|Active current at 70 C|i\_vdd\_70 | Spec | 0.001 µA |  | 100.000 µA |
 | | | ('Sch',)|99.476 µA | 103.473 µA | 108.049 µA |
-|Leakage current at 70 C|i\_leak | Spec |  |  | 1.000 nA |
+|Leakage current at 70 C|i\_leak | Spec | 0.001 nA |  | 1.000 nA |
 | | | ('Sch',)|17.722 nA | 18.881 nA | 19.927 nA |

@@ -24,12 +24,12 @@ Check transient operation
 | | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 0.029 |  | |
 | | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|0.030 | 0.048 | 0.081 | |
 | | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|-0.005 | 0.038 | 0.081 | |
-|**Active current at 70 C**|**i\_vdd\_70** || **Spec**  | **0.000** | **0.000** | **100.000** | **µA** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 104.235 |  | |
-| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|78.522 | 106.770 | 141.828 | |
-| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|96.167 | 103.483 | 110.799 | |
-|**Leakage current at 70 C**|**i\_leak** || **Spec**  | **0.000** | **0.000** | **1.000** | **nA** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 18.697 |  | |
-| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|1.881 | 51.986 | 266.462 | |
-| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|16.841 | 18.735 | 20.630 | |
+|**Active current at 70 C**|**i\_vdd\_70** || **Spec**  | **0.001** | **0.000** | **100.000** | **µA** |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | <span style='color:orange'>**104.235**</span> |  | |
+| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|78.522 | <span style='color:red'>**106.770**</span> | <span style='color:red'>**141.828**</span> | |
+| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|96.167 | <span style='color:orange'>**103.483**</span> | <span style='color:red'>**110.799**</span> | |
+|**Leakage current at 70 C**|**i\_leak** || **Spec**  | **0.001** | **0.000** | **1.000** | **nA** |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | <span style='color:red'>**18.697**</span> |  | |
+| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|<span style='color:red'>**1.881**</span> | <span style='color:red'>**51.986**</span> | <span style='color:red'>**266.462**</span> | |
+| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|<span style='color:red'>**16.841**</span> | <span style='color:red'>**18.735**</span> | <span style='color:red'>**20.630**</span> | |
 
