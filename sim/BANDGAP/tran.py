@@ -1,13 +1,14 @@
-#!/usr/bin/env python3
 # import pandas as pd
 import yaml
 import matplotlib.pyplot as plt
 import scipy as sp
+import numpy as np
 
-DO_PLOT = False
-DO_COMPLEX_PLOT = True
+DO_PLOT = True
+
 
 def main(name):
+
   yamlfile = name + ".yaml"
 
   # Read result yaml file
@@ -24,55 +25,16 @@ def main(name):
     elif "vctat" in key:
       vctat.append((int(key[6:]), val))
 
-  iptat.sort(key=lambda x : x[0])
-  vctat.sort(key=lambda x : x[1])
+  iptat.sort(key=lambda x: x[0])
+  vctat.sort(key=lambda x: x[0])
 
-  if DO_COMPLEX_PLOT:
-    # original data
-    temps = [t for t, v in iptat]
-    ipvals = [v for t, v in iptat]
-    plt.plot(temps, ipvals, label='Measured Data')
-    i_lm = sp.stats.linregress(temps, ipvals)
-    line_y = [i_lm.intercept + i_lm.slope * t for t in (temps[0], temps[-1])]
-    plt.plot((temps[0], temps[-1]), line_y, 'r--', label='Linear Fit')
-    plt.title("I PTAT")
-    plt.xlabel("Temperature [C]")
-    plt.ylabel("Current [A]")
-    plt.legend()
-    plt.figure()
-    temps2 = [t for t, v in vctat]
-    vvals = [v for t, v in vctat]
-    plt.plot(temps2, vvals, label='Measured Data')
-    v_lm = sp.stats.linregress(temps2, vvals)
-    line_y = [v_lm.intercept + v_lm.slope * t for t in (temps2[0], temps2[-1])]
-    plt.plot((temps2[0], temps2[-1]), line_y, 'r--', label='Linear Fit')
-    plt.title("V CTAT")
-    plt.xlabel("Temperature [C]")
-    plt.ylabel("Voltage [V]")
-    plt.legend()
-    plt.show()
-
-
-  if DO_PLOT:
-   plt.plot([temp for temp, val in iptat], [val for temp, val in iptat])
-   plt.title("I PTAT")
-   plt.xlabel("Temperature [C]")
-   plt.ylabel("Current [A]")
-   plt.figure()
-   plt.plot([temp for temp, val in vctat], [val for temp, val in vctat])
-   plt.title("V CTAT")
-   plt.xlabel("Temperature [C]")
-   plt.ylabel("Voltage [V]")
-   plt.show()
-  
-
-  temps = [temp for temp, val in iptat]
-  iptat_vals = [val for temp, val in iptat]
-  vctat_vals = [val for temp, val in vctat]
+  temps = np.array([temp for temp, val in iptat])
+  iptat_vals = np.array([val for temp, val in iptat])
+  vctat_vals = np.array([val for temp, val in vctat])
 
   print("temps have", len(temps), "iptat", len(iptat_vals), "vctat", len(vctat_vals))
 
-  # Linear regression, reporting slope and r
+  # Linear regression
   i_lm = sp.stats.linregress(temps, iptat_vals)
   obj["iptat_intercept"] = float(i_lm.intercept)
   obj["iptat_slope"] = float(i_lm.slope)
@@ -83,8 +45,39 @@ def main(name):
   obj["vctat_slope"] = float(v_lm.slope)
   obj["vctat_rvalue"] = float(v_lm.rvalue)
 
+  if DO_PLOT:
+
+    iptat_fit = i_lm.intercept + i_lm.slope * temps
+    vctat_fit = v_lm.intercept + v_lm.slope * temps
+
+    iptat_err = iptat_vals - iptat_fit
+    vctat_err = vctat_vals - vctat_fit
+
+    fig, axs = plt.subplots(2, 2, figsize=(10, 8))
+
+    axs[0,0].plot(temps, iptat_vals, color='red')
+    axs[0,0].set_title("I PTAT")
+    axs[0,0].set_xlabel("Temperature [C]")
+    axs[0,0].set_ylabel("Current [A]")
+
+    axs[0,1].plot(temps, iptat_err, color='orange')
+    axs[0,1].set_title("I PTAT Error")
+    axs[0,1].set_xlabel("Temperature [C]")
+    axs[0,1].set_ylabel("Error [A]")
+
+    axs[1,0].plot(temps, vctat_vals, color='green')
+    axs[1,0].set_title("V CTAT")
+    axs[1,0].set_xlabel("Temperature [C]")
+    axs[1,0].set_ylabel("Voltage [V]")
+
+    axs[1,1].plot(temps, vctat_err, color='blue')
+    axs[1,1].set_title("V CTAT Error")
+    axs[1,1].set_xlabel("Temperature [C]")
+    axs[1,1].set_ylabel("Error [V]")
+
+    plt.tight_layout()
+    plt.show()
+
   # Save new yaml file
-  with open(yamlfile,"w") as fo:
-    yaml.dump(obj,fo)
-
-
+  with open(yamlfile, "w") as fo:
+    yaml.dump(obj, fo)
