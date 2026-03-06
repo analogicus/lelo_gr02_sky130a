@@ -40,13 +40,24 @@ freq_rvalue:
   digits: 3
   unit: ""
 
-pwr:
+i_active:
   src:
-    - pwr_25
-  name: Power usage at 25 C
+    - i_vdd_70
+  name: Active current at 70 C
   min: -5%
   typ: 1
   max: 5%
   digits: 3
-  scale: 1e6
-  unit: V
+  scale: -1e6
+  unit: µA
+
+i_leak:
+  src:
+    - i_leak
+  name: Leakage current at 70 C
+  min: -5%
+  typ: 1
+  max: 5%
+  digits: 3
+  scale: -1e6
+  unit: µA
