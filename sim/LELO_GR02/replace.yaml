@@ -1,6 +1,5 @@
-#temperatures: -40 -30 -20 -10 0 10 25 30 40 50 60 70 85 90 100 125
-temperatures: -10 0 10 25 30 40 50 60 70 85 
-#temperatures: -40 -20  0 25 85 125
+temperatures: -5 0 10 25 30 40 50 60 70 75
+leak_temp: 70
 t_stop: 6us
-t_step: 0.1ns
+t_step: 0.5ns
 t_start: 1us
