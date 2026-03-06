@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import scipy as sp
 import numpy as np
 
-DO_PLOT = False
+DO_PLOT = True
 
 def main(name):
   yamlfile = name + ".yaml"
@@ -40,13 +40,13 @@ def main(name):
   obj["freq_slope"] = float(lm.slope)
   obj["freq_rvalue"] = float(lm.rvalue)
 
-  error = np.array([abs(freq - (lm.intercept + lm.slope * temp)) for temp, freq in zip(temps, freqs)])
-  max_abs_err = max(np.abs(error))
+  sq_err = [(freq - (lm.intercept + lm.slope * temp))**2 for temp, freq in zip(temps, freqs)]
+  max_sq_err = max(sq_err)
   fs = max(freqs) - min(freqs)
 
-  obj["freq_max_abs_err"] = float(max_abs_err)
+  obj["freq_max_sq_err"] = float(max_sq_err)
   obj["freq_fs"] = float(fs)
-  obj["freq_max_abs_err_per_fs"] = float(max_abs_err / fs)
+  obj["freq_max_sq_err_per_fs"] = float(np.sqrt(max_sq_err) / fs)
 
   if DO_PLOT:
     plt.plot(temps, freqs)
@@ -55,8 +55,8 @@ def main(name):
     plt.ylabel("Frequency [Hz]")
 
     plt.figure()
-    plt.plot(temps, error / fs)
-    plt.title("Error relative to full scale")
+    plt.plot(temps, np.sqrt(np.array(sq_err)) / fs)
+    plt.title("Square error relative to full scale")
     plt.xlabel("Temperature [C]")
     plt.ylabel("Relative error")
 
