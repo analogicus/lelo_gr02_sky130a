@@ -1,3 +1,4 @@
+
 The oscillator is responsible for converting the V_CTAT and I_PTAT produced by the bandgap into a temperature-dependent frequency that can be further processed by digital logic.
 
 To achieve this, a transistor is charged using the I_PTAT current until it reaches the voltage given by V_CTAT. The comparison is performed using an OTA.

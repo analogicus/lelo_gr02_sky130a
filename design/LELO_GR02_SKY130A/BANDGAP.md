@@ -1,3 +1,4 @@
+
 The schematic depicts a bandgap reference circuit, which provides a temperature-independent voltage reference by combining PTAT and CTAT signals.
 
 The bandgap reference has four inputs and two outputs. The supply voltage VDD_1V8 provides a 1.8 V DC supply to the circuit, while VSS serves as the ground reference.

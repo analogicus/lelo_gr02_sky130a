@@ -1,1 +1,2 @@
+
 The same circuit as the operational amplifier used in the bandgap reference, but put it in its own file. 
