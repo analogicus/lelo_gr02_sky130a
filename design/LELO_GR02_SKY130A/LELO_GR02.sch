@@ -4,30 +4,69 @@ K {}
 V {}
 S {}
 E {}
-N 890 -330 910 -330 {lab=OSC_TEMP_1V8}
-N 100 -300 130 -300 {lab=PWRUP_1V8}
-N 190 -300 800 -300 {lab=#net1}
-N 800 -330 800 -320 {lab=#net1}
-N 800 -330 830 -330 {lab=#net1}
-N 800 -320 800 -300 {lab=#net1}
-C {cborder/border_xs.sym} 0 0 0 0 {
+N 1380 -380 1400 -380 {lab=OSC_TEMP_1V8}
+N 760 -350 870 -350 {lab=#net1}
+N 760 -380 870 -380 {lab=I_PTAT}
+N 630 -510 670 -510 {lab=PWRUP_N_1V8}
+N 750 -510 770 -510 {lab=PWRUP_B_1V8}
+N 650 -510 650 -440 {lab=PWRUP_N_1V8}
+N 630 -510 650 -510 {lab=PWRUP_N_1V8}
+N 870 -380 940 -380 {lab=I_PTAT}
+N 870 -350 940 -350 {lab=#net1}
+N 890 -320 930 -320 {lab=VDD_1V8}
+N 930 -320 940 -320 {lab=VDD_1V8}
+N 890 -290 940 -290 {lab=PWRUP_N_1V8}
+N 890 -260 940 -260 {lab=PWRUP_B_1V8}
+N 890 -230 940 -230 {lab=VSS}
+N 270 -320 320 -320 {lab=VDD_1V8}
+N 270 -290 320 -290 {lab=PWRUP_N_1V8}
+N 270 -260 320 -260 {lab=PWRUP_B_1V8}
+N 270 -230 320 -230 {lab=VSS}
+N 270 -540 290 -540 {lab=VDD_1V8}
+N 270 -510 290 -510 {lab=PWRUP_1V8}
+N 270 -480 290 -480 {lab=VSS}
+C {cborder/border_xs.sym} 430 -40 0 0 {
 user="Group 2"
 company=""}
-C {devices/ipin.sym} 100 -600 0 0 {name=p1 lab=VDD_1V8}
-C {devices/ipin.sym} 100 -100 0 0 {name=p2 lab=VSS}
-C {devices/ipin.sym} 100 -300 0 0 {name=p3 lab=PWRUP_1V8}
-C {devices/opin.sym} 910 -330 0 0 {name=p29 lab=OSC_TEMP_1V8}
-C {sky130_fd_pr/res_generic_m4.sym} 860 -330 1 0 {name=R2
-W=0.3
-L=0.4
-model=res_generic_m4
-mult=1}
-C {sky130_fd_pr/res_generic_m4.sym} 160 -300 1 0 {name=R1
-W=0.3
-L=0.4
-model=res_generic_m4
-mult=1}
-C {LELO_GR02_SKY130A/BANDGAP.sym} 460 -350 0 0 {name=x1}
-C {devices/lab_pin.sym} 310 -350 0 0 {name=p4 sig_type=std_logic lab=PWRUP_1V8}
-C {devices/lab_pin.sym} 310 -330 0 0 {name=p5 sig_type=std_logic lab=VSS}
-C {devices/lab_pin.sym} 310 -370 0 0 {name=p6 sig_type=std_logic lab=VDD_1V8}
+C {devices/ipin.sym} 270 -480 0 0 {name=p2 lab=VSS}
+C {devices/ipin.sym} 270 -510 0 0 {name=p3 lab=PWRUP_1V8}
+C {devices/opin.sym} 1400 -380 0 0 {name=p29 lab=OSC_TEMP_1V8}
+C {LELO_GR02_SKY130A/BANDGAP.sym} 540 -140 0 0 {name=x1}
+C {devices/lab_pin.sym} 270 -290 0 0 {name=p4 sig_type=std_logic lab=PWRUP_N_1V8}
+C {devices/lab_pin.sym} 270 -230 0 0 {name=p5 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 270 -320 0 0 {name=p6 sig_type=std_logic lab=VDD_1V8}
+C {LELO_GR02_SKY130A/OSCILLATOR.sym} 1400 -200 0 0 {name=x2
+}
+C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 550 -510 0 0 {name=x6 }
+C {devices/lab_pin.sym} 590 -470 0 1 {name=l13 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 590 -550 0 1 {name=l14 sig_type=std_logic lab=VDD_1V8}
+C {devices/lab_pin.sym} 550 -510 0 0 {name=p21 sig_type=std_logic lab=PWRUP_1V8
+
+}
+C {devices/lab_pin.sym} 770 -510 0 1 {name=p22 sig_type=std_logic lab=PWRUP_B_1V8
+
+
+}
+C {devices/lab_pin.sym} 890 -290 0 0 {name=p1 sig_type=std_logic lab=PWRUP_N_1V8}
+C {devices/lab_pin.sym} 890 -230 0 0 {name=p7 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 890 -320 0 0 {name=p8 sig_type=std_logic lab=VDD_1V8}
+C {devices/ipin.sym} 270 -540 0 0 {name=p9 lab=VDD_1V8}
+C {devices/lab_pin.sym} 290 -480 0 1 {name=l1 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 290 -510 0 1 {name=p10 sig_type=std_logic lab=PWRUP_1V8
+
+
+}
+C {devices/lab_pin.sym} 290 -540 0 1 {name=l2 sig_type=std_logic lab=VDD_1V8}
+C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 670 -510 0 0 {name=x3 }
+C {devices/lab_pin.sym} 710 -470 0 1 {name=l3 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 710 -550 0 1 {name=l4 sig_type=std_logic lab=VDD_1V8}
+C {devices/lab_pin.sym} 650 -440 0 1 {name=p11 sig_type=std_logic lab=PWRUP_N_1V8
+
+
+}
+C {devices/lab_pin.sym} 270 -260 0 0 {name=p12 sig_type=std_logic lab=PWRUP_B_1V8}
+C {devices/lab_pin.sym} 890 -260 0 0 {name=p13 sig_type=std_logic lab=PWRUP_B_1V8}
+C {devices/lab_wire.sym} 870 -380 0 0 {name=p14 sig_type=std_logic lab=I_PTAT
+}
+C {devices/lab_wire.sym} 870 -350 0 0 {name=p15 sig_type=std_logic lab=V_CTAT
+}

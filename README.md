@@ -94,6 +94,8 @@ Because they can’t handle reverse punchlines
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP.sch |
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP_OPAMP.sch |
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP_DIODE.sch |
+| Schematic       | design/LELO_GR02_SKY130A/OSCILLATOR.sch |
+| Schematic       | design/LELO_GR02_SKY130A/OSCILLATOR_OPAMP.sch |
 
 
 
@@ -105,10 +107,6 @@ Because they can’t handle reverse punchlines
 | VDD_1V8      | Input     | VDD_1V8 | Main supply                                |
 | OSC_TEMP_1V8 | Output    | VDD_1V8 | Temperature dependent oscillation frequency|
 | PWRUP_1V8    | Input     | VDD_1V8 | Power up the circuit                       |
-| PWRUP_N_1V8  | Input     | VDD_1V8 | Power up the circuit                       |
-| V_PTAT       | Output    | VDD_1V8 | Voltage Proportional To Absolute Temperature |
-| I_PTAT       | Output    | VDD_1V8 | Current Proportional To Absolute Temperature |
-| VOUT         | Output    | VDD_1V8 | Output signal of the operational amplifier |
 | VSS          | Input     | Ground  |                                            |
 
 

@@ -7,8 +7,8 @@ all: typical etc mc summary
 TB=tran
 VIEW=Sch
 #VIEW=Lay
-LIB=LELO_GR02_SKY130A
-CELL=BANDGAP
+CELL=OSCILLATOR
+LIB =LELO_GR02_SKY130A
 OPT=
 
 include ../../tech/make/sim.make
@@ -47,7 +47,7 @@ slide:
 	pandoc -s  -t slidy README.md -o README.html
 
 wave:
-	cicsim wave output_tran/tran_SchGtKttTtVt_$(T).raw &
+	cicsim wave output_tran/tran_SchGtKttTtVt.raw &
 
 clean:
 	-rm -rf output_*

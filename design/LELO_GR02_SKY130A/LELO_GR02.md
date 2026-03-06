@@ -1,0 +1,1 @@
+This schematic shows the complete system, which consists of a bandgap reference and an oscillator. The bandgap produces a reference voltage and a bias current, which are fed into the oscillator. The oscillator generates a clock signal that is used to drive a counter.
