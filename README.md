@@ -12,41 +12,77 @@ Creating this module is part of the Analog Integrated Circuits course at NTNU.
 The goal is to create a basic temperature sensor and get it to tape out in the TinyTapeout project.
 Along the way we will learn about the analog design and layout required and gain practical experience working with the tools and understanding the design workflow.
 
-# How
-This module was developed through four separate milestones, each building on the results of the previous one. 
+# How 
+This module was developed through four separate milestones, each building on the results of the previous one. A detailed explanation of each circuit can be found under the Schematic section when generating the docs.
 
 ## Milestone 1 - The Bandgap Circuit.
 
-The first milestone focuses on the bandgap circuit. Every electronic circuit requires a stable supply to function as intended, such as current and voltage sources. While ideal sources provide constant outputs regardless of external factors like load, noise, or temperature, real-world sources are affected by these conditions. The bandgap circuit is therefore used to generate a stable reference that is largely independent of such variations. It has three inputs and two outputs. The supply voltage VDD_1V8 provides a 1.8 V DC supply to the bandgap circuit, while VSS is the ground reference. The PWRUP_1V8 signal is used to enable the circuit. To reduce leakage current and overall power consumption, power gating is implemented. As power consumption becomes increasingly critical when designing ICs, minimizing unnecessary power loss is essential. In this design, power gating is implemented using PMOS transistors, although NMOS transistors could also be used as an alternative. The bandgap circuit provides two outputs: I_PTAT and V_CTAT. The I_PTAT output is a current proportional to absolute temperature (PTAT), while V_CTAT is a voltage complementary to absolute temperature (CTAT). These temperature-dependent signals will be used later in the implementation of an oscillator. 
+The first step of the project involves designing a bandgap reference circuit. The bandgap is a component used for temperature sensing and voltage references in integrated circuits. This circuit generates two key outputs:
 
-The heart of the bandgap are two diodes connected BJTs: D1 and Dn. D1 is used to generate V_CTAT. The nodes at the collector of the diode connected BJTs are kept at the same voltage by the op-amp, which is explained below. Because Dn is eight times larger than D1, its current density is different, changing it's V_BE. The difference in V_BE between the two diodes drops over the resistor, converting it to I_PTAT. This current is mirrored exactly on the two branches and set by the op-amp feedback loop. I_PTAT is furthermore mirrored to the current output of the bandgap for further usage. A capacitor is used to stabilize the feedback, suppressing oscillations by increasing the phase margin.
+- V_CTAT (Complementary to Absolute Temperature voltage): This voltage decreases linearly as temperature increases.
 
-The operational amplifier used within the bandgap circuit is shown in the figure above. It consists of an NMOS differential input pair combined with a PMOS current mirror load to provide amplification. Below the differential stage, a simple NMOS current mirror is used as a current source. A 32 kΩ resistor generates the bias current required to properly drive the op-amp. Power gating for the op-amp is implemented using PMOS transistors located above the circuit.
+- I_PTAT (Proportional to Absolute Temperature current): This current increases linearly with temperature. 
 
-<img alt="image" src="https://github.com/user-attachments/assets/e3747c0a-d1b8-438f-a334-d67553d6d574" />
+The combination of V_CTAT and I_PTAT allows the system to produce a temperature-dependent signal with a controlled linear relationship. By feeding these outputs into a subsequent oscillator circuit, the temperature-induced changes in voltage and current modulate the oscillator frequency. This frequency can then be measured using a digital counter to accurately determine the temperature of the system
 
-Simulation results of the bandgap circuit are shown in the figure above. As observed, there is a proportional relationship between temperature and both the output voltage and current. Although the linearity could be further improved, the performance is sufficient to meet the criteria for milestone 1.
+<img alt="Bandgap Circuit Outputs" src="https://github.com/user-attachments/assets/55c9a77b-23ca-4d28-86b2-a43ff193b9bf" />
 
-To simulate the bandgap and achieve the graphs above, run the following commands from the /lelo_gr02_sky130a directory:
+### Observations from the simulation
+- I_PTAT shows a decreasing trend with temperature (negative slope).
+- V_CTAT increases with temperature (positive slope).
+- Despite opposite slopes, both outputs maintain linearity, which is crucial for temperature sensing.
+
+### To simulate the bandgap and view plots:
 
 ```bash
 cd sim/BANDGAP/
-cd make typical
+make typical
+```
+This will display plots for I_PTAT, V_CTAT, and their errors.
+
+Optional: If you do not wish to see the plots, open tran.py in the BANDGAP folder and set:
+
+```bash
+DO_PLOT = False
 ```
 
 ## Milestone 2 - The Oscillator
 
-To be continued... hopefully before GTA 6
+The I_PTAT and V_CTAT from Milestone 1 are used to control the frequency of the oscillator clock. The change in frequency caused by the linear variation of I_PTAT and V_CTAT is how the temperature is measured. As the temperature changes, it affects I_PTAT and V_CTAT, which in turn changes the oscillator frequency. This frequency is fed into a counter (developed in Milestone 3). The counter value is then used to determine the temperature of the bandgap reference.
 
+### Observations from the simulation
 
+<img alt="image" src="https://github.com/user-attachments/assets/8de872d9-30c5-47ca-8e9f-52fd3768f36f" />
 
+The simulation of the circuit shows that the output of the oscillator oscillates. 
 
+(Picture of the whole sustem)
 
+(explenation) 
 
+(say if it meets the spesificaiton)
 
+### To simulate the oscillator alone:
 
+```bash
+cd sim/OSCILLATOR
+make typical
+cicsim wave output_tran/tran_SchGtKttTtVt.raw 
+```
+In cicsim, select v(osc_temp_1V8) to see the output of the oscillator. 
 
+### To simulate the whole system:
 
+```bash
+cd sim/LELO_GR02
+make typical
+```
+## Milestone 3 - The Measurement
+
+While you wait for milestone-3, here is a joke: 
+
+Why do diodes make terrible comedians?
+Because they can’t handle reverse punchlines
 
 
 # What
@@ -58,6 +94,8 @@ To be continued... hopefully before GTA 6
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP.sch |
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP_OPAMP.sch |
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP_DIODE.sch |
+| Schematic       | design/LELO_GR02_SKY130A/OSCILLATOR.sch |
+| Schematic       | design/LELO_GR02_SKY130A/OSCILLATOR_OPAMP.sch |
 
 
 
@@ -69,10 +107,6 @@ To be continued... hopefully before GTA 6
 | VDD_1V8      | Input     | VDD_1V8 | Main supply                                |
 | OSC_TEMP_1V8 | Output    | VDD_1V8 | Temperature dependent oscillation frequency|
 | PWRUP_1V8    | Input     | VDD_1V8 | Power up the circuit                       |
-| PWRUP_N_1V8  | Input     | VDD_1V8 | Power up the circuit                       |
-| V_PTAT       | Output    | VDD_1V8 | Voltage Proportional To Absolute Temperature |
-| I_PTAT       | Output    | VDD_1V8 | Current Proportional To Absolute Temperature |
-| VOUT         | Output    | VDD_1V8 | Output signal of the operational amplifier |
 | VSS          | Input     | Ground  |                                            |
 
 
