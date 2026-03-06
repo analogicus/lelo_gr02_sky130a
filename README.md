@@ -58,10 +58,13 @@ The figure above is an illustration of the output of the oscillator circuit duri
 
 The simulations were run for temperatures -5, 0, 10, 25, 30, 40, 50, 60, 70 and 75 degrees Celsium.
 The resulting frequency curve is shown below.
-<img alt="osc_freq" src="https://github.com/user-attachments/assets/b69eb350-7488-4dd4-8d4d-d8f624241614" />
+
+<img alt="osc_freq" style="width: 100%" src="https://github.com/user-attachments/assets/b69eb350-7488-4dd4-8d4d-d8f624241614" />
 
 To quantify the nonlinearity of the output frequencies, a regression fit was performed and the deviations from the straight line frequency relative to the full scale was plotted below.
-<img alt="osc_freq_err" src="https://github.com/user-attachments/assets/662306a9-0584-4a81-936e-c8dc0b5e7c2c" />
+
+<img alt="osc_freq_err" style="width: 100%" src="https://github.com/user-attachments/assets/662306a9-0584-4a81-936e-c8dc0b5e7c2c" />
+
 This shows that the error from the straight line is between 0.5% and 2.5%.
 
 The regression model and the r^2 correlation figure for both the typical, extreme test case and Monte Carlo simulations can be found on the <a href="/lelo_gr02_sky130a/simulations.html">results page</a>.
