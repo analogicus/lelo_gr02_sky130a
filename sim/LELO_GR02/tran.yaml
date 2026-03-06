@@ -42,13 +42,13 @@ freq_rvalue:
 
 freq_max_sq_err_per_fs:
   src:
-    - freq_max_sq_err_per_fs
-  name: Maximum relative frequency error
-  min: -5%
-  typ: 1
-  max: 5%
+    - freq_max_abs_err_per_fs
+  name: Maximum error from straight line, relative to full scale
+  min: 0
+  typ: 0
+  max: 1.01
   digits: 3
-  unit: "Hz"
+  unit: ""
 
 i_active:
   src:
