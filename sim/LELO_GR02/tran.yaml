@@ -40,6 +40,16 @@ freq_rvalue:
   digits: 3
   unit: ""
 
+freq_max_sq_err_per_fs:
+  src:
+    - freq_max_sq_err_per_fs
+  name: Maximum relative frequency error
+  min: -5%
+  typ: 1
+  max: 5%
+  digits: 3
+  unit: "Hz"
+
 i_active:
   src:
     - i_vdd_70

@@ -2,6 +2,7 @@
 import yaml
 import matplotlib.pyplot as plt
 import scipy as sp
+import numpy as np
 
 DO_PLOT = False
 
@@ -32,12 +33,6 @@ def main(name):
   for t, f in zip(temps, freqs):
     obj[f"freq_{t}"] = f
 
-  if DO_PLOT:
-    plt.plot(temps, freqs)
-    plt.title("Oscillator frequency")
-    plt.xlabel("Temperature [C]")
-    plt.ylabel("Frequency [Hz]")
-    plt.show()
 
   # Linear regression, reporting slope and r
   lm = sp.stats.linregress(temps, freqs)
@@ -45,13 +40,27 @@ def main(name):
   obj["freq_slope"] = float(lm.slope)
   obj["freq_rvalue"] = float(lm.rvalue)
 
-  max_sq_err = max((freq - (lm.intercept - lm.slope * temp)**2) for temp, freq in zip(temps, freqs))
+  sq_err = [(freq - (lm.intercept + lm.slope * temp))**2 for temp, freq in zip(temps, freqs)]
+  max_sq_err = max(sq_err)
+  fs = max(freqs) - min(freqs)
 
   obj["freq_max_sq_err"] = float(max_sq_err)
-  fs = max(temps) - min(temps)
   obj["freq_fs"] = float(fs)
-  obj["freq_max_sq_err_per_fs"] = float(max_sq_err / fs)
+  obj["freq_max_sq_err_per_fs"] = float(np.sqrt(max_sq_err) / fs)
 
+  if DO_PLOT:
+    plt.plot(temps, freqs)
+    plt.title("Oscillator frequency")
+    plt.xlabel("Temperature [C]")
+    plt.ylabel("Frequency [Hz]")
+
+    plt.figure()
+    plt.plot(temps, np.sqrt(np.array(sq_err)) / fs)
+    plt.title("Square error relative to full scale")
+    plt.xlabel("Temperature [C]")
+    plt.ylabel("Relative error")
+
+    plt.show()
 
   # Save new yaml file
   with open(yamlfile,"w") as fo:
