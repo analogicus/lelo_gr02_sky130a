@@ -25,8 +25,8 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
-VPWR  PWRUP_1V8  VSS  dc 1.8 
-*VPWR  PWRUP_1V8  VSS  pwl 0 0 {t_start} 0 {{t_start} + 10p} {AVDD}
+VPWRN  PWRUP_B_1V8  VSS  dc 1.8
+VPWRB  PWRUP_N_1V8  VSS  dc 0
 
 
 *-----------------------------------------------------------------
@@ -56,13 +56,13 @@ optran 0 0 0 1n 1u 0
 ptran 0 0 0 1n 1u 0
 
 #ifdef Nosweep
-tran 0.1n {t_stop}
+tran {t_step} {t_stop}
 write {cicname}.raw
 #else
 set fend = .raw
 foreach vtemp {temperatures}
   option temp=$vtemp
-  tran 1n {t_stop}
+  tran {t_step} {t_stop}
   write {cicname}_$vtemp$fend
 end
 
