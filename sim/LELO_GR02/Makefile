@@ -18,6 +18,9 @@ test:
 
 typical: netlist
 	cicsim run --replace replace.yaml --name ${VIEW}_typical ${TB} ${OPT} ${VIEW} Gt Ktt Tt Vt
+	
+custom: netlist
+	cicsim run --replace replace.yaml --name ${VIEW}_custom ${TB} ${OPT} ${VIEW} Gt "${CORNER}" "${T}" "${V}"
 
 slow: netlist
 	cicsim run --replace replace.yaml --name ${VIEW}_slow ${TB} ${OPT} ${VIEW} Gt Kss "Th,Tl" Vl
@@ -30,6 +33,9 @@ tfs: netlist
 
 etc: netlist
 	cicsim run --replace replace.yaml --name ${VIEW}_etc ${TB} ${OPT} ${VIEW} Gt "Kss,Kff,Ksf,Kfs" "Th,Tl" "Vl,Vh"
+
+sf: netlist
+	cicsim run --replace replace.yaml --name ${VIEW}_etc ${TB} ${OPT} ${VIEW} Gt "Ksf" "Th,Tl" "Vl,Vh"
 
 mc: netlist
 	cicsim run --replace replace.yaml --name ${VIEW}_mc --count 30 ${TB} ${OPT} ${VIEW} Gt "Kttmm" "Tt" "Vt"
@@ -46,6 +52,8 @@ summary:
 slide:
 	pandoc -s  -t slidy README.md -o README.html
 
+wave:
+	cicsim wave output_tran/tran_SchGtKttTtVt_$(T).raw &
 
 clean:
 	-rm -rf output_*
