@@ -28,8 +28,8 @@ Check transient operation
 | | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 104.235 |  | |
 | | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|78.522 | 106.770 | 141.828 | |
 | | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|96.167 | 103.483 | 110.799 | |
-|**Leakage current at 70 C**|**i\_leak** || **Spec**  | **0.000** | **0.000** | **1.000** | **µA** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 0.019 |  | |
-| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|0.002 | 0.052 | 0.266 | |
-| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|0.017 | 0.019 | 0.021 | |
+|**Leakage current at 70 C**|**i\_leak** || **Spec**  | **0.000** | **0.000** | **1.000** | **nA** |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 18.697 |  | |
+| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|1.881 | 51.986 | 266.462 | |
+| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|16.841 | 18.735 | 20.630 | |
 

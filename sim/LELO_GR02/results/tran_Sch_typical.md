@@ -14,5 +14,5 @@ For details see <a href='tran_Sch_typical.html'>tran_Sch_typical.html</a>
 | | | ('Sch',)|0.029  | 0.029  | 0.029  |
 |Active current at 70 C|i\_vdd\_70 | Spec |  |  | 100.000 µA |
 | | | ('Sch',)|104.235 µA | 104.235 µA | 104.235 µA |
-|Leakage current at 70 C|i\_leak | Spec |  |  | 1.000 µA |
-| | | ('Sch',)|0.019 µA | 0.019 µA | 0.019 µA |
+|Leakage current at 70 C|i\_leak | Spec |  |  | 1.000 nA |
+| | | ('Sch',)|18.697 nA | 18.697 nA | 18.697 nA |
