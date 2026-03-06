@@ -5,10 +5,14 @@ For details see <a href='tran_Sch_typical.html'>tran_Sch_typical.html</a>
 |**Name**|**Parameter**|**View**|**Min** | **Typ** | **Max**|
 |:---|:---|:---:|:---:|:---:|:---:|
 |Oscillation frequency, offset at zero celsius|freq\_intercept | Spec | 10.000 Hz |  | 200.000 Hz |
-| | | ('Sch',)|4513887190731.318 Hz | 4513887190731.318 Hz | 4513887190731.318 Hz |
+| | | ('Sch',)|4450251404701.441 Hz | 4450251404701.441 Hz | 4450251404701.441 Hz |
 |Oscillation frequency, increase per kelvin|freq\_slope | Spec | 0.100 Hz |  | 0.900 Hz |
-| | | ('Sch',)|15864405142.780 Hz | 15864405142.780 Hz | 15864405142.780 Hz |
+| | | ('Sch',)|19968635324.095 Hz | 19968635324.095 Hz | 19968635324.095 Hz |
 |Oscillation frequency, Pearson correlation coefficient|freq\_rvalue | Spec | 0.950  | 1.000  | 1.050  |
-| | | ('Sch',)|0.981  | 0.981  | 0.981  |
-|Power usage at 25 C|pwr\_25 | Spec | 0.950 V | 1.000 V | 1.050 V |
-| | | ('Sch',)|211.859 V | 211.859 V | 211.859 V |
+| | | ('Sch',)|0.999  | 0.999  | 0.999  |
+|Maximum relative frequency error|freq\_max\_sq\_err\_per\_fs | Spec | 0.950 Hz | 1.000 Hz | 1.050 Hz |
+| | | ('Sch',)|0.026 Hz | 0.026 Hz | 0.026 Hz |
+|Active current at 70 C|i\_vdd\_70 | Spec | 0.950 µA | 1.000 µA | 1.050 µA |
+| | | ('Sch',)|104.656 µA | 104.656 µA | 104.656 µA |
+|Leakage current at 70 C|i\_leak | Spec | 0.950 µA | 1.000 µA | 1.050 µA |
+| | | ('Sch',)|0.019 µA | 0.019 µA | 0.019 µA |

@@ -1,2 +1,2 @@
-,freq_intercept,freq_slope,freq_rvalue,pwr_25,name,type,time,OK
-0,4513887190731.318,15864405142.779892,0.9813991291645474,211.85856,tran_SchGtKttTtVt,Sch,Thu Mar  5 16:59:47 2026,False
+,freq_intercept,freq_slope,freq_rvalue,freq_max_sq_err_per_fs,i_vdd_70,i_leak,name,type,time,OK
+0,4450251404701.441,19968635324.094723,0.9992880805277816,0.02646962210194115,104.6557,0.018913529999999998,tran_SchGtKttTtVt,Sch,Fri Mar  6 13:07:49 2026,False
