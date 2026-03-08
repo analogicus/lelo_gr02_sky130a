@@ -118,7 +118,7 @@ C {devices/lab_pin.sym} 400 480 0 0 {name=p24 sig_type=std_logic lab=PWRUP_B_1V8
 }
 C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 280 -190 0 1 {name=x3
 }
-C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 870 -190 0 1 {name=x3[1:0]}
+C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 870 -190 0 1 {name=x5}
 C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 600 -190 0 0 {name=x4}
 C {LELO_ATR_SKY130A/LELOATR_LVT_NCH_4C5F0.sym} 420 480 0 0 {name=x1[2:0]}
 C {devices/lab_pin.sym} 570 320 0 1 {name=p26 sig_type=std_logic lab=DIODE_VOLTAGE
