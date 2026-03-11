@@ -30,7 +30,7 @@ The combination of V_CTAT and I_PTAT allows the system to produce a temperature-
 ### Observations from the simulation
 - I_PTAT shows a decreasing trend with temperature (negative slope).
 - V_CTAT increases with temperature (positive slope).
-- Despite opposite slopes, both outputs maintain linearity, which is crucial for temperature sensing.
+- Despite opposite slopes, both outputs maintain linearity which is important for temperature sensing.
 
 ### To simulate the bandgap and view plots:
 
