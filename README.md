@@ -93,7 +93,7 @@ make typical
 
 With the oscillator from Milestone 2 and the bandgap from Milestone 1 implemented, the next step is to measure the oscillator frequency. The implemented temperature sensor only outputs measurements while the PWRUP signal remains high (1.8 V). To measure the frequency, an algorithm that controllably turns the PWRUP signal on and off at specific time intervals is required. This functionality will be implemented in Verilog.
 
-###The Counter
+### The Counter
 
 <img alt="image" src="https://github.com/user-attachments/assets/005c436e-d5e1-4795-b4a2-e7224f3a7492" />
 
