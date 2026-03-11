@@ -30,7 +30,7 @@ The combination of V_CTAT and I_PTAT allows the system to produce a temperature-
 ### Observations from the simulation
 - I_PTAT shows a decreasing trend with temperature (negative slope).
 - V_CTAT increases with temperature (positive slope).
-- Despite opposite slopes, both outputs maintain linearity, which is crucial for temperature sensing.
+- Despite opposite slopes, both outputs maintain linearity which is important for temperature sensing.
 
 ### To simulate the bandgap and view plots:
 
@@ -93,7 +93,7 @@ make typical
 
 With the oscillator from Milestone 2 and the bandgap from Milestone 1 implemented, the next step is to measure the oscillator frequency. The implemented temperature sensor only outputs measurements while the PWRUP signal remains high (1.8 V). To measure the frequency, an algorithm that controllably turns the PWRUP signal on and off at specific time intervals is required. This functionality will be implemented in Verilog.
 
-###The Counter
+### The Counter
 
 <img alt="image" src="https://github.com/user-attachments/assets/005c436e-d5e1-4795-b4a2-e7224f3a7492" />
 
@@ -249,6 +249,7 @@ endmodule
 
 The code above presents the Verilog implementation of the FSM.
 
+## Milestone 4 - The Physical Design
 
 # What
 
@@ -261,8 +262,8 @@ The code above presents the Verilog implementation of the FSM.
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP_DIODE.sch |
 | Schematic       | design/LELO_GR02_SKY130A/OSCILLATOR.sch |
 | Schematic       | design/LELO_GR02_SKY130A/OSCILLATOR_OPAMP.sch |
-
-
+| RTL             | rtl/Counter.v |
+| RTL             | rtl/FSM.v |
 
 
 # Signal interface
