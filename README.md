@@ -133,7 +133,7 @@ The code above presents the Verilog implementation of the counter.
 
 ### The Finite State Machine 
 
-With the counter implemented above, it is now possible to count the clock cycles from the temperature sensor. However, the counter requires a reset signal to stop counting, while the temperature sensor requires PWRUP to remain high in order to increase the counter. To control both the counter and the sensor signal, a finite state machine (FSM) is used. 
+With the counter implemented above, it is now possible to count the clock cycles from the temperature sensor. However, the counter requires a reset signal to stop counting, while the temperature sensor requires PWRUP to remain high in order to produce oscillation. To control both the counter and the sensor signal, a finite state machine (FSM) is used. 
 
 #### Module Ports
 
