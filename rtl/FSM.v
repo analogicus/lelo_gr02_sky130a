@@ -4,9 +4,11 @@ module counter_fsm (
     input wire clk,
     input wire rst_n,
     input wire start,
+    input wire [7:0] cnt_out,
     output wire pwrupOsc,
     output reset_cnt, 
-    output wire capture  // This signal is high at the same time as the counter output is valid (may not be necessary).
+    output wire completed,  
+    output [7:0] clk_cycles
 );
 
 // Assigning state names to binary values
@@ -19,7 +21,7 @@ parameter CAPTURE = 2'b11;
 reg [1:0] state;
 reg [1:0] next_state;
 
-// Sequenctial logic for selecting next state
+// State logic
 alwyas @(posedge clk or negedge rst_n)
 begin
     if (!rst_n)
@@ -28,38 +30,43 @@ begin
         state <= next_state
 end
 
-// Implementing the FSM
-always @(*) begin
-    case (state)
+// Function of the FSM
+always @(*) begin   
 
+    case (state)
         IDLE: begin
-            capture = 0;
-            reset = 1; 
-            if (start)
-                next_state = PWRUP;
-                reset = 0;
+            reset_cnt <= 1; 
+            pwrupOsc <= 0;
+            completed <= 0;
+            if (start and !rst_n)
+                next_state <= PWRUP;
+                reset_cnt <= 0;
             else
-                next_state = IDLE;
-                reset = 1;
+                next_state <= IDLE;
+                reset_cnt <= 1;
         end
 
         PWRUP: begin
-            pwrupOsc = 1;
-            next_state = PWRDWN;
+            pwrupOsc    <= 1;
+            reset_cnt   <= 0;
+            completed   <= 0;
+            next_state  <= PWRDWN;
         end
 
         PWRDWN: begin
-            pwrupOsc = 0;
-            next_state = CAPTURE;
+            reset_cnt   <= 0;
+            pwrupOsc    <= 0;
+            completed   <= 0;
+            next_state  <= CAPTURE;
         end
 
         CAPTURE: begin
-            capture = 1;
-            reset = 1;
-            next_state = IDLE;
+            reset_cnt   <= 0;
+            pwrupOsc    <= 0;
+            completed   <= 0;
+            clk_cycles  <= cnt_out;
+            next_state  <= IDLE;
         end
-        
-        default: next_state = IDLE;
 
     endcase
 end

@@ -3,32 +3,21 @@
 // Module for the Counter 
 
 module counter (
-    input wire clk,
-    input wire rst_n,
-    input wire pwrupOsc,
-    input wire capture, 
+    input wire osc_temp,       
+    input wire reset,
     output wire [7:0] cnt_out
 );
 
-// Combinatorial logic
-// Increases the counter with 1
-
+// Register which stores the counter value
 reg [7:0] cnt_var;
 
-always @(pwrupOsc);
+always_ff @(posedge clk or negedge reset) 
 begin
-    if (!pwrupOsc)
-	cnt_val <= 0;
-    else 
-	cnt_val <= cnt_val + 1;
-end
-
-// Sequenctial logic which outputs the counter value
-always @(posedge clk or negedge rst_n) 
-begin
-    if (!rst_n)
+    if (reset)
         cnt_out <= 0;
-    else if (capture)
+        cnt_var <= 0;
+    else 
+        cnt_var <= cnt_var + 1;
         cnt_out <= cnt_var;
 end
 
