@@ -249,6 +249,7 @@ endmodule
 
 The code above presents the Verilog implementation of the FSM.
 
+## Milestone 4 - The Physical Design
 
 # What
 
@@ -261,8 +262,8 @@ The code above presents the Verilog implementation of the FSM.
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP_DIODE.sch |
 | Schematic       | design/LELO_GR02_SKY130A/OSCILLATOR.sch |
 | Schematic       | design/LELO_GR02_SKY130A/OSCILLATOR_OPAMP.sch |
-
-
+| RTL             | rtl/Counter.v |
+| RTL             | rtl/FSM.v |
 
 
 # Signal interface
