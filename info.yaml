@@ -3,13 +3,13 @@ cell: LELO_GR02
 # Your name
 author: "Ardit Uka, Jonas Hilbich, Iver Abrahamsen & Simen Eilevstjønn"
 # Your github username
-github: Group 2
+github: analogicus
 # Something funny and descriptive
 tagline: ""
 # Your email, if you so wish
 email: ""
 # Your github site, usually <github username>.github.io
-url: analogicus.github.io/lelo_gr02_sky130a/
+url: analogicus.github.io
 doc:
   # Make docs
   libraries:
@@ -19,3 +19,4 @@ doc:
         - BANDGAP_OPAMP
         - BANDGAP_DIODE
         - OSCILLATOR
+        - OSCILLATOR_OPAMP
