@@ -5,20 +5,15 @@
 module counter (
     input wire osc_temp,       
     input wire reset,
-    output wire [7:0] cnt_out
+    output reg [7:0] cnt_out
 );
 
-// Register which stores the counter value
-reg [7:0] cnt_var;
-
-always_ff @(posedge clk or negedge reset) 
+always @(posedge osc_temp or posedge reset) 
 begin
     if (reset)
-        cnt_out <= 0;
-        cnt_var <= 0;
+        cnt_out <= 1'b0;
     else 
-        cnt_var <= cnt_var + 1;
-        cnt_out <= cnt_var;
+        cnt_out <= cnt_out + 1'b1;
 end
 
 endmodule
