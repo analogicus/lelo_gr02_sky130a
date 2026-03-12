@@ -200,35 +200,35 @@ always @(*) begin
     case (state)
         IDLE: begin
             reset_cnt = 1; 
-            pwrupOsc = 0;
+            pwrupOsc  = 0;
             completed = 0;
             if (start and !rst_n)
                 next_state = PWRUP;
                 reset_cnt = 0;
             else
-                next_state <= IDLE;
-                reset_cnt <= 1;
+                next_state = IDLE;
+                reset_cnt  = 1;
         end
 
         PWRUP: begin
-            pwrupOsc    <= 1;
-            reset_cnt   <= 0;
-            completed   <= 0;
-            next_state  <= PWRDWN;
+            pwrupOsc    = 1;
+            reset_cnt   = 0;
+            completed   = 0;
+            next_state  = PWRDWN;
         end
 
         PWRDWN: begin
-            reset_cnt   <= 0;
-            pwrupOsc    <= 0;
-            completed   <= 0;
-            next_state  <= CAPTURE;
+            reset_cnt   = 0;
+            pwrupOsc    = 0;
+            completed   = 0;
+            next_state  = CAPTURE;
         end
 
         CAPTURE: begin
-            reset_cnt   <= 0;
-            pwrupOsc    <= 0;
-            completed   <= 1;
-            next_state  <= IDLE;
+            reset_cnt   = 0;
+            pwrupOsc    = 0;
+            completed   = 1;
+            next_state  = IDLE;
         end
 
     endcase
