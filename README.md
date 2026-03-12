@@ -105,24 +105,19 @@ To reset the counter, a reset signal is applied, which forces the counter value 
 
 ```verilog
 // Module for the Counter 
+
 module counter (
     input wire osc_temp,       
     input wire reset,
-    output wire [7:0] cnt_out
+    output reg [7:0] cnt_out
 );
 
-// Register which stores the counter value
-reg [7:0] cnt_var;
-
-// Sequential logic which increment the counter value with one and outputs data at rising edge of the clock
-always_ff @(posedge osc_temp or negedge reset) 
+always @(posedge osc_temp or posedge reset) 
 begin
     if (reset)
-        cnt_out <= 0;
-        cnt_var <= 0;
+        cnt_out <= 1'b0;
     else 
-        cnt_var <= cnt_var + 1;
-        cnt_out <= cnt_var;
+        cnt_out <= cnt_out + 1'b1;
 end
 
 endmodule
@@ -169,65 +164,60 @@ module counter_fsm (
     input wire rst_n,
     input wire start,
     input wire [7:0] cnt_out,
-    output wire pwrupOsc,
-    output reset_cnt, 
-    output wire completed,  
-    output [7:0] clk_cycles
+    output reg pwrupOsc,
+    output reg reset_cnt, 
+    output reg completed,  
+    output reg [7:0] clk_cycles
 );
 
 // Assigning state names to binary values
-parameter IDLE = 2'b00;
-parameter PWRUP = 2'b01;
-parameter PWRDWN = 2'b10;
+parameter IDLE    = 2'b00;
+parameter PWRUP   = 2'b01;
+parameter PWRDWN  = 2'b10;
 parameter CAPTURE = 2'b11;
 
 // Defining a register which stores current and next state
 reg [1:0] state;
 reg [1:0] next_state;
 
-// State logic
-alwyas @(posedge clk or negedge rst_n)
+// State logic (Sequential)
+always @(posedge clk or negedge rst_n)
 begin
     if (!rst_n)
-        state = IDLE;
+        state <= IDLE;
     else
-        state = next_state
+        state <= next_state;
 end
 
-// Function of the FSM
+// Function of the FSM (Combinational)
 always @(*) begin   
+
+    // To avoid inferred latch (ask Carsten)
+    next_state = state;
+    reset_cnt  = 1'b0;
+    pwrupOsc   = 1'b0;
+    completed  = 1'b0;
 
     case (state)
         IDLE: begin
-            reset_cnt = 1; 
-            pwrupOsc  = 0;
-            completed = 0;
-            if (start and !rst_n)
+            reset_cnt = 1'b1; 
+            if (start) begin
                 next_state = PWRUP;
-                reset_cnt = 0;
             else
                 next_state = IDLE;
-                reset_cnt  = 1;
         end
 
         PWRUP: begin
-            pwrupOsc    = 1;
-            reset_cnt   = 0;
-            completed   = 0;
+            pwrupOsc    = 1'b1;
             next_state  = PWRDWN;
         end
 
         PWRDWN: begin
-            reset_cnt   = 0;
-            pwrupOsc    = 0;
-            completed   = 0;
             next_state  = CAPTURE;
         end
 
         CAPTURE: begin
-            reset_cnt   = 0;
-            pwrupOsc    = 0;
-            completed   = 1;
+            completed   = 1'b1;
             next_state  = IDLE;
         end
 
@@ -235,13 +225,12 @@ always @(*) begin
     
 end
 
-// Sequential logic which outputs data while in capture
+// Data Capture (Sequential)
 always @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
+    if (!rst_n)
         clk_cycles <= 8'b0;
-    end else if (state == CAPTURE) begin
+    else if (state == CAPTURE)
         clk_cycles <= cnt_out;
-    end
 end
 
 endmodule
