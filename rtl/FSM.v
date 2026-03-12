@@ -25,9 +25,9 @@ reg [1:0] next_state;
 alwyas @(posedge clk or negedge rst_n)
 begin
     if (!rst_n)
-        state <= IDLE;
+        state = IDLE;
     else
-        state <= next_state
+        state = next_state
 end
 
 // Function of the FSM
@@ -35,40 +35,49 @@ always @(*) begin
 
     case (state)
         IDLE: begin
-            reset_cnt <= 1; 
-            pwrupOsc <= 0;
-            completed <= 0;
+            reset_cnt = 1; 
+            pwrupOsc  = 0;
+            completed = 0;
             if (start and !rst_n)
-                next_state <= PWRUP;
-                reset_cnt <= 0;
+                next_state = PWRUP;
+                reset_cnt  = 0;
             else
-                next_state <= IDLE;
-                reset_cnt <= 1;
+                next_state = IDLE;
+                reset_cnt  = 1;
         end
 
         PWRUP: begin
-            pwrupOsc    <= 1;
-            reset_cnt   <= 0;
-            completed   <= 0;
-            next_state  <= PWRDWN;
+            pwrupOsc    = 1;
+            reset_cnt   = 0;
+            completed   = 0;
+            next_state  = PWRDWN;
         end
 
         PWRDWN: begin
-            reset_cnt   <= 0;
-            pwrupOsc    <= 0;
-            completed   <= 0;
-            next_state  <= CAPTURE;
+            reset_cnt   = 0;
+            pwrupOsc    = 0;
+            completed   = 0;
+            next_state  = CAPTURE;
         end
 
         CAPTURE: begin
-            reset_cnt   <= 0;
-            pwrupOsc    <= 0;
-            completed   <= 0;
-            clk_cycles  <= cnt_out;
-            next_state  <= IDLE;
+            reset_cnt   = 0;
+            pwrupOsc    = 0;
+            completed   = 1;
+            next_state  = IDLE;
         end
 
     endcase
+    
+end
+
+// Sequential logic which outputs data while in capture
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        clk_cycles <= 8'b0;
+    end else if (state == CAPTURE) begin
+        clk_cycles <= cnt_out;
+    end
 end
 
 endmodule
