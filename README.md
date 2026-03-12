@@ -170,13 +170,13 @@ module counter_fsm (
     output reg [7:0] clk_cycles
 );
 
-// Assigning state names to binary values
+// Assigning binary value to state names
 parameter IDLE    = 2'b00;
 parameter PWRUP   = 2'b01;
 parameter PWRDWN  = 2'b10;
 parameter CAPTURE = 2'b11;
 
-// Defining a register which stores current and next state
+// Defining registers for storing states
 reg [1:0] state;
 reg [1:0] next_state;
 
