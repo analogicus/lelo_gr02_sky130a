@@ -145,8 +145,8 @@ With the counter implemented above, it is now possible to count the clock cycles
 | Input | `cnt_out` | 8-bit count value from the counter module. | Connected to counter.v output |
 | Output | `pwrupOsc` | Power-up signal used to turn on the analog temperature sensor. | Connected to PWRUP port in Xschem |
 | Output | `reset_cnt` | Active-high signal that resets the external counter. | Connected to counter.v reset |
-| Output | `completed` | Flag indicating that the measurement is finished and data is ready. | External signal (User) |
-| Output | `clk_cycles` | 8-bit output holding the captured oscillator clock cycles. | External signal (User) |
+| Output | `completed` | Flag indicating that the measurement is finished and data is ready. | Sent to measurement file|
+| Output | `clk_cycles` | 8-bit output holding the captured oscillator clock cycles. | Sent to measurement file|
 
 <img alt="FSM Diagram" src="https://github.com/user-attachments/assets/38063d81-6b8a-4cd9-8fe7-b385211ce12f" />
 
