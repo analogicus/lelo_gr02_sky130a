@@ -1,0 +1,12 @@
+*Automatic generated instance fron ../../tech/scripts/genxdut Cnt
+*.include ../../rtl/Counter.v
+adut_Cnt [
++ ]
++ [
++ ] null dut_Cnt
+.model dut_Cnt d_cosim simulation="../Cnt.so" delay=10p
+
+* Inputs
+
+* Outputs
+

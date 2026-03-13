@@ -1,0 +1,292 @@
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_GR02_SKY130A/TB_LELOGR02_BANDGAP.sch
+**.subckt TB_LELOGR02_BANDGAP
+V1 TB_PWRUP_N 0 0
+x5 TB_IPTAT 0 JNWTR_CAPX1
+V3 TB_VDD 0 1.8
+x1 TB_VDD TB_IPTAT TB_VCTAT TB_PWRUP_N 0 TB_PWRUP_B BANDGAP
+x2 TB_IPTAT 0 JNWTR_CAPX1
+V2 TB_PWRUP_B 0 1.8
+**** begin user architecture code
+
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+
+.lib ../../../tech/ngspice/temperature.spi Tl
+.lib ../../../tech/ngspice/corners.spi Kss
+.lib ../../../tech/ngspice/supply.spi Vl
+.include ../../../../cpdk/ngspice/ideal_circuits.spi
+
+.option SEED=1
+.option savecurrents
+.options temp=30
+.save all
+.save i(TB_IPTAT)
+.control
+optran 0 0 0 10n 1u 0
+
+
+tran 1n 10u
+write TB_BANDGAP.raw
+
+exit
+.endc
+
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_CAPX1.sym # of pins=2
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX1.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX1.sch
+.subckt JNWTR_CAPX1 A B
+*.iopin A
+*.iopin B
+XC1 B A sky130_fd_pr__cap_mim_m3_1 W=5 L=5 MF=1 m=1
+.ends
+
+
+* expanding   symbol:  LELO_GR02_SKY130A/BANDGAP.sym # of pins=6
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_GR02_SKY130A/BANDGAP.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_GR02_SKY130A/BANDGAP.sch
+.subckt BANDGAP VDD_1V8 I_PTAT V_CTAT PWRUP_N_1V8 VSS PWRUP_B_1V8
+*.ipin VDD_1V8
+*.ipin VSS
+*.ipin PWRUP_B_1V8
+*.opin I_PTAT
+*.opin V_CTAT
+*.ipin PWRUP_N_1V8
+xpb4<1> POWERGATING_PMOS PWRUP_N_1V8 VDD_1V8 VDD_1V8 JNWATR_PCH_2C1F2
+xpb4<0> POWERGATING_PMOS PWRUP_N_1V8 VDD_1V8 VDD_1V8 JNWATR_PCH_2C1F2
+x8 V_CTAT DIODE_VOLTAGE POWERGATING_NMOS BANDGAP_DIODE
+x5 DIODE_VOLTAGE VIN_Voltage VSS JNWTR_RPPO8
+x2 PWRUP_N_1V8 PWRUP_B_1V8 VSS VIN_Voltage V_CTAT Vout VDD_1V8 BANDGAP_OPAMP
+x2<1> V_CTAT Vout POWERGATING_PMOS VDD_1V8 LELOATR_PCH_2C1F2
+x2<0> V_CTAT Vout POWERGATING_PMOS VDD_1V8 LELOATR_PCH_2C1F2
+x3<4> I_PTAT Vout POWERGATING_PMOS VDD_1V8 LELOATR_PCH_2C1F2
+x3<3> I_PTAT Vout POWERGATING_PMOS VDD_1V8 LELOATR_PCH_2C1F2
+x3<2> I_PTAT Vout POWERGATING_PMOS VDD_1V8 LELOATR_PCH_2C1F2
+x3<1> I_PTAT Vout POWERGATING_PMOS VDD_1V8 LELOATR_PCH_2C1F2
+x3<0> I_PTAT Vout POWERGATING_PMOS VDD_1V8 LELOATR_PCH_2C1F2
+x4<1> VIN_Voltage Vout POWERGATING_PMOS VDD_1V8 LELOATR_PCH_2C1F2
+x4<0> VIN_Voltage Vout POWERGATING_PMOS VDD_1V8 LELOATR_PCH_2C1F2
+x1<2> POWERGATING_NMOS PWRUP_B_1V8 VSS VSS LELOATR_NCH_4C5F0
+x1<1> POWERGATING_NMOS PWRUP_B_1V8 VSS VSS LELOATR_NCH_4C5F0
+x1<0> POWERGATING_NMOS PWRUP_B_1V8 VSS VSS LELOATR_NCH_4C5F0
+x5<4> POWERGATING_PMOS Vout JNWTR_CAPX1
+x5<3> POWERGATING_PMOS Vout JNWTR_CAPX1
+x5<2> POWERGATING_PMOS Vout JNWTR_CAPX1
+x5<1> POWERGATING_PMOS Vout JNWTR_CAPX1
+x5<0> POWERGATING_PMOS Vout JNWTR_CAPX1
+.ends
+
+
+* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym # of pins=4
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sch
+.subckt JNWATR_PCH_2C1F2 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.22 W=1.92 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  LELO_GR02_SKY130A/BANDGAP_DIODE.sym # of pins=3
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_GR02_SKY130A/BANDGAP_DIODE.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_GR02_SKY130A/BANDGAP_DIODE.sch
+.subckt BANDGAP_DIODE D1 DN VSS
+*.ipin VSS
+*.ipin D1
+*.ipin DN
+XQ1 VSS VSS D1 sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+XQ2<7> VSS VSS DN sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+XQ2<6> VSS VSS DN sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+XQ2<5> VSS VSS DN sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+XQ2<4> VSS VSS DN sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+XQ2<3> VSS VSS DN sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+XQ2<2> VSS VSS DN sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+XQ2<1> VSS VSS DN sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+XQ2<0> VSS VSS DN sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RPPO8.sym # of pins=3
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO8.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO8.sch
+.subckt JNWTR_RPPO8 N P B
+*.iopin P
+*.iopin N
+*.iopin B
+XXA1 N P B JNWTR_RES8
+.ends
+
+
+* expanding   symbol:  LELO_GR02_SKY130A/BANDGAP_OPAMP.sym # of pins=7
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_GR02_SKY130A/BANDGAP_OPAMP.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_GR02_SKY130A/BANDGAP_OPAMP.sch
+.subckt BANDGAP_OPAMP PWRUP_N_1V8 PWRUP_B_1V8 VSS VIN VIP VOUT VDD_1V8
+*.ipin VSS
+*.ipin PWRUP_N_1V8
+*.ipin VIP
+*.opin VOUT
+*.ipin VIN
+*.ipin PWRUP_B_1V8
+*.ipin VDD_1V8
+x10 net1 VIN BOTTOM VSS LELOATR_LVT_NCH_4C5F0
+x4 PMOS_GATE VIP BOTTOM VSS LELOATR_LVT_NCH_4C5F0
+x2<4> net1 VOUT JNWTR_CAPX4
+x2<3> net1 VOUT JNWTR_CAPX4
+x2<2> net1 VOUT JNWTR_CAPX4
+x2<1> net1 VOUT JNWTR_CAPX4
+x2<0> net1 VOUT JNWTR_CAPX4
+x3<3> VOUT net1 SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x3<2> VOUT net1 SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x3<1> VOUT net1 SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x3<0> VOUT net1 SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x1<1> BOTTOM V_IB VSS VSS LELOATR_NCH_4C5F0
+x1<0> BOTTOM V_IB VSS VSS LELOATR_NCH_4C5F0
+x8<1> V_IB V_IB VSS VSS LELOATR_NCH_4C5F0
+x8<0> V_IB V_IB VSS VSS LELOATR_NCH_4C5F0
+x7<1> VOUT V_IB VSS VSS LELOATR_NCH_4C5F0
+x7<0> VOUT V_IB VSS VSS LELOATR_NCH_4C5F0
+x4<3> net1 PMOS_GATE SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x4<2> net1 PMOS_GATE SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x4<1> net1 PMOS_GATE SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x4<0> net1 PMOS_GATE SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x5<3> PMOS_GATE PMOS_GATE SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x5<2> PMOS_GATE PMOS_GATE SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x5<1> PMOS_GATE PMOS_GATE SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x5<0> PMOS_GATE PMOS_GATE SUPPLY VDD_1V8 LELOATR_PCH_4C5F0
+x9 SUPPLY PWRUP_N_1V8 VDD_1V8 VDD_1V8 LELOATR_PCH_2C1F2
+x6<2> V_IB PWRUP_N_1V8 VSS VSS LELOATR_NCH_4C5F0
+x6<1> V_IB PWRUP_N_1V8 VSS VSS LELOATR_NCH_4C5F0
+x6<0> V_IB PWRUP_N_1V8 VSS VSS LELOATR_NCH_4C5F0
+x1 net2 SUPPLY VSS JNWTR_RPPO16
+x2 V_IB net2 VSS JNWTR_RPPO16
+.ends
+
+
+* expanding   symbol:  LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym # of pins=4
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sch
+.subckt LELOATR_PCH_2C1F2 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.22 W=1.92 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  LELO_ATR_SKY130A/LELOATR_NCH_4C5F0.sym # of pins=4
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_ATR_SKY130A/LELOATR_NCH_4C5F0.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_ATR_SKY130A/LELOATR_NCH_4C5F0.sch
+.subckt LELOATR_NCH_4C5F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__nfet_01v8 L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RES8.sym # of pins=3
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RES8.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RES8.sch
+.subckt JNWTR_RES8 N P B
+*.iopin N
+*.iopin P
+*.iopin B
+XR1_0 INT_0 N B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_1 INT_1 INT_0 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_2 INT_2 INT_1 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_3 INT_3 INT_2 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_4 INT_4 INT_3 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_5 INT_5 INT_4 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_6 INT_6 INT_5 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_7 P INT_6 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  LELO_ATR_SKY130A/LELOATR_LVT_NCH_4C5F0.sym # of pins=4
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_ATR_SKY130A/LELOATR_LVT_NCH_4C5F0.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_ATR_SKY130A/LELOATR_LVT_NCH_4C5F0.sch
+.subckt LELOATR_LVT_NCH_4C5F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__nfet_01v8_lvt L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_CAPX4.sym # of pins=2
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX4.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX4.sch
+.subckt JNWTR_CAPX4 A B
+*.iopin A
+*.iopin B
+XXA1 A B JNWTR_CAPX1
+XXA2 A B JNWTR_CAPX1
+XXB1 A B JNWTR_CAPX1
+XXB2 A B JNWTR_CAPX1
+.ends
+
+
+* expanding   symbol:  LELO_ATR_SKY130A/LELOATR_PCH_4C5F0.sym # of pins=4
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_ATR_SKY130A/LELOATR_PCH_4C5F0.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/LELO_ATR_SKY130A/LELOATR_PCH_4C5F0.sch
+.subckt LELOATR_PCH_4C5F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RPPO16.sym # of pins=3
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO16.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO16.sch
+.subckt JNWTR_RPPO16 N P B
+*.iopin P
+*.iopin N
+*.iopin B
+XXA1 N P B JNWTR_RES16
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RES16.sym # of pins=3
+** sym_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RES16.sym
+** sch_path: /home/ardiu/pro/aicex/ip/lelo_gr02_sky130a/design/JNW_TR_SKY130A/JNWTR_RES16.sch
+.subckt JNWTR_RES16 N P B
+*.iopin N
+*.iopin P
+*.iopin B
+XR1_0 INT_0 N B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_1 INT_1 INT_0 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_2 INT_2 INT_1 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_3 INT_3 INT_2 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_4 INT_4 INT_3 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_5 INT_5 INT_4 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_6 INT_6 INT_5 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_7 INT_7 INT_6 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_8 INT_8 INT_7 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_9 INT_9 INT_8 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_10 INT_10 INT_9 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_11 INT_11 INT_10 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_12 INT_12 INT_11 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_13 INT_13 INT_12 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_14 INT_14 INT_13 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_15 P INT_14 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+.ends
+
+.end
