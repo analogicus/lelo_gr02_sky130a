@@ -1,2 +1,2 @@
-,freq_intercept,freq_slope,freq_rvalue,freq_max_abs_err_per_fs,i_vdd_70,i_leak,name,type,time,OK
-0,4.443455841383185,0.01957367173254172,0.9991432547086448,0.028635379794734607,104.23519999999999,18.696540000000002,tran_SchGtKttTtVt,Sch,Fri Mar  6 20:11:00 2026,False
+,freq_intercept,freq_slope,freq_rvalue,freq_max_abs_err_per_fs,i_vdd_25,i_leak,name,type,time,OK
+0,4.549610875818616,0.020620278386832887,0.9323610635283598,0.20487303380545663,103.28280000000001,28.20271,tran_SchGtKttTtVt,Sch,Fri Mar 13 14:07:52 2026,False
