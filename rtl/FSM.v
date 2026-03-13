@@ -31,7 +31,7 @@ begin
 end
 
 // Function of the FSM (Combinational)
-always_ff @(*) begin   
+always_comb begin   
 
     // To avoid inferred latch (ask Carsten)
     next_state = state;
@@ -40,9 +40,10 @@ always_ff @(*) begin
     completed  = 1'b0;
 
     case (state)
+
         IDLE: begin
             reset_cnt = 1'b1; 
-            if (start) begin
+            if (start)
                 next_state = PWRUP;
             else
                 next_state = IDLE;
