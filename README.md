@@ -104,20 +104,25 @@ The counter receives the oscillation signal from the temperature sensor as its c
 To reset the counter, a reset signal is applied, which forces the counter value to zero. This reset signal is controlled by the state machine.
 
 ```verilog
-// Module for the Counter 
+`timescale 1 ns / 1 ps
 
 module counter (
-    input wire osc_temp,       
-    input wire reset,
-    output reg [7:0] cnt_out
+    input  wire osc_temp,
+    input  wire reset,
+    output logic [7:0] cnt_out
 );
 
-always @(posedge osc_temp or posedge reset) 
-begin
+logic [7:0] cnt_var;
+
+always_comb begin
+    cnt_var = cnt_out + 1;
+end
+
+always_ff @(posedge osc_temp or posedge reset) begin
     if (reset)
-        cnt_out <= 1'b0;
-    else 
-        cnt_out <= cnt_out + 1'b1;
+        cnt_out <= 8'b0;
+    else
+        cnt_out <= cnt_var;
 end
 
 endmodule
@@ -156,7 +161,7 @@ The state machine uses four states:
 * **CAPTURE:** The FSM sets the completed flag high to notify the user that the measurement is finished. Simultaneously, it captures the data from cnt_out and outputs it to clk_cycles. On the next clock edge, it returns to IDLE to await the next start command.
 
   
-```verilog
+```sv
 `timescale 1 ns / 1 ps
 
 module counter_fsm (
@@ -164,24 +169,24 @@ module counter_fsm (
     input wire rst_n,
     input wire start,
     input wire [7:0] cnt_out,
-    output reg pwrupOsc,
-    output reg reset_cnt, 
-    output reg completed,  
-    output reg [7:0] clk_cycles
+    output logic pwrupOsc,
+    output logic reset_cnt, 
+    output logic completed,  
+    output logic [7:0] clk_cycles
 );
 
-// Assigning binary value to state names
+// Assigning state names to binary values
 parameter IDLE    = 2'b00;
 parameter PWRUP   = 2'b01;
 parameter PWRDWN  = 2'b10;
 parameter CAPTURE = 2'b11;
 
-// Defining registers for storing states
-reg [1:0] state;
-reg [1:0] next_state;
+// Defining a register which stores current and next state
+logic [1:0] state;
+logic [1:0] next_state;
 
 // State logic (Sequential)
-always @(posedge clk or negedge rst_n)
+always_ff @(posedge clk or negedge rst_n)
 begin
     if (!rst_n)
         state <= IDLE;
@@ -190,7 +195,7 @@ begin
 end
 
 // Function of the FSM (Combinational)
-always @(*) begin   
+always_ff @(*) begin   
 
     // To avoid inferred latch (ask Carsten)
     next_state = state;
@@ -226,7 +231,7 @@ always @(*) begin
 end
 
 // Data Capture (Sequential)
-always @(posedge clk or negedge rst_n) begin
+always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n)
         clk_cycles <= 8'b0;
     else if (state == CAPTURE)

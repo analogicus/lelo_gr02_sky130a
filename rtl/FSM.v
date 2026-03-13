@@ -5,10 +5,10 @@ module counter_fsm (
     input wire rst_n,
     input wire start,
     input wire [7:0] cnt_out,
-    output reg pwrupOsc,
-    output reg reset_cnt, 
-    output reg completed,  
-    output reg [7:0] clk_cycles
+    output logic pwrupOsc,
+    output logic reset_cnt, 
+    output logic completed,  
+    output logic [7:0] clk_cycles
 );
 
 // Assigning state names to binary values
@@ -18,11 +18,11 @@ parameter PWRDWN  = 2'b10;
 parameter CAPTURE = 2'b11;
 
 // Defining a register which stores current and next state
-reg [1:0] state;
-reg [1:0] next_state;
+logic [1:0] state;
+logic [1:0] next_state;
 
 // State logic (Sequential)
-always @(posedge clk or negedge rst_n)
+always_ff @(posedge clk or negedge rst_n)
 begin
     if (!rst_n)
         state <= IDLE;
@@ -31,7 +31,7 @@ begin
 end
 
 // Function of the FSM (Combinational)
-always @(*) begin   
+always_ff @(*) begin   
 
     // To avoid inferred latch (ask Carsten)
     next_state = state;
@@ -67,7 +67,7 @@ always @(*) begin
 end
 
 // Data Capture (Sequential)
-always @(posedge clk or negedge rst_n) begin
+always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n)
         clk_cycles <= 8'b0;
     else if (state == CAPTURE)
