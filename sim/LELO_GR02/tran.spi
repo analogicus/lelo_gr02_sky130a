@@ -12,6 +12,7 @@
 * OPTIONS
 *-----------------------------------------------------------------
 .option TNOM=27 GMIN=1e-15 reltol=1e-3
+.option sparse
 
 *-----------------------------------------------------------------
 * PARAMETERS
@@ -25,6 +26,7 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
+VPWRUP PWRUP_1V8 VSS DC {AVDD}
 
 *-----------------------------------------------------------------
 * DUT
@@ -34,7 +36,12 @@ VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
 *----------------------------------------------------------------
 * PROBE
 *----------------------------------------------------------------
-.save all
+.save i(vdd)
+.save V(osc_temp_1v8)
+.save v(VDD_1V8)
+.save v(PWRUP_1V8)
+.save v(PWRUP_N_1V8)
+.save v(PWRUP_B_1V8)
 
 
 *----------------------------------------------------------------
@@ -60,8 +67,15 @@ foreach vtemp {temperatures}
   tran {t_step} {t_stop}
   write {cicname}_$vtemp$fend
 end
-
 #endif
+
+* Measure leakage current
+option temp={leak_temp}
+* Disable power-up rail only for leakage run
+alter @VPWRUP[dc]=0
+tran {t_step} {t_stop}
+write {cicname}_leak$fend
+
 
 quit
 

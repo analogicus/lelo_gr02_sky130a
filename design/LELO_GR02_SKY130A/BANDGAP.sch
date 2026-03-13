@@ -126,7 +126,7 @@ C {devices/lab_pin.sym} 510 420 0 1 {name=p28 sig_type=std_logic lab=POWERGATING
 }
 C {devices/lab_pin.sym} 480 -300 0 1 {name=p25 sig_type=std_logic lab=POWERGATING_PMOS}
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 450 -210 0 0 {name=x5[3:0]}
-C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} 510 120 1 0 {name=x1 }
+C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} 510 120 1 0 {name=x1 }
 C {devices/lab_pin.sym} 490 160 0 0 {name=p29 sig_type=std_logic lab=VSS
 }
 C {devices/lab_pin.sym} 0 -210 0 1 {name=p20 sig_type=std_logic lab=PWRUP_N_1V8
