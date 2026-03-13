@@ -24,7 +24,7 @@ meas TRAN T2_$vtemp when V(osc_temp_1v8)=("Vpmx_$vtemp"+"VPmn_$vtemp")/2 from={t
 end
 
 load {cicname}_leak$fend
-meas tran i_leak AVG i(vdd) from={t_start} to={t_stop}
+meas tran i_leak AVG i(vdd) from={t_start_i_leak} to={t_stop_i_leak}
 
 echo "MEAS_END"
 .endc
