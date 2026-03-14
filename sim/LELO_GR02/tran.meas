@@ -20,11 +20,13 @@ meas TRAN Vpmx_$vtemp max V(osc_temp_1v8) from={t_start} to={t_stop}
 meas TRAN Vpmn_$vtemp min V(osc_temp_1v8) from={t_start} to={t_stop}
 meas TRAN T1_$vtemp when V(osc_temp_1v8)=("Vpmx_$vtemp"+"VPmn_$vtemp")/2 from={t_start} rise=1
 meas TRAN T2_$vtemp when V(osc_temp_1v8)=("Vpmx_$vtemp"+"VPmn_$vtemp")/2 from={t_start} rise=11
+meas tran i_active  AVG i(VDD) from={t_start}  to = {t_stop}
 
 end
 
-load {cicname}_leak$fend
-meas tran i_leak AVG i(vdd) from={t_start_i_leak} to={t_stop_i_leak}
+set vtemp = 25
+load {cicname}_$vtemp$fend
+meas tran i_leakage  AVG i(VDD)     from={t_start_i_leak} to={t_stop_i_leak}
 
 echo "MEAS_END"
 .endc

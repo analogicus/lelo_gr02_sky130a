@@ -1,10 +1,10 @@
-temperatures: -5 0 10 25 30 40 50 60 70 75
+temperatures: -5 0 5 10 15 20 25 30 35 40 45 50 55 60 67 70
+
+t_start: 3us
+t_step: 1ns
+t_stop: 20us
+
+t_start_i_leak: 20n
+t_stop_i_leak:  1u
+
 leak_temp: 25
-
-t_start: 2us
-t_step: 0.5ns
-t_stop: 8us
-
-t_start_i_leak: 0.5u
-t_stop_i_leak: 1.5u
-
