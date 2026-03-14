@@ -72,7 +72,7 @@ C {devices/lab_pin.sym} 0 -300 0 1 {name=p6 sig_type=std_logic lab=VDD_1V8
 C {devices/lab_pin.sym} 0 -260 0 1 {name=p7 sig_type=std_logic lab=PWRUP_B_1V8
 
 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym} 410 -350 0 0 {name=xpb4[2:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} 410 -350 0 0 {name=xpb4[1:0]}
 C {devices/lab_pin.sym} 380 -350 0 0 {name=p8 sig_type=std_logic lab=PWRUP_N_1V8
 
 
@@ -109,7 +109,7 @@ C {devices/lab_pin.sym} 0 -220 0 1 {name=p22 sig_type=std_logic lab=PWRUP_N_1V8
 }
 C {devices/lab_pin.sym} 390 20 0 0 {name=p13 sig_type=std_logic lab=PWRUP_N_1V8}
 C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} 360 150 0 0 {name=x2}
-C {cborder/border_xs.sym} -40 620 0 0 {
+C {cborder/border_xs.sym} -30 590 0 0 {
 user="Group 2"
 company=""}
 C {devices/lab_pin.sym} 400 -10 0 0 {name=p23 sig_type=std_logic lab=PWRUP_B_1V8}
@@ -120,7 +120,7 @@ C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 280 -190 0 1 {name=x3
 }
 C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 870 -190 0 1 {name=x3[1:0]}
 C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 600 -190 0 0 {name=x4}
-C {LELO_ATR_SKY130A/LELOATR_LVT_NCH_4C5F0.sym} 420 480 0 0 {name=x1[2:0]}
+C {LELO_ATR_SKY130A/LELOATR_NCH_8C1F2.sym} 420 480 0 0 {name=x1[2:0]}
 C {devices/lab_pin.sym} 570 320 0 1 {name=p26 sig_type=std_logic lab=DIODE_VOLTAGE
 }
 C {devices/lab_pin.sym} 660 80 0 1 {name=p27 sig_type=std_logic lab=VIN_Voltage
@@ -128,7 +128,7 @@ C {devices/lab_pin.sym} 660 80 0 1 {name=p27 sig_type=std_logic lab=VIN_Voltage
 C {devices/lab_pin.sym} 510 420 0 1 {name=p28 sig_type=std_logic lab=POWERGATING_NMOS
 }
 C {devices/lab_pin.sym} 480 -300 0 1 {name=p25 sig_type=std_logic lab=POWERGATING_PMOS}
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 450 -210 0 0 {name=x5[3:0]}
+C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 450 -210 0 0 {name=x5[1:0]}
 C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} 510 120 1 0 {name=x1 }
 C {devices/lab_pin.sym} 490 160 0 0 {name=p29 sig_type=std_logic lab=VSS
 }

@@ -4,7 +4,7 @@ t_start: 3us
 t_step: 1ns
 t_stop: 20us
 
-t_start_i_leak: 20n
-t_stop_i_leak:  1u
+t_start_i_leak: 0.5u
+t_stop_i_leak:  1.5u
 
 leak_temp: 25
