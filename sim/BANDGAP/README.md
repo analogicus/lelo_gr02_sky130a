@@ -21,7 +21,7 @@ Check transient operation
 | | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|0.984 | 0.992 | 1.000 | |
 | | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|0.987 | 0.989 | 0.992 | |
 |**Voltage complementary to temperature, offset at zero celsius**|**vctat\_intercept** || **Spec**  | **200.000** | **0.000** | **1200.000** | **mV** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 727.044 |  | |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 727.048 |  | |
 | | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|702.661 | 735.409 | 755.578 | |
 | | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|732.979 | 736.342 | 739.705 | |
 |**Voltage complementary to temperature, increase per kelvin**|**vctat\_slope** || **Spec**  | **0.500** | **0.000** | **2.000** | **mV/K** |
@@ -37,7 +37,7 @@ Check transient operation
 | | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>| |  |  | |
 | | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>| |  |  | |
 |**Leakage current at 25 celsius**|**i\_leak\_25** || **Spec**  | **0.100** | **1.000** | **1.000** | **nA** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 0.899 |  | |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 0.217 |  | |
 | | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>| |  |  | |
 | | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>| |  |  | |
 

@@ -128,7 +128,7 @@ C {devices/lab_pin.sym} 660 80 0 1 {name=p27 sig_type=std_logic lab=VIN_Voltage
 C {devices/lab_pin.sym} 510 420 0 1 {name=p28 sig_type=std_logic lab=POWERGATING_NMOS
 }
 C {devices/lab_pin.sym} 480 -300 0 1 {name=p25 sig_type=std_logic lab=POWERGATING_PMOS}
-C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 450 -210 0 0 {name=x5[1:0]}
+C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 450 -210 0 0 {name=x5}
 C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} 510 120 1 0 {name=x1 }
 C {devices/lab_pin.sym} 490 160 0 0 {name=p29 sig_type=std_logic lab=VSS
 }

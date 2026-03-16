@@ -119,7 +119,7 @@ C {devices/lab_pin.sym} 390 -130 0 1 {name=p15 sig_type=std_logic lab=VDD_1V8}
 C {devices/lab_wire.sym} -180 120 0 0 {name=p19 sig_type=std_logic lab=V_IB}
 C {devices/ipin.sym} 210 20 0 1 {name=p11 lab=VIP}
 C {devices/lab_wire.sym} -430 -30 0 0 {name=p5 sig_type=std_logic lab=VSS}
-C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 330 -60 3 1 {name=x1}
+C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 330 -60 3 1 {name=x2[1:0]}
 C {devices/ipin.sym} -480 -270 0 0 {name=p20 lab=PWRUP_B_1V8}
 C {devices/lab_pin.sym} -480 -270 0 1 {name=p21 sig_type=std_logic lab=PWRUP_B_1V8}
 C {LELO_ATR_SKY130A/LELOATR_LVT_NCH_4C5F0.sym} -50 170 0 0 {name=x1[1:0]}
