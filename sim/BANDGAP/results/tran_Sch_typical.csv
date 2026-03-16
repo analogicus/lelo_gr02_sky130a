@@ -1,2 +1,2 @@
-,iptat_intercept,iptat_slope,iptat_rvalue,vctat_intercept,vctat_slope,vctat_rvalue,name,type,time,OK
-0,1.822794936258625,0.004531976623079563,0.9998613174174552,563.5597814208379,1.8531315952498952,0.9992902513222678,tran_SchGtKttTtVt,Sch,Wed Mar  4 14:01:58 2026,False
+,iptat_intercept,iptat_slope,iptat_rvalue,vctat_intercept,vctat_slope,vctat_rvalue,i_act_25,i_leak_25,name,type,time,OK
+0,1.8263427124413145,0.004470673004694837,0.9999314575004067,727.0444624413146,-1.8525651240778,-0.9999775382053575,51.60222,0.8993049,tran_SchGtKttTtVt,Sch,Mon Mar 16 21:25:28 2026,False

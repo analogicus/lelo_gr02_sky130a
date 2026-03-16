@@ -50,9 +50,9 @@ freq_max_sq_err_per_fs:
   digits: 3
   unit: ""
 
-i_active:
+i_act_25:
   src:
-    - i_active
+    - i_act_25
   name: Active current at 25 celsius
   typ: 30
   min: 5
@@ -61,11 +61,11 @@ i_active:
   digits: 3
   unit: uA
 
-i_leak:
+i_leak_25:
   src:
-    - i_leakage
+    - i_leak_25
   name: Leakage current at 25 celsius
-  typ: 0.5
+  typ: 1
   min: 0.1
   max: 1
   scale: -1e9

@@ -26,7 +26,7 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
-VPWRUP PWRUP_1V8 VSS  pwl 0 0 2u 0 2.01u {AVDD}
+VPWB PWRUP_1V8 VSS  pwl 0 {AVDD} {PWRUP_Off} {AVDD} {{PWRUP_Off}+ 0.1u} 0 
 
 *-----------------------------------------------------------------
 * DUT

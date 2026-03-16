@@ -25,11 +25,9 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
-*VPWB PWRUP_N_1V8 VSS  pwl 1u {AVDD} {10n}  {AVDD} {{t_start} + 10n} 0
-*VPWN PWRUP_B_1V8 VSS  pwl 1u 0      {10ns} 0      {{t_start} + 10n} {AVDD}
+VPWB PWRUP_B_1V8 VSS  pwl 0 {AVDD} {PWRUP_Off} {AVDD} {{PWRUP_Off}+ 0.1u} 0 
+VPWN PWRUP_N_1V8 VSS  pwl 0 0 {PWRUP_Off} 0 {{PWRUP_Off}+ 0.1u} {AVDD} 
 
-VPWB PWRUP_N_1V8 VSS  pwl 0 {AVDD} 2u {AVDD} 2.01u 0 
-VPWN PWRUP_B_1V8 VSS  pwl 0 0 2u 0 2.01u {AVDD} 
 *-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------

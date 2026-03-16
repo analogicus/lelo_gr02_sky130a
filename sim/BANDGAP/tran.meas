@@ -15,10 +15,10 @@ foreach vtemp {temperatures}
 
 load {cicname}_$vtemp$fend
 
-meas tran vctat_$vtemp    AVG v(v_ctat)  from = {t_start}  to = {t_stop}
-meas tran iptat_$vtemp    AVG i(vptat)   from = {t_start}  to = {t_stop}
-meas tran i_act_$vtemp    AVG i(vdd)     from = {t_start}  to = {t_stop}
-meas tran i_leak_$vtemp   AVG i(vdd)     from = {t_start_i_leak}  to = {t_stop_i_leak}
+meas tran vctat_$vtemp    AVG v(v_ctat)  from = {t_start_i_active}  to = {t_stop_i_active}
+meas tran iptat_$vtemp    AVG i(vptat)   from = {t_start_i_active}  to = {t_stop_i_active}
+meas tran i_act_$vtemp    AVG i(vdd)     from = {t_start_i_active}  to = {t_stop_i_active}
+meas tran i_leak_$vtemp   AVG i(vdd)     from = {t_start_i_leak}    to = {t_stop_i_leak}
 
 end
 
