@@ -4,12 +4,16 @@ K {}
 V {}
 S {}
 E {}
+L 4 100 -60 520 -60 {}
+L 4 100 -600 100 -60 {}
+L 4 100 -600 1610 -600 {}
+L 4 1610 -600 1610 -160 {}
 N 1380 -380 1400 -380 {lab=OSC_TEMP_1V8}
 N 630 -510 670 -510 {lab=PWRUP_N_1V8}
 N 650 -510 650 -440 {lab=PWRUP_N_1V8}
 N 760 -350 940 -350 {lab=#net1}
 N 760 -380 940 -380 {lab=#net2}
-C {cborder/border_xs.sym} 430 -40 0 0 {
+C {cborder/border_xs.sym} 520 -60 0 0 {
 user="Group 2"
 company=""}
 C {devices/ipin.sym} 270 -480 0 0 {name=p2 lab=VSS}
