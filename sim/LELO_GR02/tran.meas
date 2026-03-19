@@ -19,7 +19,7 @@ meas tran i_vdd_$vtemp AVG i(vdd) from={t_start_i_active} to={t_stop_i_active}
 meas TRAN Vpmx_$vtemp max V(osc_temp_1v8) from={t_start_i_active} to={t_stop_i_active}
 meas TRAN Vpmn_$vtemp min V(osc_temp_1v8) from={t_start_i_active} to={t_stop_i_active}
 meas TRAN T1_$vtemp when V(osc_temp_1v8)=("Vpmx_$vtemp"+"VPmn_$vtemp")/2 from={t_start_i_active} rise=1
-meas TRAN T2_$vtemp when V(osc_temp_1v8)=("Vpmx_$vtemp"+"VPmn_$vtemp")/2 from={t_start_i_active} rise=11
+meas TRAN T2_$vtemp when V(osc_temp_1v8)=("Vpmx_$vtemp"+"VPmn_$vtemp")/2 from={t_start_i_active} rise=6
 meas tran i_act_$vtemp    AVG i(vdd)     from = {t_start_i_active}  to = {t_stop_i_active}
 meas tran i_leak_$vtemp   AVG i(vdd)     from = {t_start_i_leak}    to = {t_stop_i_leak}
 end
