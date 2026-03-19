@@ -7,8 +7,9 @@ E {}
 N 1380 -380 1400 -380 {lab=OSC_TEMP_1V8}
 N 630 -510 670 -510 {lab=PWRUP_N_1V8}
 N 650 -510 650 -440 {lab=PWRUP_N_1V8}
-N 760 -380 940 -380 {lab=#net1}
-N 760 -350 940 -350 {lab=#net2}
+N 760 -350 940 -350 {lab=#net1}
+N 760 -380 820 -380 {lab=#net2}
+N 880 -380 940 -380 {lab=#net3}
 C {cborder/border_xs.sym} 430 -40 0 0 {
 user="Group 2"
 company=""}
@@ -50,3 +51,4 @@ C {devices/lab_pin.sym} 650 -440 0 1 {name=p11 sig_type=std_logic lab=PWRUP_N_1V
 }
 C {devices/lab_pin.sym} 320 -260 0 0 {name=p12 sig_type=std_logic lab=PWRUP_B_1V8}
 C {devices/lab_pin.sym} 940 -260 0 0 {name=p13 sig_type=std_logic lab=PWRUP_B_1V8}
+C {devices/vsource.sym} 850 -380 3 1 {name=V3 value=0 savecurrent=false}
