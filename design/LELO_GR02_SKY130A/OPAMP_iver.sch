@@ -8,7 +8,7 @@ N -100 -130 -40 -130 {lab=PMOS_GATE}
 N -140 -100 -140 -10 {lab=PMOS_GATE}
 N 70 -100 70 -10 {lab=#net1}
 N -140 -70 -70 -70 {lab=PMOS_GATE}
-N 110 20 150 20 {lab=VIN_P}
+N 110 20 150 20 {lab=#net2}
 N -140 50 -140 80 {lab=TAIL}
 N 70 50 70 80 {lab=TAIL}
 N -40 -130 30 -130 {lab=PMOS_GATE}
@@ -75,7 +75,7 @@ C {devices/ipin.sym} -460 230 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} -150 -240 0 0 {name=p3 lab=PWRUP_N_1V8}
 C {devices/ipin.sym} 150 20 0 1 {name=p4 lab=VIN_P}
 C {devices/opin.sym} 420 0 0 0 {name=p6 lab=VOUT}
-C {JNW_ATR_SKY130A/JNWATR_PCH_2C1F2.sym} -100 -240 0 0 {name=x8 }
+C {JNW_ATR_SKY130A/JNWATR_PCH_8C1F2.sym} -100 -240 0 0 {name=x8 }
 C {devices/lab_wire.sym} 10 -180 0 0 {name=p7 sig_type=std_logic lab=SUPPLY}
 C {devices/lab_wire.sym} -40 -70 2 0 {name=p8 sig_type=std_logic lab=PMOS_GATE}
 C {devices/lab_wire.sym} -30 80 2 0 {name=p10 sig_type=std_logic lab=TAIL}

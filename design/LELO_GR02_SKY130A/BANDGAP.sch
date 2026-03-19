@@ -72,7 +72,7 @@ C {devices/lab_pin.sym} 0 -300 0 1 {name=p6 sig_type=std_logic lab=VDD_1V8
 C {devices/lab_pin.sym} 0 -260 0 1 {name=p7 sig_type=std_logic lab=PWRUP_B_1V8
 
 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} 410 -350 0 0 {name=xpb4[1:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} 410 -350 0 0 {name=xpb4}
 C {devices/lab_pin.sym} 380 -350 0 0 {name=p8 sig_type=std_logic lab=PWRUP_N_1V8
 
 
@@ -118,9 +118,9 @@ C {devices/lab_pin.sym} 400 480 0 0 {name=p24 sig_type=std_logic lab=PWRUP_B_1V8
 }
 C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 280 -190 0 1 {name=x3
 }
-C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 870 -190 0 1 {name=x3[1:0]}
+C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 870 -190 0 1 {name=x3[2:0]}
 C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 600 -190 0 0 {name=x4}
-C {LELO_ATR_SKY130A/LELOATR_NCH_8C1F2.sym} 420 480 0 0 {name=x1[2:0]}
+C {LELO_ATR_SKY130A/LELOATR_NCH_8C1F2.sym} 420 480 0 0 {name=x6}
 C {devices/lab_pin.sym} 570 320 0 1 {name=p26 sig_type=std_logic lab=DIODE_VOLTAGE
 }
 C {devices/lab_pin.sym} 660 80 0 1 {name=p27 sig_type=std_logic lab=VIN_Voltage

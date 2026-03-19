@@ -131,8 +131,8 @@ C {devices/lab_pin.sym} -480 -210 0 1 {name=p26 sig_type=std_logic lab=VDD_1V8}
 C {devices/lab_pin.sym} -180 -290 0 0 {name=p1 sig_type=std_logic lab=VDD_1V8}
 C {devices/lab_wire.sym} -10 80 0 1 {name=p18 sig_type=std_logic lab=BOTTOM}
 C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} -400 -70 1 0 {name=x2 }
-C {LELO_ATR_SKY130A/LELOATR_PCH_8C5F0.sym} -100 -240 0 0 {name=x3[1:0]}
-C {LELO_ATR_SKY130A/LELOATR_NCH_8C1F2.sym} -220 240 0 0 {name=x6[2:0]}
+C {LELO_ATR_SKY130A/LELOATR_PCH_8C5F0.sym} -100 -240 0 0 {name=x3}
+C {LELO_ATR_SKY130A/LELOATR_NCH_8C1F2.sym} -220 240 0 0 {name=x6}
 C {LELO_ATR_SKY130A/LELOATR_LVT_NCH_4C5F0.sym} -360 170 0 1 {name=x5[1:0]}
 C {LELO_ATR_SKY130A/LELOATR_LVT_NCH_4C5F0.sym} 200 170 0 0 {name=x7[1:0]}
 C {LELO_ATR_SKY130A/LELOATR_LVT_NCH_4C5F0.sym} -180 20 0 0 {name=x8}
