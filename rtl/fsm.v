@@ -3,12 +3,12 @@
 module counter_fsm (
     input wire clk,
     input wire rst_n,
-    input wire start,
-    input wire [7:0] cnt_out,
-    output logic pwrupOsc,
-    output logic reset_cnt, 
-    output logic completed,  
-    output logic [7:0] clk_cycles
+    input wire start_i,
+    input wire [7:0] cnt_i,
+    output logic pwrup_osc_o,
+    output logic reset_cnt_o, 
+    output logic completed_o,  
+    output logic [7:0] clk_cycles_o
 );
 
 // Assigning state names to binary values
@@ -35,22 +35,22 @@ always_comb begin
 
     // To avoid inferred latch (ask Carsten)
     next_state = state;
-    reset_cnt  = 1'b0;
-    pwrupOsc   = 1'b0;
-    completed  = 1'b0;
+    reset_cnt_o  = 1'b0;
+    pwrup_osc_o   = 1'b0;
+    completed_o  = 1'b0;
 
     case (state)
 
         IDLE: begin
-            reset_cnt = 1'b1; 
-            if (start)
+            reset_cnt_o = 1'b1; 
+            if (start_i)
                 next_state = PWRUP;
             else
                 next_state = IDLE;
         end
 
         PWRUP: begin
-            pwrupOsc    = 1'b1;
+            pwrup_osc_o = 1'b1;
             next_state  = PWRDWN;
         end
 
@@ -59,7 +59,7 @@ always_comb begin
         end
 
         CAPTURE: begin
-            completed   = 1'b1;
+            completed_o   = 1'b1;
             next_state  = IDLE;
         end
 
@@ -70,9 +70,9 @@ end
 // Data Capture (Sequential)
 always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n)
-        clk_cycles <= 8'b0;
-    else if (state == CAPTURE)
-        clk_cycles <= cnt_out;
+        clk_cycles_o <= 8'b0;
+    else if (state == PWRDWN)
+        clk_cycles_o <= cnt_i;
 end
 
 endmodule
