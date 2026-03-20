@@ -3,7 +3,7 @@
 module sensor_tb;
     // save data for waveform viewer
     initial begin
-        $dumpfile("sensor_tb_sim.vcd");
+        $dumpfile("../sim/LELO_GR02/sensor_tb_sim.vcd");
         $dumpvars(0, sensor_tb);
     end
 
