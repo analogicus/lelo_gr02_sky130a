@@ -64,8 +64,7 @@ N 370 20 370 80 {lab=VOUT}
 N -400 -110 -400 -30 {lab=SUPPLY}
 N 370 -160 370 -90 {lab=SUPPLY}
 N 370 -30 370 20 {lab=VOUT}
-N 70 -60 160 -60 {lab=#net1}
-N 230 -60 330 -60 {lab=#net2}
+N 70 -60 330 -60 {lab=#net1}
 C {devices/ipin.sym} -180 -290 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -460 230 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} -150 -240 0 0 {name=p3 lab=PWRUP_N_1V8}
@@ -94,4 +93,3 @@ C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 30 -130 0 0 {name=x6 }
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -100 -130 0 1 {name=x11 }
 C {LELO_ATR_SKY130A/LELOATR_LVT_PCH_4C5F0.sym} 330 -60 0 0 {name=x1}
 C {devices/lab_wire.sym} 400 110 0 1 {name=p16 sig_type=std_logic lab=VSS}
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 220 -60 3 0 {name=x5 }
