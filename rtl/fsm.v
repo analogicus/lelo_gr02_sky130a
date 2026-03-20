@@ -1,10 +1,10 @@
 `timescale 1 ns / 1 ps
 
 module counter_fsm (
-    input wire clk,
-    input wire rst_n,
-    input wire start_i,
-    input wire [7:0] cnt_i,
+    input logic clk,
+    input logic rst_n,
+    input logic start_i,
+    input logic [7:0] cnt_i,
     output logic pwrup_osc_o,
     output logic reset_cnt_o, 
     output logic completed_o,  

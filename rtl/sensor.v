@@ -1,10 +1,10 @@
 `timescale 1 ns / 1 ps
 
 module sensor (
-    input  wire clk,
-    input  wire rst_n,
-    input  wire start_i,
-    input  wire osc_i,
+    input  logic clk,
+    input  logic rst_n,
+    input  logic start_i,
+    input  logic osc_i,
     output logic completed_o,
     output logic [7:0] clk_cycles_o
 );

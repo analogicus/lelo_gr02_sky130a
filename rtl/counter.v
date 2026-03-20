@@ -1,8 +1,8 @@
 `timescale 1 ns / 1 ps
 
 module counter (
-    input  wire osc_i,
-    input  wire reset_cnt_i,
+    input  logic osc_i,
+    input  logic reset_cnt_i,
     output logic [7:0] cnt_o
 );
 
