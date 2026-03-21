@@ -91,11 +91,22 @@ module sensor_tb;
     integer expected;
     real temp_step;
 
+    // generate start signal whenever completed goes high (asap, same cylce for maximum stresstest)
+    logic first_start_done;
+
+    // start is high if it's the first start or completed is high
+    assign start = (!first_start_done) ? 1'b1 : completed;
+
+    // kickstart logic for start signal
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n)
+            first_start_done <= 0;
+        else
+            first_start_done <= 1;
+    end
+
     initial begin
         $display("+++ TESTING SENSOR +++");
-
-        rst_n = 0;
-        start = 0;
 
         // settings
         temp = 0.0;
@@ -103,7 +114,7 @@ module sensor_tb;
         temp_step = 5.0;
         
         period = temp_to_period(temp);
-
+        rst_n = 0;
         pass_cnt = 0;
         fail_cnt = 0;
 
@@ -111,13 +122,7 @@ module sensor_tb;
         rst_n = 1;
 
         repeat (20) begin
-            #100us;
-
             period = temp_to_period(temp);
-
-            // start and stop measurement
-            @(posedge clk); start = 1;
-            @(posedge clk); start = 0;
 
             // wait for FSM completion
             @(posedge completed);

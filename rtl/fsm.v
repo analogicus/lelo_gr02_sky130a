@@ -14,10 +14,10 @@ module counter_fsm #(
 );
 
 // Assigning state names to binary values
-parameter IDLE    = 2'b00;
-parameter PWRUP   = 2'b01;
-parameter PWRDWN  = 2'b10;
-parameter CAPTURE = 2'b11;
+// DO NOT UPDATE WITHOUT CHANGING ASSERTION OF completed_o SIGNAL
+localparam IDLE    = 2'b00;
+localparam CNT     = 2'b01;
+localparam CAPTURE = 2'b10;
 
 // Defining a register which stores current and next state
 logic [1:0] state;
@@ -34,46 +34,48 @@ end
 
 // Function of the FSM (Combinational)
 always_comb begin   
-
     // To avoid inferred latch (ask Carsten)
     next_state = state;
     reset_cnt_o  = 1'b0;
     pwrup_osc_o   = 1'b0;
-    completed_o  = 1'b0;
 
     case (state)
-
         IDLE: begin
             reset_cnt_o = 1'b1; 
-            if (start_i)
-                next_state = PWRUP;
-            else
+            if (start_i) begin
+                next_state = CNT;
+            end else
                 next_state = IDLE;
         end
 
-        PWRUP: begin
+        CNT: begin
             pwrup_osc_o = 1'b1;
-            next_state  = PWRDWN;
-        end
-
-        PWRDWN: begin
             next_state  = CAPTURE;
         end
 
         CAPTURE: begin
-            completed_o   = 1'b1;
             next_state  = IDLE;
         end
 
+        default:
+            next_state  = IDLE;
     endcase
     
 end
 
-// Data Capture (Sequential)
+// assert complete signal
+always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n)
+        completed_o <= 1'b0;
+    else
+        completed_o <= state[1];
+end
+
+// capture counter value
 always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n)
         clk_cycles_o <= '0;
-    else if (state == PWRDWN)
+    else if (state == CAPTURE)
         clk_cycles_o <= cnt_i;
 end
 
