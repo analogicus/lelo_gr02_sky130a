@@ -1,20 +1,24 @@
 `timescale 1 ns / 1 ps
 
-module sensor (
+module sensor #(
+    parameter CNT_WIDTH = 8
+)(
     input  logic clk,
     input  logic rst_n,
     input  logic start_i,
     input  logic osc_i,
     output logic completed_o,
-    output logic [7:0] clk_cycles_o
+    output logic [CNT_WIDTH-1:0] clk_cycles_o
 );
 
 logic pwrup_osc;
 logic reset_cnt;
-logic [7:0] cnt;
+logic [CNT_WIDTH-1:0] cnt;
 
 // FSM instance
-counter_fsm u_fsm (
+counter_fsm #(
+    .CNT_WIDTH(CNT_WIDTH)
+) u_fsm (
     .clk(clk),
     .rst_n(rst_n),
     .start_i(start_i),
@@ -26,7 +30,9 @@ counter_fsm u_fsm (
 );
 
 // Counter instance
-counter u_counter (
+counter #(
+    .CNT_WIDTH(CNT_WIDTH)
+) u_counter (
     .osc_i(osc_i & pwrup_osc), // idea: only count when powered
     //.osc_i(osc_i),
     .reset_cnt_i(reset_cnt),

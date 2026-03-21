@@ -7,6 +7,8 @@ module sensor_tb;
         $dumpvars(0, sensor_tb);
     end
 
+    parameter CNT_WIDTH = 9;
+
     // ---------
     // Signal generation
     // ---------
@@ -15,10 +17,10 @@ module sensor_tb;
     logic start;
     logic osc;
     logic completed;
-    logic [7:0] clk_cycles;
+    logic [CNT_WIDTH-1:0] clk_cycles;
 
     // DUT
-    sensor dut (
+    sensor #(.CNT_WIDTH(CNT_WIDTH)) dut (
         .clk(clk),
         .rst_n(rst_n),
         .start_i(start),
@@ -44,7 +46,7 @@ module sensor_tb;
         temp_table[1] =  20.0;  period_table[1] = 500.0;
         temp_table[2] =  40.0;  period_table[2] = 400.0;
         temp_table[3] =  60.0;  period_table[3] = 300.0;
-        temp_table[4] =  80.0;  period_table[4] = 200.0;
+        temp_table[4] =  80.0;  period_table[4] = 100.0;
     end
 
     // linear interpolation

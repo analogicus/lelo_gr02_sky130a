@@ -1,14 +1,16 @@
 `timescale 1 ns / 1 ps
 
-module counter_fsm (
+module counter_fsm #(
+    parameter CNT_WIDTH = 8
+)(
     input logic clk,
     input logic rst_n,
     input logic start_i,
-    input logic [7:0] cnt_i,
+    input logic [CNT_WIDTH-1:0] cnt_i,
     output logic pwrup_osc_o,
     output logic reset_cnt_o, 
     output logic completed_o,  
-    output logic [7:0] clk_cycles_o
+    output logic [CNT_WIDTH-1:0] clk_cycles_o
 );
 
 // Assigning state names to binary values
@@ -70,7 +72,7 @@ end
 // Data Capture (Sequential)
 always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n)
-        clk_cycles_o <= 8'b0;
+        clk_cycles_o <= '0;
     else if (state == PWRDWN)
         clk_cycles_o <= cnt_i;
 end
