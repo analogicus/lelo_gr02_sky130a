@@ -92,6 +92,8 @@ module sensor_tb;
     real temp_step;
 
     initial begin
+        $display("+++ TESTING SENSOR +++");
+
         rst_n = 0;
         start = 0;
 
@@ -142,6 +144,7 @@ module sensor_tb;
 
         if (fail_cnt == 0) $display("ALL TESTS PASSED");
         else $display("TESTS FAILED");
+        $display("+++ TESTING SENSOR DONE +++");
 
         #100us;
         $finish;
