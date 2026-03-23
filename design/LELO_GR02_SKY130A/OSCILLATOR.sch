@@ -62,10 +62,10 @@ C {devices/ipin.sym} -280 -20 0 0 {name=p6 lab=V_CTAT}
 C {devices/ipin.sym} -280 20 0 0 {name=p7 lab=I_PTAT}
 C {JNW_TR_SKY130A/JNWTR_DFRNQNX1_CV.sym} 400 0 0 0 {name=x6 }
 C {devices/lab_wire.sym} 270 0 1 0 {name=p8 sig_type=std_logic lab=OTA_OUTPUT}
-C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} -220 100 2 0 {name=x13[2:0]}
+C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} -220 150 0 1 {name=x13[2:0]}
 C {LELO_GR02_SKY130A/OPAMP_iver.sym} -60 -90 1 0 {name=x7}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -20 70 2 0 {name=x3 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} -40 -160 0 0 {name=x2}
+C {JNW_ATR_SKY130A/JNWATR_NCH_2C5F0.sym} -20 70 2 0 {name=x3 }
+C {JNW_ATR_SKY130A/JNWATR_PCH_8C1F2.sym} -40 -160 0 0 {name=x2}
 C {devices/lab_wire.sym} 0 -110 0 1 {name=p13 sig_type=std_logic lab=VDD_GATED}
 C {devices/lab_wire.sym} 460 -100 0 0 {name=p14 sig_type=std_logic lab=VDD_GATED}
 C {devices/lab_wire.sym} 430 40 3 0 {name=p11 sig_type=std_logic lab=VDD_GATED}
@@ -75,4 +75,4 @@ C {devices/lab_wire.sym} 30 210 1 1 {name=p16 sig_type=std_logic lab=VSS_GATED}
 C {devices/lab_wire.sym} 460 40 1 1 {name=p9 sig_type=std_logic lab=VSS_GATED}
 C {devices/lab_wire.sym} 650 -20 1 1 {name=p12 sig_type=std_logic lab=VSS_GATED}
 C {devices/lab_wire.sym} 570 -80 1 0 {name=p17 sig_type=std_logic lab=PWRUP_B_1V8}
-C {JNW_ATR_SKY130A/JNWATR_NCH_8C5F0.sym} -130 270 0 0 {name=x1}
+C {JNW_ATR_SKY130A/JNWATR_NCH_8C1F2.sym} -130 270 0 0 {name=x1}

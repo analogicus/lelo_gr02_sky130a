@@ -4,129 +4,131 @@ K {}
 V {}
 S {}
 E {}
-L 4 -0 -440 -0 590 {}
-L 4 -0 -440 1080 -440 {}
-L 4 1090 -440 1090 510 {}
-L 4 1080 -440 1090 -440 {}
-N 510 -160 660 -160 {lab=Vout}
-N 340 -160 510 -160 {lab=Vout}
-N 300 -250 300 -190 {lab=POWERGATING_PMOS}
-N 300 -250 510 -250 {lab=POWERGATING_PMOS}
-N 510 -270 510 -250 {lab=POWERGATING_PMOS}
-N 440 -320 470 -320 {lab=PWRUP_N_1V8}
-N 510 -370 510 -350 {lab=VDD_1V8}
-N 510 -320 540 -320 {lab=VDD_1V8}
-N 540 -370 540 -320 {lab=VDD_1V8}
-N 510 -370 540 -370 {lab=VDD_1V8}
-N 300 110 450 110 {lab=V_CTAT}
-N 510 -140 560 -140 {lab=Vout}
-N 510 -250 700 -250 {lab=POWERGATING_PMOS}
-N 450 240 450 360 {lab=V_CTAT}
-N 520 540 520 560 {lab=VSS}
-N 700 -250 700 -190 {lab=POWERGATING_PMOS}
-N 440 -370 510 -370 {lab=VDD_1V8}
-N 300 560 520 560 {lab=VSS}
-N 570 350 570 360 {lab=#net1}
-N 570 110 570 130 {lab=#net2}
-N 890 -250 890 -190 {lab=POWERGATING_PMOS}
-N 700 -250 890 -250 {lab=POWERGATING_PMOS}
-N 890 -110 920 -110 {lab=I_PTAT}
-N 300 110 300 140 {lab=V_CTAT}
-N 300 140 310 140 {lab=V_CTAT}
-N 300 -130 300 110 {lab=V_CTAT}
-N 700 -130 700 110 {lab=#net2}
-N 510 -250 510 -240 {lab=POWERGATING_PMOS}
-N 890 -130 890 -110 {lab=I_PTAT}
-N 510 -140 510 -110 {lab=Vout}
-N 450 110 480 110 {lab=V_CTAT}
-N 540 110 570 110 {lab=#net2}
-N 570 110 700 110 {lab=#net2}
-N 520 560 560 560 {lab=VSS}
-N 460 510 480 510 {lab=PWRUP_B_1V8}
-N 560 510 560 560 {lab=VSS}
-N 520 510 560 510 {lab=VSS}
-N 520 450 520 480 {lab=POWERGATING_NMOS}
-N 510 -290 510 -270 {lab=POWERGATING_PMOS}
-N 510 -270 540 -270 {lab=POWERGATING_PMOS}
-N 700 110 720 110 {lab=#net2}
-N 520 450 570 450 {lab=POWERGATING_NMOS}
-N 930 -160 960 -160 {lab=Vout}
-N 280 -160 300 -160 {lab=VDD_1V8}
-N 510 -170 510 -160 {lab=Vout}
-N 510 -160 510 -140 {lab=Vout}
-N 570 340 570 350 {lab=#net1}
-N 520 440 520 450 {lab=POWERGATING_NMOS}
-N 570 130 570 150 {lab=#net2}
-N 570 230 570 260 {lab=#net1}
-N 450 110 450 240 {lab=V_CTAT}
-N 570 260 570 340 {lab=#net1}
-N 490 100 490 110 {lab=V_CTAT}
-N 480 110 490 110 {lab=V_CTAT}
-N 490 90 490 100 {lab=V_CTAT}
-N 530 90 530 110 {lab=#net2}
-N 530 110 540 110 {lab=#net2}
-C {devices/ipin.sym} 210 220 0 0 {name=p1 lab=VDD_1V8}
-C {devices/ipin.sym} 210 330 0 0 {name=p2 lab=VSS}
-C {devices/ipin.sym} 210 260 0 0 {name=p3 lab=PWRUP_B_1V8}
-C {devices/opin.sym} 920 -110 0 0 {name=p4 lab=I_PTAT}
-C {devices/opin.sym} 310 140 0 0 {name=p5 lab=V_CTAT}
-C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} 470 -320 0 0 {name=xpb4}
-C {devices/lab_pin.sym} 440 -320 0 0 {name=p8 sig_type=std_logic lab=PWRUP_N_1V8
+N 450 -190 600 -190 {lab=Vout}
+N 280 -190 450 -190 {lab=Vout}
+N 240 -280 240 -220 {lab=POWERGATING_PMOS}
+N 240 -280 450 -280 {lab=POWERGATING_PMOS}
+N 450 -300 450 -280 {lab=POWERGATING_PMOS}
+N 380 -350 410 -350 {lab=PWRUP_N_1V8}
+N 450 -400 450 -380 {lab=VDD_1V8}
+N 450 -350 480 -350 {lab=VDD_1V8}
+N 480 -400 480 -350 {lab=VDD_1V8}
+N 450 -400 480 -400 {lab=VDD_1V8}
+N 240 80 390 80 {lab=V_CTAT}
+N 450 -170 500 -170 {lab=Vout}
+N 450 -280 640 -280 {lab=POWERGATING_PMOS}
+N 390 210 390 330 {lab=V_CTAT}
+N 460 510 460 530 {lab=VSS}
+N 640 -280 640 -220 {lab=POWERGATING_PMOS}
+N 380 -400 450 -400 {lab=VDD_1V8}
+N 240 530 460 530 {lab=VSS}
+N 510 320 510 330 {lab=DIODE_VOLTAGE}
+N 510 80 510 100 {lab=VIN_Voltage}
+N 830 -280 830 -220 {lab=POWERGATING_PMOS}
+N 640 -280 830 -280 {lab=POWERGATING_PMOS}
+N 830 -140 860 -140 {lab=I_PTAT}
+N 240 80 240 110 {lab=V_CTAT}
+N 240 110 250 110 {lab=V_CTAT}
+N 240 -160 240 80 {lab=V_CTAT}
+N 640 -160 640 80 {lab=VIN_Voltage}
+N 450 -280 450 -270 {lab=POWERGATING_PMOS}
+N 830 -160 830 -140 {lab=I_PTAT}
+N 450 -170 450 -140 {lab=Vout}
+N 390 80 420 80 {lab=V_CTAT}
+N 480 80 510 80 {lab=VIN_Voltage}
+N 510 80 640 80 {lab=VIN_Voltage}
+N 460 530 500 530 {lab=VSS}
+N 400 480 420 480 {lab=PWRUP_B_1V8}
+N 500 480 500 530 {lab=VSS}
+N 460 480 500 480 {lab=VSS}
+N 460 420 460 450 {lab=POWERGATING_NMOS}
+N 450 -320 450 -300 {lab=POWERGATING_PMOS}
+N 450 -300 480 -300 {lab=POWERGATING_PMOS}
+N 510 320 570 320 {lab=DIODE_VOLTAGE}
+N 640 80 660 80 {lab=VIN_Voltage}
+N 460 420 510 420 {lab=POWERGATING_NMOS}
+N 870 -190 900 -190 {lab=Vout}
+N 220 -190 240 -190 {lab=VDD_1V8}
+N 450 -200 450 -190 {lab=Vout}
+N 450 -190 450 -170 {lab=Vout}
+N 510 310 510 320 {lab=DIODE_VOLTAGE}
+N 460 410 460 420 {lab=POWERGATING_NMOS}
+N 510 100 510 120 {lab=VIN_Voltage}
+N 510 200 510 230 {lab=DIODE_VOLTAGE}
+N 390 80 390 210 {lab=V_CTAT}
+N 510 230 510 310 {lab=DIODE_VOLTAGE}
+N 430 70 430 80 {lab=V_CTAT}
+N 420 80 430 80 {lab=V_CTAT}
+N 430 60 430 70 {lab=V_CTAT}
+N 470 60 470 80 {lab=VIN_Voltage}
+N 470 80 480 80 {lab=VIN_Voltage}
+C {devices/ipin.sym} 0 -300 0 0 {name=p1 lab=VDD_1V8}
+C {devices/ipin.sym} 0 480 0 0 {name=p2 lab=VSS}
+C {devices/ipin.sym} 0 -260 0 0 {name=p3 lab=PWRUP_B_1V8}
+C {devices/opin.sym} 860 -140 0 0 {name=p4 lab=I_PTAT}
+C {devices/opin.sym} 250 110 0 0 {name=p5 lab=V_CTAT}
+C {devices/lab_pin.sym} 0 -300 0 1 {name=p6 sig_type=std_logic lab=VDD_1V8
+}
+C {devices/lab_pin.sym} 0 -260 0 1 {name=p7 sig_type=std_logic lab=PWRUP_B_1V8
+
+}
+C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} 410 -350 0 0 {name=xpb4}
+C {devices/lab_pin.sym} 380 -350 0 0 {name=p8 sig_type=std_logic lab=PWRUP_N_1V8
 
 
 }
-C {devices/lab_pin.sym} 440 -370 0 0 {name=p9 sig_type=std_logic lab=VDD_1V8
+C {devices/lab_pin.sym} 380 -400 0 0 {name=p9 sig_type=std_logic lab=VDD_1V8
 }
-C {devices/lab_pin.sym} 550 -10 0 1 {name=p12 sig_type=std_logic lab=VSS
+C {devices/lab_pin.sym} 0 480 0 1 {name=p11 sig_type=std_logic lab=VSS
 }
-C {devices/lab_pin.sym} 470 -10 0 0 {name=p14 sig_type=std_logic lab=VDD_1V8
+C {devices/lab_pin.sym} 490 -40 0 1 {name=p12 sig_type=std_logic lab=VSS
+}
+C {devices/lab_pin.sym} 410 -40 0 0 {name=p14 sig_type=std_logic lab=VDD_1V8
 
 }
-C {devices/lab_pin.sym} 560 -140 0 1 {name=p15 sig_type=std_logic lab=Vout
-
-
-}
-C {devices/lab_pin.sym} 960 -160 0 1 {name=p16 sig_type=std_logic lab=Vout
+C {devices/lab_pin.sym} 500 -170 0 1 {name=p15 sig_type=std_logic lab=Vout
 
 
 }
-C {LELO_GR02_SKY130A/BANDGAP_DIODE.sym} 410 390 0 0 {name=x8}
-C {devices/lab_pin.sym} 300 560 0 0 {name=p10 sig_type=std_logic lab=VSS
+C {devices/lab_pin.sym} 900 -190 0 1 {name=p16 sig_type=std_logic lab=Vout
+
+
 }
-C {devices/lab_pin.sym} 280 -160 0 0 {name=p17 sig_type=std_logic lab=VDD_1V8
+C {LELO_GR02_SKY130A/BANDGAP_DIODE.sym} 350 360 0 0 {name=x8}
+C {devices/lab_pin.sym} 240 530 0 0 {name=p10 sig_type=std_logic lab=VSS
 }
-C {devices/lab_pin.sym} 700 -160 0 1 {name=p18 sig_type=std_logic lab=VDD_1V8
+C {devices/lab_pin.sym} 220 -190 0 0 {name=p17 sig_type=std_logic lab=VDD_1V8
 }
-C {devices/lab_pin.sym} 890 -160 0 0 {name=p19 sig_type=std_logic lab=VDD_1V8
+C {devices/lab_pin.sym} 640 -190 0 1 {name=p18 sig_type=std_logic lab=VDD_1V8
 }
-C {devices/ipin.sym} 210 300 0 0 {name=p21 lab=PWRUP_N_1V8}
-C {devices/lab_pin.sym} 450 50 0 0 {name=p13 sig_type=std_logic lab=PWRUP_N_1V8}
-C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} 420 180 0 0 {name=x2}
-C {cborder/border_xs.sym} 0 610 0 0 {
+C {devices/lab_pin.sym} 830 -190 0 0 {name=p19 sig_type=std_logic lab=VDD_1V8
+}
+C {devices/ipin.sym} 0 -220 0 0 {name=p21 lab=PWRUP_N_1V8}
+C {devices/lab_pin.sym} 0 -220 0 1 {name=p22 sig_type=std_logic lab=PWRUP_N_1V8
+
+}
+C {devices/lab_pin.sym} 390 20 0 0 {name=p13 sig_type=std_logic lab=PWRUP_N_1V8}
+C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} 360 150 0 0 {name=x2}
+C {cborder/border_xs.sym} -30 590 0 0 {
 user="Group 2"
 company=""}
-C {devices/lab_pin.sym} 460 20 0 0 {name=p23 sig_type=std_logic lab=PWRUP_B_1V8}
-C {devices/lab_pin.sym} 460 510 0 0 {name=p24 sig_type=std_logic lab=PWRUP_B_1V8
+C {devices/lab_pin.sym} 400 -10 0 0 {name=p23 sig_type=std_logic lab=PWRUP_B_1V8}
+C {devices/lab_pin.sym} 400 480 0 0 {name=p24 sig_type=std_logic lab=PWRUP_B_1V8
 
 }
-C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 340 -160 0 1 {name=x1[1:0]
+C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 280 -190 0 1 {name=x3
 }
-C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 930 -160 0 1 {name=x3[1:0]}
-C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 660 -160 0 0 {name=x4}
-C {LELO_ATR_SKY130A/LELOATR_NCH_8C1F2.sym} 480 510 0 0 {name=x6}
-C {devices/lab_pin.sym} 570 450 0 1 {name=p28 sig_type=std_logic lab=POWERGATING_NMOS
+C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 870 -190 0 1 {name=x3[2:0]}
+C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 600 -190 0 0 {name=x4}
+C {LELO_ATR_SKY130A/LELOATR_NCH_8C1F2.sym} 420 480 0 0 {name=x6}
+C {devices/lab_pin.sym} 570 320 0 1 {name=p26 sig_type=std_logic lab=DIODE_VOLTAGE
 }
-C {devices/lab_pin.sym} 540 -270 0 1 {name=p25 sig_type=std_logic lab=POWERGATING_PMOS}
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 510 -180 0 0 {name=x5}
-C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} 570 150 1 0 {name=x1 }
-C {devices/lab_pin.sym} 550 190 0 0 {name=p29 sig_type=std_logic lab=VSS
+C {devices/lab_pin.sym} 660 80 0 1 {name=p27 sig_type=std_logic lab=VIN_Voltage
 }
-C {devices/lab_pin.sym} 210 300 0 1 {name=p6 sig_type=std_logic lab=PWRUP_N_1V8
-
-
+C {devices/lab_pin.sym} 510 420 0 1 {name=p28 sig_type=std_logic lab=POWERGATING_NMOS
 }
-C {devices/lab_pin.sym} 210 260 0 1 {name=p7 sig_type=std_logic lab=PWRUP_B_1V8}
-C {devices/lab_pin.sym} 210 220 0 1 {name=p11 sig_type=std_logic lab=VDD_1V8
-}
-C {devices/lab_pin.sym} 210 330 0 1 {name=p20 sig_type=std_logic lab=VSS
+C {devices/lab_pin.sym} 480 -300 0 1 {name=p25 sig_type=std_logic lab=POWERGATING_PMOS}
+C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 450 -210 0 0 {name=x5}
+C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} 510 120 1 0 {name=x1 }
+C {devices/lab_pin.sym} 490 160 0 0 {name=p29 sig_type=std_logic lab=VSS
 }
