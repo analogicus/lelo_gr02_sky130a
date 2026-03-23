@@ -23,10 +23,10 @@ custom: netlist
 	cicsim run --replace replace.yaml --name ${VIEW}_custom ${TB} ${OPT} ${VIEW} Gt "${CORNER}" "${T}" "${V}"
 
 slow: netlist
-	cicsim run --replace replace.yaml --name ${VIEW}_slow ${TB} ${OPT} ${VIEW} Gt Kss "Th,Tl" Vl
+	cicsim run --replace replace.yaml --name ${VIEW}_slow ${TB} ${OPT} ${VIEW} Gt Kss Tl Vl
 
 fast: netlist
-	cicsim run --replace replace.yaml --name ${VIEW}_fast ${TB} ${OPT} ${VIEW} Gt Kff "Th,Tl" Vh
+	cicsim run --replace replace.yaml --name ${VIEW}_fast ${TB} ${OPT} ${VIEW} Gt Kff Th Vh
 
 tfs: netlist
 	cicsim run --replace replace.yaml --name ${VIEW}_tfs ${TB} ${OPT} ${VIEW} Gt "Ktt,Kss,Kff" "Tt,Th,Tl" "Vt,Vl,Vh"
@@ -36,6 +36,9 @@ etc: netlist
 
 sf: netlist
 	cicsim run --replace replace.yaml --name ${VIEW}_etc ${TB} ${OPT} ${VIEW} Gt "Ksf" "Th,Tl" "Vl,Vh"
+
+fs: netlist
+	cicsim run --replace replace.yaml --name ${VIEW}_etc ${TB} ${OPT} ${VIEW} Gt "Kfs" "Th,Tl" "Vl,Vh"
 
 mc: netlist
 	cicsim run --replace replace.yaml --name ${VIEW}_mc --count 30 ${TB} ${OPT} ${VIEW} Gt "Kttmm" "Tt" "Vt"

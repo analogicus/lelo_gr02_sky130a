@@ -36,7 +36,7 @@ N -100 -160 -100 -60 {lab=PWRUP_N_1V8}
 N 30 -200 100 -200 {lab=VDD_1V8}
 N 100 -200 100 -50 {lab=VDD_1V8}
 N -0 -130 -0 -110 {lab=VDD_GATED}
-N 650 -30 650 -20 {lab=VSS}
+N 650 -30 650 -20 {lab=VSS_GATED}
 N 650 -120 650 -110 {lab=VDD_GATED}
 N 580 -60 610 -60 {lab=#net2}
 N 500 -0 530 -0 {lab=#net1}
@@ -64,7 +64,7 @@ C {JNW_TR_SKY130A/JNWTR_DFRNQNX1_CV.sym} 400 0 0 0 {name=x6 }
 C {devices/lab_wire.sym} 270 0 1 0 {name=p8 sig_type=std_logic lab=OTA_OUTPUT}
 C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} -220 150 0 1 {name=x13[2:0]}
 C {LELO_GR02_SKY130A/OPAMP_iver.sym} -60 -90 1 0 {name=x7}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -20 70 2 0 {name=x3 }
+C {JNW_ATR_SKY130A/JNWATR_NCH_2C5F0.sym} -20 70 2 0 {name=x3 }
 C {JNW_ATR_SKY130A/JNWATR_PCH_8C1F2.sym} -40 -160 0 0 {name=x2}
 C {devices/lab_wire.sym} 0 -110 0 1 {name=p13 sig_type=std_logic lab=VDD_GATED}
 C {devices/lab_wire.sym} 460 -100 0 0 {name=p14 sig_type=std_logic lab=VDD_GATED}
