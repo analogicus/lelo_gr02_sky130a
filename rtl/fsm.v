@@ -63,20 +63,16 @@ always_comb begin
     
 end
 
-// assert complete signal
+// capture counter value and assert complete signal
 always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n)
-        completed_o <= 1'b0;
-    else
-        completed_o <= state[1];
-end
-
-// capture counter value
-always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n)
+    completed_o <= 1'b0;
+    if (!rst_n) begin
         clk_cycles_o <= '0;
-    else if (state == CAPTURE)
+        completed_o <= 1'b1;
+    end else if (state == CAPTURE) begin
         clk_cycles_o <= cnt_i;
+        completed_o <= 1'b1;
+    end
 end
 
 endmodule

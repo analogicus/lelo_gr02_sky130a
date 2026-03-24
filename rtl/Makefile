@@ -1,6 +1,6 @@
-.PHONY: all compile_sensor sim_sensor compile_counter sim_counter
+.PHONY: all compile_sensor sim_sensor compile_counter sim_counter place_sensor
 
-all: sim_sensor
+all: sim_sensor place_sensor
 
 compile_sensor:
 	iverilog -g2012 -o ../sim/LELO_GR02/sensor_tb_sim.out sensor_tb.v sensor.v fsm.v counter.v
@@ -13,3 +13,6 @@ compile_counter:
 
 sim_counter: compile_counter
 	vvp ../sim/LELO_GR02/counter_tb_sim.out
+
+place_sensor:
+	yosys -p "read_verilog -sv sensor.v fsm.v counter.v; synth -top sensor; stat" > place_log.txt
