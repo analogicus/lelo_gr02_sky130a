@@ -42,7 +42,6 @@ endgenerate
 // Counter + FSM
 
 logic pwrup_osc;
-logic reset_cnt;
 logic [CNT_WIDTH-1:0] cnt;
 
 // FSM instance
@@ -54,7 +53,6 @@ counter_fsm #(
     .start_i(start_sync),
     .cnt_i(cnt),
     .pwrup_osc_o(pwrup_osc),
-    .reset_cnt_o(reset_cnt),
     .completed_o(completed_o),
     .clk_cycles_o(clk_cycles_o)
 );
@@ -65,7 +63,7 @@ counter #(
 ) u_counter (
     .osc_i(osc_i & pwrup_osc), // idea: only count when powered
     //.osc_i(osc_i),
-    .reset_cnt_i(reset_cnt),
+    .reset_cnt_i(completed_o),
     .cnt_o(cnt)
 );
 

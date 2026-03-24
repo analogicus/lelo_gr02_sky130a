@@ -8,16 +8,14 @@ module counter_fsm #(
     input logic start_i,
     input logic [CNT_WIDTH-1:0] cnt_i,
     output logic pwrup_osc_o,
-    output logic reset_cnt_o, 
-    output logic completed_o,  
+    output logic completed_o,
     output logic [CNT_WIDTH-1:0] clk_cycles_o
 );
 
 // Assigning state names to binary values
-// DO NOT UPDATE WITHOUT CHANGING ASSERTION OF completed_o SIGNAL
-localparam IDLE    = 2'b00;
-localparam CNT     = 2'b01;
-localparam CAPTURE = 2'b10;
+localparam IDLE    = 2'b01;
+localparam CNT     = 2'b10;
+localparam CAPTURE = 2'b00;
 
 // Defining a register which stores current and next state
 logic [1:0] state;
@@ -36,12 +34,12 @@ end
 always_comb begin   
     // To avoid inferred latch (ask Carsten)
     next_state = state;
-    reset_cnt_o  = 1'b0;
-    pwrup_osc_o   = 1'b0;
+
+    completed_o = state[0];
+    pwrup_osc_o = state[1];
 
     case (state)
         IDLE: begin
-            reset_cnt_o = 1'b1; 
             if (start_i) begin
                 next_state = CNT;
             end else
@@ -49,7 +47,6 @@ always_comb begin
         end
 
         CNT: begin
-            pwrup_osc_o = 1'b1;
             next_state  = CAPTURE;
         end
 
@@ -60,18 +57,14 @@ always_comb begin
         default:
             next_state  = IDLE;
     endcase
-    
 end
 
 // capture counter value and assert complete signal
 always_ff @(posedge clk or negedge rst_n) begin
-    completed_o <= 1'b0;
     if (!rst_n) begin
         clk_cycles_o <= '0;
-        completed_o <= 1'b1;
     end else if (state == CAPTURE) begin
         clk_cycles_o <= cnt_i;
-        completed_o <= 1'b1;
     end
 end
 
