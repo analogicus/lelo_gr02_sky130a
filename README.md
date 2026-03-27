@@ -91,9 +91,9 @@ make typical
 ```
 ## Milestone 3 - The Measurement
 
-With the oscillator from Milestone 2 and the bandgap from Milestone 1 implemented, the next step is to measure the oscillator frequency. The implemented temperature sensor only outputs measurements while the PWRUP signal remains high (1.8 V). To measure the frequency, a circuit that controlls the PWRUP signal is required. This functionality will be implemented in Verilog.
+With the oscillator from Milestone 2 and the bandgap from Milestone 1 implemented, the next step is to measure the oscillator frequency. The implemented temperature sensor only oscillates while the PWRUP signal remains high (1.8 V). To count the oscillations per system clock cycle, and thus measure the frequency, a circuit that controlls the PWRUP signal is required. This functionality will be implemented in Verilog.
 
-### The Counter
+### The Counter (counter.v)
 
 <img alt="image" src="https://github.com/user-attachments/assets/005c436e-d5e1-4795-b4a2-e7224f3a7492" />
 
@@ -108,117 +108,41 @@ Use `make sim_counter` in the `rtl` directory to run the automated tests and che
 
 
 
-### The Finite State Machine 
+### The Finite State Machine (fsm.v)
 
-With the counter implemented above, it is now possible to count the clock cycles from the temperature sensor. However, the counter requires a reset signal to stop counting, while the temperature sensor requires PWRUP to remain high in order to produce oscillation. To control both the counter and the sensor signal, a finite state machine (FSM) is used. 
+With the counter implemented as shown above, it is now possible to count the clock cycles from the temperature sensor. To control both the counter and the sensor signal, a finite state machine (FSM) is used. 
 
 #### Module Ports
 
 | Port Type | Name | Description | Connection |
 | :--- | :--- | :--- | :--- |
-| Input | `clk` | 33 MHz system clock (from Tiny Tapeout). | External signal |
+| Input | `clk` | System clock (from Tiny Tapeout). | External signal |
 | Input | `rst_n` | Active-low reset signal used to reset the entire FSM. | External signal (User) |
-| Input | `start` | Initiates the FSM, starting the temperature sensor and its measurements. | External signal (User) |
-| Input | `cnt_out` | 8-bit count value from the counter module. | Connected to counter.v output |
-| Output | `pwrupOsc` | Power-up signal used to turn on the analog temperature sensor. | Connected to PWRUP port in Xschem |
-| Output | `reset_cnt` | Active-high signal that resets the external counter. | Connected to counter.v reset |
-| Output | `completed` | Flag indicating that the measurement is finished and data is ready. | Sent to measurement file|
-| Output | `clk_cycles` | 8-bit output holding the captured oscillator clock cycles. | Sent to measurement file|
+| Input | `start_i` | Starts the temperature measurement. | External signal (User) |
+| Input | `cnt_i` | Counter value from the counter module. | Connected to counter's output. |
+| Output | `pwrup_osc_o` | Power-up signal used to turn on the analog temperature sensor. | Connected to PWRUP port on analog design. |
+| Output | `reset_cnt_o` | Active-high signal that resets the counter. | Connected to counter's reset. |
+| Output | `completed_o` | Flag indicating that the measurement is finished and data is ready. | Use as needed. |
+| Output | `clk_cycles_o` | Number of counted clock cycles. | Use as needed. |
 
-<img alt="FSM Diagram" src="https://github.com/user-attachments/assets/38063d81-6b8a-4cd9-8fe7-b385211ce12f" />
+<img width="100%" alt="image" src="https://github.com/user-attachments/assets/ab44c405-4498-4352-9da3-bdc5143d296c" />
+
 
 #### State Flow & Behavior
 
-The state machine uses four states:
+The state machine uses three states:
 
 * **Global Reset:** At any time, pulling rst_n low will asynchronously reset the FSM back to the IDLE state.
-* **IDLE:** The FSM rests here by default. It holds the counter in reset (reset_cnt = 1) and keeps the temperature sensor powered off (pwrupOsc = 0). It waits here until the user drives the start signal high.
-* **PWRUP:** Triggered by the start signal. The counter reset is released (reset_cnt = 0), and the temperature sensor is powered on (pwrupOsc = 1). After one clock cycle, it automatically transitions to PWRDWN.
-* **PWRDWN:** The FSM powers down the temperature sensor (pwrupOsc = 0). After one clock cycle, it automatically transitions to the CAPTURE state.
-* **CAPTURE:** The FSM sets the completed flag high to notify the user that the measurement is finished. Simultaneously, it captures the data from cnt_out and outputs it to clk_cycles. On the next clock edge, it returns to IDLE to await the next start command.
+* **IDLE:** The FSM rests here by default. It holds the counter in reset (`reset_cnt_o = 1`) and keeps the temperature sensor powered off (`pwrup_osc_o = 0`). It waits here until the user drives the start signal high. After a transistion from CAPTURE, the `clk_cycles_o` contains the last oscialltor count with it's validity indicated by `completed_o` (1 means valid).
+* **CNT:** Entered with a high start signal. The counter reset is released (`reset_cnt_o = 0`), and the temperature sensor is powered on (`pwrup_osc_o = 1`). After one clock cycle, it automatically transitions to CAPTURE. The counter counts the osciallations of the temperature sensor.
+* **CAPTURE:** The FSM powers down the temperature sensor and propagates the counter value and a `completed_o` signal to the output in the next cycle. After one clock cycle, it automatically transitions back to the IDLE state.
 
-  
-```sv
-`timescale 1 ns / 1 ps
+### Sensor (sensor.v)
 
-module counter_fsm (
-    input wire clk,
-    input wire rst_n,
-    input wire start,
-    input wire [7:0] cnt_out,
-    output logic pwrupOsc,
-    output logic reset_cnt, 
-    output logic completed,  
-    output logic [7:0] clk_cycles
-);
-
-// Assigning state names to binary values
-parameter IDLE    = 2'b00;
-parameter PWRUP   = 2'b01;
-parameter PWRDWN  = 2'b10;
-parameter CAPTURE = 2'b11;
-
-// Defining a register which stores current and next state
-logic [1:0] state;
-logic [1:0] next_state;
-
-// State logic (Sequential)
-always_ff @(posedge clk or negedge rst_n)
-begin
-    if (!rst_n)
-        state <= IDLE;
-    else
-        state <= next_state;
-end
-
-// Function of the FSM (Combinational)
-always_ff @(*) begin   
-
-    // To avoid inferred latch (ask Carsten)
-    next_state = state;
-    reset_cnt  = 1'b0;
-    pwrupOsc   = 1'b0;
-    completed  = 1'b0;
-
-    case (state)
-        IDLE: begin
-            reset_cnt = 1'b1; 
-            if (start) begin
-                next_state = PWRUP;
-            else
-                next_state = IDLE;
-        end
-
-        PWRUP: begin
-            pwrupOsc    = 1'b1;
-            next_state  = PWRDWN;
-        end
-
-        PWRDWN: begin
-            next_state  = CAPTURE;
-        end
-
-        CAPTURE: begin
-            completed   = 1'b1;
-            next_state  = IDLE;
-        end
-
-    endcase
-    
-end
-
-// Data Capture (Sequential)
-always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n)
-        clk_cycles <= 8'b0;
-    else if (state == CAPTURE)
-        clk_cycles <= cnt_out;
-end
-
-endmodule
-```
-
-The code above presents the Verilog implementation of the FSM.
+The FSM and counter are combined in the sensor module. This module contains a reduced set of the in- and outputs as discussed above as well as an input for the oscillator signal (`osc_i`).
+The module also features two parameters:
+- CNT_WIDTH: Sets the width of the counter in bits (default: 8). This parameter also exists in and is linked to the submodules for the counter and fsm.
+- SYNC_START: This decides if a two flip-flop synchronizer is added in the module to synchronize the `start_i` signal into the digial logic's clock domain (default: 0 (false)). If the synchronizer is added, the start signal is delayed by two clock cycles.
 
 ## Milestone 4 - The Physical Design
 
