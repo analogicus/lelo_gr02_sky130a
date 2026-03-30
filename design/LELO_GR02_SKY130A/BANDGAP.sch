@@ -105,7 +105,6 @@ C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} 420 180 0 0 {name=x2}
 C {cborder/border_xs.sym} 0 610 0 0 {
 user="Group 2"
 company=""}
-C {devices/lab_pin.sym} 460 20 0 0 {name=p23 sig_type=std_logic lab=PWRUP_B_1V8}
 C {devices/lab_pin.sym} 460 510 0 0 {name=p24 sig_type=std_logic lab=PWRUP_B_1V8
 
 }
