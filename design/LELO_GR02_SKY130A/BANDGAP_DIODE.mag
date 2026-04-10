@@ -60,7 +60,7 @@ box 0 0 670 670
 << labels >>
 flabel metal1 190 180 1790 490 0 FreeSans 800 0 0 0 DN
 port 0 nsew
-flabel locali 20 1830 1940 1940 0 FreeSans 800 0 0 0 VSS
+flabel locali 20 1830 1940 1940 0 FreeSans 800 0 0 0 C
 port 1 nsew
 flabel metal2 830 830 1130 1130 0 FreeSans 800 0 0 0 D1
 port 2 nsew
