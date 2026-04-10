@@ -1,0 +1,84 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1774566000
+<< checkpaint >>
+rect -96 0 4472 19856
+<< locali >>
+rect -96 360 96 440
+rect -96 1416 96 1496
+<< metal1 >>
+rect 160 19416 224 19496
+rect 160 1416 224 1496
+rect 160 7496 224 7576
+rect 672 40 864 120
+use LELOATR_LVT_PCH_4C5F0 x1 ../LELO_ATR_SKY130A
+transform 1 0 0 0 1 0
+box 0 0 1520 1056
+use LELOATR_LVT_NCH_4C5F0 x10<0> ../LELO_ATR_SKY130A
+transform 1 0 0 0 1 1056
+box 0 1056 1520 2112
+use LELOATR_LVT_NCH_4C5F0 x10<1> ../LELO_ATR_SKY130A
+transform 1 0 0 0 1 2112
+box 0 2112 1520 3168
+use LELOATR_LVT_NCH_4C5F0 x10<2> ../LELO_ATR_SKY130A
+transform 1 0 0 0 1 3168
+box 0 3168 1520 4224
+use LELOATR_LVT_NCH_4C5F0 x10<3> ../LELO_ATR_SKY130A
+transform 1 0 0 0 1 4224
+box 0 4224 1520 5280
+use LELOATR_LVT_NCH_4C5F0 x10<4> ../LELO_ATR_SKY130A
+transform 1 0 0 0 1 5280
+box 0 5280 1520 6336
+use JNWATR_PCH_4C5F0 x11 ../JNW_ATR_SKY130A
+transform 1 0 0 0 1 6336
+box 0 6336 1152 7136
+use LELOATR_LVT_NCH_4C5F0 x1<0> ../LELO_ATR_SKY130A
+transform 1 0 0 0 1 7136
+box 0 7136 1520 8192
+use LELOATR_LVT_NCH_4C5F0 x1<1> ../LELO_ATR_SKY130A
+transform 1 0 0 0 1 8192
+box 0 8192 1520 9248
+use LELOATR_LVT_NCH_4C5F0 x1<2> ../LELO_ATR_SKY130A
+transform 1 0 0 0 1 9248
+box 0 9248 1520 10304
+use LELOATR_LVT_NCH_4C5F0 x1<3> ../LELO_ATR_SKY130A
+transform 1 0 0 0 1 10304
+box 0 10304 1520 11360
+use LELOATR_LVT_NCH_4C5F0 x1<4> ../LELO_ATR_SKY130A
+transform 1 0 0 0 1 11360
+box 0 11360 1520 12416
+use JNWTR_RPPO16 x2 ../JNW_TR_SKY130A
+transform 1 0 0 0 1 12416
+box 0 12416 4472 15856
+use JNWATR_NCH_4C5F0 x3 ../JNW_ATR_SKY130A
+transform 1 0 0 0 1 15856
+box 0 15856 1152 16656
+use JNWATR_NCH_4C5F0 x4 ../JNW_ATR_SKY130A
+transform 1 0 0 0 1 16656
+box 0 16656 1152 17456
+use JNWATR_PCH_4C5F0 x6 ../JNW_ATR_SKY130A
+transform 1 0 0 0 1 17456
+box 0 17456 1152 18256
+use JNWATR_NCH_4C5F0 x7 ../JNW_ATR_SKY130A
+transform 1 0 0 0 1 18256
+box 0 18256 1152 19056
+use JNWATR_PCH_8C1F2 x8 ../JNW_ATR_SKY130A
+transform 1 0 0 0 1 19056
+box 0 19056 1408 19856
+<< labels >>
+flabel locali s -96 360 96 440 0 FreeSans 400 0 0 0 VDD_1V8
+port 1 nsew power bidirectional
+flabel metal1 s 160 19416 224 19496 0 FreeSans 400 0 0 0 PWRUP_N_1V8
+port 2 nsew signal bidirectional
+flabel locali s -96 1416 96 1496 0 FreeSans 400 0 0 0 VSS
+port 3 nsew ground bidirectional
+flabel metal1 s 160 1416 224 1496 0 FreeSans 400 0 0 0 VIN_P
+port 4 nsew signal bidirectional
+flabel metal1 s 160 7496 224 7576 0 FreeSans 400 0 0 0 VIN_N
+port 5 nsew signal bidirectional
+flabel metal1 s 672 40 864 120 0 FreeSans 400 0 0 0 VOUT
+port 6 nsew signal bidirectional
+<< properties >>
+string FIXED_BBOX -96 0 4472 19856
+<< end >>
