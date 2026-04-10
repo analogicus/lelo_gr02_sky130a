@@ -1,0 +1,100 @@
+magic
+tech sky130A
+timestamp 1775815209
+<< checkpaint >>
+rect 12529440 85055040 171799318 171823426
+rect 12539520 23478 171799318 85055040
+rect -630 19230 1326 20160
+rect -630 12808 2588 14642
+rect -630 12620 4993 12808
+rect -722 12054 4993 12620
+rect -722 10558 5067 12054
+rect 5074 10558 7706 11274
+rect -722 8708 7706 10558
+rect -630 8605 7706 8708
+rect -630 7350 8207 8605
+rect -630 7150 8902 7350
+rect -630 6096 9002 7150
+rect -630 4170 10173 6096
+rect -630 4108 6888 4170
+rect 6955 4108 10173 4170
+rect -630 3342 10173 4108
+rect -722 2878 10173 3342
+rect -722 2270 7918 2878
+rect -722 2170 6788 2270
+rect -722 1670 5918 2170
+rect -722 1620 5818 1670
+rect -722 1094 5067 1620
+rect -722 1026 5789 1094
+rect -630 0 5789 1026
+rect -630 -630 2002 0
+rect 3641 -694 5789 0
+rect 8096 -630 10060 1030
+<< locali >>
+rect -48 1900 48 1940
+rect 8 8 1364 64
+<< metal1 >>
+rect 80 11706 112 11746
+rect 272 9422 368 9462
+rect 3351 5994 3383 6034
+rect 272 1740 368 1780
+use LELOATR_PCH_2C1F2  x1<0> ../LELO_ATR_SKY130A
+timestamp 1767481200
+transform 1 0 3592 0 1 6448
+box -92 -64 604 464
+use LELOATR_PCH_2C1F2  x1<1>
+timestamp 1767481200
+transform 1 0 3592 0 1 6976
+box -92 -64 604 464
+use JNWTR_RPPO8  x1 ../JNW_TR_SKY130A
+timestamp 1737500400
+transform 1 0 4300 0 1 5300
+box 0 0 1372 1720
+use BANDGAP_OPAMP  x2 ../LELO_GR02_SKY130A
+timestamp 1775811214
+transform 1 0 -91 0 1 2729
+box 91 71 4146 6548
+use LELOATR_PCH_2C1F2  x3<0>
+timestamp 1767481200
+transform 1 0 3592 0 1 4864
+box -92 -64 604 464
+use LELOATR_PCH_2C1F2  x3<1>
+timestamp 1767481200
+transform 1 0 3592 0 1 5392
+box -92 -64 604 464
+use LELOATR_PCH_2C1F2  x4
+timestamp 1767481200
+transform 1 0 3592 0 1 5920
+box -92 -64 604 464
+use JNWTR_CAPX1  x5 ../JNW_TR_SKY130A
+timestamp 1737500400
+transform 1 0 3500 0 1 7450
+box 0 0 540 540
+use LELOATR_NCH_8C1F2  x6 ../LELO_ATR_SKY130A
+timestamp 1767481200
+transform 1 0 2742 0 1 8714
+box -92 -64 796 464
+use BANDGAP_DIODE  x8 ../LELO_GR02_SKY130A
+timestamp 1775813668
+transform 1 0 4300 0 1 3300
+box 0 0 1958 1958
+use JNWATR_PCH_8C5F0  xpb4 ../JNW_ATR_SKY130A
+timestamp 1740610800
+transform 1 0 4392 0 1 2764
+box -92 -64 796 464
+<< labels >>
+flabel locali s -48 1900 48 1940 0 FreeSans 200 0 0 0 VDD_1V8
+port 1 nsew power bidirectional
+flabel metal1 s 272 9422 368 9462 0 FreeSans 200 0 0 0 I_PTAT
+port 2 nsew signal bidirectional
+flabel metal1 s 272 1740 368 1780 0 FreeSans 200 0 0 0 V_CTAT
+port 3 nsew signal bidirectional
+flabel metal1 s 3351 5994 3383 6034 0 FreeSans 200 0 0 0 PWRUP_N_1V8
+port 4 nsew signal bidirectional
+flabel locali s 8 8 1364 64 0 FreeSans 200 0 0 0 VSS
+port 5 nsew ground bidirectional
+flabel metal1 s 80 11706 112 11746 0 FreeSans 200 0 0 0 PWRUP_B_1V8
+port 6 nsew signal bidirectional
+<< properties >>
+string FIXED_BBOX -48 0 5067 12054
+<< end >>
