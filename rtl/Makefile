@@ -13,3 +13,6 @@ compile_counter:
 
 sim_counter: compile_counter
 	vvp ../sim/LELO_GR02/counter_tb_sim.out
+
+wave: 
+	gtkwave ../sim/LELO_GR02/counter_tb_sim.vcd
