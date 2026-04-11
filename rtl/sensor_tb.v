@@ -36,17 +36,15 @@ module sensor_tb;
 
     // set up lookup table
     // loading from csv does not seem to play nicely with icarus iverilog
-    parameter POINTS = 5;
+    parameter POINTS = 3;
     real temp_table[POINTS-1:0];
     real period_table[POINTS-1:0];
 
-    // lookup table
+    // lookup table, period is in ns
     initial begin
-        temp_table[0] =  0.0;   period_table[0] = 1000.0;
-        temp_table[1] =  20.0;  period_table[1] = 500.0;
-        temp_table[2] =  40.0;  period_table[2] = 400.0;
-        temp_table[3] =  60.0;  period_table[3] = 300.0;
-        temp_table[4] =  80.0;  period_table[4] = 100.0;
+        temp_table[0] =  0.0;   period_table[0] = 338.0;
+        temp_table[1] =  25.0;  period_table[1] = 299.1;
+        temp_table[2] =  70.0;  period_table[2] = 245.2;
     end
 
     // linear interpolation
