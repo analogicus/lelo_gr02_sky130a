@@ -1,0 +1,217 @@
+{
+    "cells": [
+        {
+            "class": "LayoutCell",
+            "x1": 0,
+            "y1": 0,
+            "x2": 99000.0,
+            "y2": 192000.0,
+            "layer": "",
+            "net": "",
+            "name": "Test_FF",
+            "has_pr": false,
+            "ckt": {
+                "class": "",
+                "name": "Test_FF",
+                "nodes": [
+                    "Q",
+                    "CK",
+                    "VDD_1V8",
+                    "RN",
+                    "AVSS",
+                    "QN"
+                ],
+                "properties": {},
+                "devices": [],
+                "instances": [
+                    {
+                        "class": "",
+                        "name": "x1",
+                        "nodes": [
+                            "net1",
+                            "CK",
+                            "RN",
+                            "Q",
+                            "QN",
+                            "VDD_1V8",
+                            "AVSS"
+                        ],
+                        "properties": {},
+                        "subcktName": "JNWTR_DFRNQNX1_CV",
+                        "groupName": "x",
+                        "deviceName": "subckt",
+                        "groupTag": "1"
+                    }
+                ]
+            },
+            "children": [
+                {
+                    "class": "Instance",
+                    "x1": 0,
+                    "y1": 0,
+                    "x2": 99000.0,
+                    "y2": 192000.0,
+                    "layer": "PR",
+                    "net": "",
+                    "name": "JNWTR_DFRNQNX1_CV",
+                    "has_pr": false,
+                    "ckt": {},
+                    "children": [
+                        {
+                            "class": "Port",
+                            "x1": 76500.0,
+                            "y1": 62500.0,
+                            "x2": 85500.0,
+                            "y2": 65500.0,
+                            "layer": "M1",
+                            "net": "",
+                            "name": "net1",
+                            "spicePort": true
+                        },
+                        {
+                            "class": "Port",
+                            "x1": 13500.0,
+                            "y1": 22500.0,
+                            "x2": 22500.0,
+                            "y2": 25500.0,
+                            "layer": "M1",
+                            "net": "",
+                            "name": "CK",
+                            "spicePort": true
+                        },
+                        {
+                            "class": "Port",
+                            "x1": 13500.0,
+                            "y1": 150500.0,
+                            "x2": 22500.0,
+                            "y2": 153500.0,
+                            "layer": "M1",
+                            "net": "",
+                            "name": "RN",
+                            "spicePort": true
+                        },
+                        {
+                            "class": "Port",
+                            "x1": 31500.0,
+                            "y1": 186500.0,
+                            "x2": 40500.0,
+                            "y2": 189500.0,
+                            "layer": "M1",
+                            "net": "",
+                            "name": "Q",
+                            "spicePort": true
+                        },
+                        {
+                            "class": "Port",
+                            "x1": 31500.0,
+                            "y1": 170500.0,
+                            "x2": 40500.0,
+                            "y2": 173500.0,
+                            "layer": "M1",
+                            "net": "",
+                            "name": "QN",
+                            "spicePort": true
+                        },
+                        {
+                            "class": "Port",
+                            "x1": 58500.0,
+                            "y1": 0.0,
+                            "x2": 67300.0,
+                            "y2": 192000.0,
+                            "layer": "M4",
+                            "net": "",
+                            "name": "VDD_1V8",
+                            "spicePort": true
+                        },
+                        {
+                            "class": "Port",
+                            "x1": 31500.0,
+                            "y1": 0.0,
+                            "x2": 40300.0,
+                            "y2": 192000.0,
+                            "layer": "M4",
+                            "net": "",
+                            "name": "AVSS",
+                            "spicePort": true
+                        }
+                    ],
+                    "instanceName": "x1",
+                    "angle": "",
+                    "cell": "JNWTR_DFRNQNX1_CV",
+                    "libpath": "JNW_TR_SKY130A",
+                    "xcell": 0,
+                    "ycell": 0
+                },
+                {
+                    "class": "Port",
+                    "x1": 31500.0,
+                    "y1": 186500.0,
+                    "x2": 40500.0,
+                    "y2": 189500.0,
+                    "layer": "M1",
+                    "net": "",
+                    "name": "Q",
+                    "spicePort": true
+                },
+                {
+                    "class": "Port",
+                    "x1": 13500.0,
+                    "y1": 22500.0,
+                    "x2": 22500.0,
+                    "y2": 25500.0,
+                    "layer": "M1",
+                    "net": "",
+                    "name": "CK",
+                    "spicePort": true
+                },
+                {
+                    "class": "Port",
+                    "x1": 58500.0,
+                    "y1": 0.0,
+                    "x2": 67300.0,
+                    "y2": 192000.0,
+                    "layer": "M4",
+                    "net": "",
+                    "name": "VDD_1V8",
+                    "spicePort": true
+                },
+                {
+                    "class": "Port",
+                    "x1": 13500.0,
+                    "y1": 150500.0,
+                    "x2": 22500.0,
+                    "y2": 153500.0,
+                    "layer": "M1",
+                    "net": "",
+                    "name": "RN",
+                    "spicePort": true
+                },
+                {
+                    "class": "Port",
+                    "x1": 31500.0,
+                    "y1": 0.0,
+                    "x2": 40300.0,
+                    "y2": 192000.0,
+                    "layer": "M4",
+                    "net": "",
+                    "name": "AVSS",
+                    "spicePort": true
+                },
+                {
+                    "class": "Port",
+                    "x1": 31500.0,
+                    "y1": 170500.0,
+                    "x2": 40500.0,
+                    "y2": 173500.0,
+                    "layer": "M1",
+                    "net": "",
+                    "name": "QN",
+                    "spicePort": true
+                }
+            ],
+            "useHalfHeight": false,
+            "alternateGroup": false,
+            "noPowerRoute": false
+        }
+    ]
+}
