@@ -146,6 +146,16 @@ The module also features two parameters:
 
 ## Milestone 4 - The Physical Design
 
+The signal flow in the physical layout is roughly left to right. The layout consists of three main cells with their function explained above:
+The bandgap, the oscillator, and digital layout.
+
+### Bandgap Layout
+
+### Oscillator Layout
+
+### Digital Circuit Layout
+The digital circuit layout is done using a librelane flow configured in the `rtl/config.json` file. `rtl/pin_order.cfg` contains the input and output pins and their rough placement. Running the flow creates folder `rtl/runs/RUN_<date>/final` containing the designs performance metrics in `metrics.csv` and layout in `mag/sensor.mag`.
+
 # What
 
 
