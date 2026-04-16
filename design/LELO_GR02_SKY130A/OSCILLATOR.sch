@@ -10,7 +10,6 @@ N -280 20 60 20 {lab=I_PTAT}
 N 360 30 360 40 {lab=PWRUP_B_1V8}
 N 390 30 390 40 {lab=VSS}
 N -80 120 -60 120 {lab=VSS}
-N 430 -60 510 -60 {lab=OSC_TEMP_1V8}
 N -280 -200 -0 -200 {lab=VDD_1V8}
 N 430 0 460 0 {lab=#net1}
 N -280 320 -90 320 {lab=VSS}
@@ -38,7 +37,6 @@ N -220 210 -60 210 {lab=#net2}
 N 280 0 280 120 {lab=#net3}
 N 260 120 280 120 {lab=#net3}
 N 360 40 360 55 {lab=PWRUP_B_1V8}
-N 115 50 115 210 {lab=VSS}
 N 385 -100 390 -100 {lab=VDD_1V8}
 N 390 -100 390 -95 {lab=VDD_1V8}
 N 390 -95 390 -90 {lab=VDD_1V8}
@@ -51,7 +49,8 @@ N 280 310 280 320 {lab=VSS}
 N 100 320 280 320 {lab=VSS}
 N 240 230 280 230 {lab=VSS}
 N 240 230 240 320 {lab=VSS}
-N 115 160 115 320 {lab=VSS}
+N 115 50 115 320 {lab=VSS}
+N 430 -60 510 -60 {lab=OSC_TEMP_1V8}
 C {devices/ipin.sym} -280 270 2 1 {name=p1 lab=PWRUP_B_1V8}
 C {devices/opin.sym} 510 -60 0 0 {name=p2 lab=OSC_TEMP_1V8}
 C {devices/ipin.sym} -280 -60 0 0 {name=p3 lab=PWRUP_N_1V8}
