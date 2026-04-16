@@ -15,9 +15,9 @@ Along the way we will learn about the analog design and layout required and gain
 # How 
 This module was developed through four separate milestones, each building on the results of the previous one. A detailed explanation of each circuit can be found under the Schematic section when generating the docs.
 
-## Milestone 1 - The Bandgap Circuit.
+## Milestone 1 - The Bandgap Circuit
 
-The first step of the project involves designing a bandgap reference circuit. The bandgap is a component used for temperature sensing and voltage references in integrated circuits. This circuit generates two key outputs:
+The first step of the project involves designing a bandgap reference circuit. The bandgap is a component used for temperature sensing and/or voltage references in integrated circuits. This circuit generates two key outputs:
 
 - V_CTAT (Complementary to Absolute Temperature voltage): This voltage decreases linearly as temperature increases.
 
@@ -25,12 +25,18 @@ The first step of the project involves designing a bandgap reference circuit. Th
 
 The combination of V_CTAT and I_PTAT allows the system to produce a temperature-dependent signal with a controlled linear relationship. By feeding these outputs into a subsequent oscillator circuit, the temperature-induced changes in voltage and current modulate the oscillator frequency. This frequency can then be measured using a digital counter to accurately determine the temperature of the system
 
-<img alt="Bandgap Circuit Outputs" src="https://github.com/user-attachments/assets/55c9a77b-23ca-4d28-86b2-a43ff193b9bf" />
+<img alt="image" src="https://github.com/user-attachments/assets/13f59109-498c-4f4e-b4d0-bf130c2038a0" />
+The bandgap simulation shows the leakage current, active current, I_PTAT, V_CTAT, as well as the I_PTAT error and V_CTAT error over a temperature range from 0°C to 70°C.
 
 ### Observations from the simulation
-- I_PTAT shows a decreasing trend with temperature (negative slope).
-- V_CTAT increases with temperature (positive slope).
-- Despite opposite slopes, both outputs maintain linearity which is important for temperature sensing.
+
+- **I_PTAT:** Decreases linearly with temperature, with an error between 0–0.15%. It varies from 2.43 µA at 0°C to 2.85 µA at 70°C.
+
+- **V_CTAT:** Decreases linearly with temperature, with an error between 0–0.08%. It varies from 0.76 V at 0°C to 0.61 V at 70°C.
+
+- **Active current:** At 25°C, it is below 100 µA, meeting the specification criteria.
+
+- **Leakage current:** At 25°C, it is below 1 nA, meeting the specification criteria.
 
 ### To simulate the bandgap and view plots:
 
@@ -149,10 +155,23 @@ The module also features two parameters:
 The signal flow in the physical layout is roughly left to right. The layout consists of three main cells with their function explained above:
 The bandgap, the oscillator, and digital layout.
 
+## Rules
+The following layout rules were applied to ensure the implementation closely matches the schematic:
+
+- **Power rails:** VDD and VSS must be routed with a large width (2 µm) and then distributed to the components. This prevents current loops and avoids connecting component grounds in series, which could lead to uneven current distribution.
+- **Metal layer orientation:** Odd-numbered metal layers should be routed vertically, while even-numbered layers should be routed horizontally. This simplifies the layout process and improves consistency.
+- **Common-centroid:** Matched circuits like differential pairs and current mirrors must be implemented using a common-centroid layout to minimize mismatch.
+- **Trace length:** Interconnects should be kept as short as possible, as longer traces introduce additional parasitic capacitance.
+- **Module placement:** For the operational amplifiers, integrate them with the bandgap and oscillator to make efficient use of space. Other modules should be placed to minimize interconnect length between them.
+  
 ### Bandgap Layout
 The bandgap consists of the OTA, pnp-based diodes as well as some extra components in the top-level cell. For all of our cells, except for the diode cell, the magic file was generated using `cicpy` before placing and routing manually in magic.
 
-TODO something about OTA.
+The `BANDGAP_OPAMP` cell consists of two current mirrors, one differential pair, two power gatings, and a second stage. 
+The parallel transistors of the simple current mirror were placed next to each other, with overlapping bulk nodes. This was done to reduce the occupied space and reduce the mismatch between transistors. The PMOS used for the second stage was placed to the right of the current mirror with overlapping source, as it reduced the occupied area.
+The differential pair were placed in the middle of the `BANDGAP_OPAMP` cell with their bulk node overlapping. With the symmetrical design, the differential pair sees the same, reducing mismatch between the pair.
+The PMOS power gatings were placed as close to the rail as possible, while the NMOS power gating transistors were placed left to the NMOS simple current mirror. The transistor pulling down the output of the opamp uses the same transistor as a transistor. For the purpose of symmetrical design, the NMOS transistors were placed on each side of the simple NMOS current mirror.
+The capacitor and resistor were placed at the bottom of the design, such that symmetry is achieved. Compared to the differential pair, the currents through these capacitors does not need to be matched.
 
 The `BANDGAP_DIODE` cell has 9 diodes, in a 1:8 ratio. This enables them to be placed in a 3x3 layout, with the centre being used for the single diode and the 8 peripheral ones connected together. This ensures a symmetric layout.
 
@@ -176,9 +195,10 @@ The digital circuit layout is done using a librelane flow configured in the `rtl
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP_OPAMP.sch |
 | Schematic       | design/LELO_GR02_SKY130A/BANDGAP_DIODE.sch |
 | Schematic       | design/LELO_GR02_SKY130A/OSCILLATOR.sch |
-| Schematic       | design/LELO_GR02_SKY130A/OSCILLATOR_OPAMP.sch |
-| RTL             | rtl/Counter.v |
-| RTL             | rtl/FSM.v |
+| Schematic       | design/LELO_GR02_SKY130A/COMPARATOR.sch |
+| RTL             | rtl/counter.v |
+| RTL             | rtl/fsm.v     |
+| RTL             | rtl/counter.v |
 
 
 # Signal interface
@@ -189,6 +209,7 @@ The digital circuit layout is done using a librelane flow configured in the `rtl
 | OSC_TEMP_1V8 | Output    | VDD_1V8 | Temperature dependent oscillation frequency|
 | PWRUP_1V8    | Input     | VDD_1V8 | Power up the circuit                       |
 | VSS          | Input     | Ground  |                                            |
+
 
 
 # Key parameters
