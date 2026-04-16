@@ -199,6 +199,13 @@ The digital circuit layout is done using a librelane flow configured in the `rtl
 | RTL             | rtl/counter.v |
 | RTL             | rtl/fsm.v     |
 | RTL             | rtl/counter.v |
+| Layout          | design/LELO_GR02_SKY130A/LELO_GR02.mag|
+| Layout          | design/LELO_GR02_SKY130A/BANDGAP_OPAMP.mag|
+| Layout          | design/LELO_GR02_SKY130A/BANDGAP_DIODE.mag|
+| Layout          | design/LELO_GR02_SKY130A/BANDGAP.mag|
+| Layout          | design/LELO_GR02_SKY130A/OSCILLATOR.mag|
+| Layout          | design/LELO_GR02_SKY130A/COMPARATOR.mag|
+
 
 
 # Signal interface
