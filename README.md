@@ -150,6 +150,16 @@ The signal flow in the physical layout is roughly left to right. The layout cons
 The bandgap, the oscillator, and digital layout.
 
 ### Bandgap Layout
+The bandgap consists of the OTA, pnp-based diodes as well as some extra components in the top-level cell. For all of our cells, except for the diode cell, the magic file was generated using `cicpy` before placing and routing manually in magic.
+
+TODO something about OTA.
+
+The `BANDGAP_DIODE` cell has 9 diodes, in a 1:8 ratio. This enables them to be placed in a 3x3 layout, with the centre being used for the single diode and the 8 peripheral ones connected together. This ensures a symmetric layout.
+
+The `BANDGAP` cell has the OTA with other components placed to the side. Of these, there are 5 PMOS transistors sharing gate, source and bulk. Since this is two double and one single, they are laid out vertically adjacent to eachother in a ABCBA pattern to ensure symmetry.
+Powergating transistors are placed close to the power rails and connected to the transistors in between.
+The resistor and and diode cells are placed in between the powergating transistors, to the side of the PMOS transistors. To avoid the cathode of the diode coupling to VSS through the bulk node, it is placed inside of a deep n-well, which provides electrial isolation from the main p substrate. This allows the usage of a powegating NMOS with the drain connected to the cathode of the diodes, instead of directly connecting the cathode to VSS.
+
 
 ### Oscillator Layout
 
