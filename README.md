@@ -25,7 +25,8 @@ The first step of the project involves designing a bandgap reference circuit. Th
 
 The combination of V_CTAT and I_PTAT allows the system to produce a temperature-dependent signal with a controlled linear relationship. By feeding these outputs into a subsequent oscillator circuit, the temperature-induced changes in voltage and current modulate the oscillator frequency. This frequency can then be measured using a digital counter to accurately determine the temperature of the system
 
-<img alt="image" src="https://github.com/user-attachments/assets/13f59109-498c-4f4e-b4d0-bf130c2038a0" />
+<img width="100%" alt="bandgap_lay_sim_res" src="https://github.com/user-attachments/assets/072a1d89-1f3e-452a-a5b4-fc04a4d48e56" />
+
 The bandgap simulation shows the leakage current, active current, I_PTAT, V_CTAT, as well as the I_PTAT error and V_CTAT error over a temperature range from 0°C to 70°C.
 
 ### Observations from the simulation
