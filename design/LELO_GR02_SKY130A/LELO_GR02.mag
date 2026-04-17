@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1776457111
+sed -i '/^timestamp/d' *.mag
 << locali >>
 rect 5300 18994 5700 19000
 rect 5300 18606 5306 18994

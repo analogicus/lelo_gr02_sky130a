@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1776457889
+sed -i '/^timestamp/d' *.mag
 << dnwell >>
 rect 6600 5400 11400 10200
 << nwell >>
