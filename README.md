@@ -210,18 +210,27 @@ The digital circuit layout is done using a librelane flow configured in the `rtl
 | Layout          | design/LELO_GR02_SKY130A/BANDGAP.mag|
 | Layout          | design/LELO_GR02_SKY130A/OSCILLATOR.mag|
 | Layout          | design/LELO_GR02_SKY130A/COMPARATOR.mag|
+| Layout          | design/LELO_GR02_SKY130A/SENSOR.mag|
 
 
 
 # Signal interface
 
-| Signal       | Direction | Domain  | Description                                |
-| :---         | :---:     | :---:   | :---                                       |
-| VDD_1V8      | Input     | VDD_1V8 | Main supply                                |
-| OSC_TEMP_1V8 | Output    | VDD_1V8 | Temperature dependent oscillation frequency|
-| PWRUP_1V8    | Input     | VDD_1V8 | Power up the circuit                       |
-| VSS          | Input     | Ground  |                                            |
+| Signal | Direction | Domain | Description |
+| :--- | :---: | :---: | :--- |
+| VDD_1V8 | Input | VDD_1V8 | Main supply |
+| OSC_TEMP_1V8 | Output | VDD_1V8 | Temperature dependent oscillation frequency |
+| PWRUP_1V8 | Input | VDD_1V8 | Power up the circuit |
+| VSS | Input | Ground | Ground reference |
 
+# Internal signals
+
+| Signal | Description |
+| :--- | :--- |
+| PWRUP_N_1V8 | Inverted powerup signal |
+| PWRUP_B_1V8 | Buffered powerup signal |
+| I_PTAT | Current proportional to absolute temperature |
+| V_CTAT | Voltage complementary to absolute temperature |
 
 
 # Key parameters
