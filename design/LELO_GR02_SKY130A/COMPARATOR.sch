@@ -4,6 +4,10 @@ K {}
 V {}
 S {}
 E {}
+L 4 870 -340 870 260 {}
+L 4 -600 -340 870 -340 {}
+L 4 -600 -340 -600 360 {}
+L 4 -600 360 -220 360 {}
 N -100 -130 -40 -130 {lab=PMOS_GATE}
 N -140 -100 -140 -10 {lab=PMOS_GATE}
 N 70 -100 70 -10 {lab=#net1}
@@ -115,3 +119,6 @@ C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -180 20 0 0 {name=x1[4:0]}
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 110 20 0 1 {name=x9[4:0]}
 C {LELO_ATR_SKY130A/LELOATR_NCH_8C1F2.sym} -190 200 0 0 {name=x3[1:0]}
 C {devices/lab_pin.sym} -200 200 0 0 {name=p16 sig_type=std_logic lab=PWRUP_N_1V8}
+C {cborder/border_xs.sym} -220 360 0 0 {
+user="Group 2"
+company=""}
