@@ -178,8 +178,7 @@ The `BANDGAP_DIODE` cell has 9 diodes, in a 1:8 ratio. This enables them to be p
 
 The `BANDGAP` cell has the OTA with other components placed to the side. Of these, there are 5 PMOS transistors sharing gate, source and bulk. Since this is two double and one single, they are laid out vertically adjacent to eachother in a ABCBA pattern to ensure symmetry.
 Powergating transistors are placed close to the power rails and connected to the transistors in between.
-The resistor and and diode cells are placed in between the powergating transistors, to the side of the PMOS transistors. To avoid the cathode of the diode coupling to VSS through the bulk node, it is placed inside of a deep n-well, which provides electrial isolation from the main p substrate. This allows the usage of a powegating NMOS with the drain connected to the cathode of the diodes, instead of directly connecting the cathode to VSS.
-
+The resistor and and diode cells are placed in between the powergating transistors, to the side of the PMOS transistors. To avoid the cathode of the diode coupling to VSS through the bulk node, it is placed inside of a deep n-well, which provides electrial isolation from the main p substrate. This allows the usage of a powergating NMOS with the drain connected to the cathode of the diodes, instead of directly connecting the cathode to VSS.
 
 ### Oscillator Layout
 The oscillator layout consists of two main parts: the comparator and the flip-flop making up the bridge to the digital section of the chip.
@@ -189,6 +188,13 @@ The flip-flop, capacitor and power gating transistors do not require such sophis
 
 ### Digital Circuit Layout
 The digital circuit layout is done using a librelane flow configured in the `rtl/config.json` file. `rtl/pin_order.cfg` contains the input and output pins and their rough placement. Running the flow creates folder `rtl/runs/RUN_<date>/final` containing the designs' performance metrics in `metrics.csv` and layout in `mag/sensor.mag`. The layout size is constrained using the config file to fit in the available area.
+
+### Remaing DRC errors
+There are still some DRC errors left that only show up when run in the GitHub actions remote:
+- Timestamp mismatches (probably caused my magic overwriting library cells locally)
+- Local interconnect spacing < 0.17um (li.3)
+- N-well needs to have N+ taps. This is for the peripheral n-well of the diode. It cannot be connected to VSS nor VDD. Nor can it have a metal connection that goes nowhere or to the cathode as all of these introduce weird components in the LVS.
+- Spacing of metal3 features attached to and within 0.40um of large metal3 < 0.4um (met3.3c)
 
 # What
 
