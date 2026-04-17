@@ -1,6 +1,5 @@
 magic
 tech sky130A
-sed -i '/^timestamp/d' *.mag
 << locali >>
 rect 10 1947 130 1950
 rect 10 1827 1951 1947
