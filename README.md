@@ -25,7 +25,8 @@ The first step of the project involves designing a bandgap reference circuit. Th
 
 The combination of V_CTAT and I_PTAT allows the system to produce a temperature-dependent signal with a controlled linear relationship. By feeding these outputs into a subsequent oscillator circuit, the temperature-induced changes in voltage and current modulate the oscillator frequency. This frequency can then be measured using a digital counter to accurately determine the temperature of the system
 
-<img alt="image" src="https://github.com/user-attachments/assets/13f59109-498c-4f4e-b4d0-bf130c2038a0" />
+<img width="100%" alt="bandgap_lay_sim_res" src="https://github.com/user-attachments/assets/072a1d89-1f3e-452a-a5b4-fc04a4d48e56" />
+
 The bandgap simulation shows the leakage current, active current, I_PTAT, V_CTAT, as well as the I_PTAT error and V_CTAT error over a temperature range from 0°C to 70°C.
 
 ### Observations from the simulation
@@ -181,6 +182,10 @@ The resistor and and diode cells are placed in between the powergating transisto
 
 
 ### Oscillator Layout
+The osciallator layouy consists of two main parts: The comparator and the flip flop making up the bridge to the digital section of the chip.
+
+The comparator, similarly to the bandgap explained above, relies on layout symmetry to achive highly matching device characteristics for the current mirrors and differential inputs thus reducing the circuits error due to manufacturing imprecisions.
+The flip flop, capacitor and power gating transistors do not require such suffisticated placement making room for the digital design.
 
 ### Digital Circuit Layout
 The digital circuit layout is done using a librelane flow configured in the `rtl/config.json` file. `rtl/pin_order.cfg` contains the input and output pins and their rough placement. Running the flow creates folder `rtl/runs/RUN_<date>/final` containing the designs performance metrics in `metrics.csv` and layout in `mag/sensor.mag`.
