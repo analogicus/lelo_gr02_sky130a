@@ -11,9 +11,9 @@ For details see <a href='tran_Sch_typical.html'>tran_Sch_typical.html</a>
 |Current proportial to temperature, Pearson correlation coefficient|iptat\_rvalue | Spec | 0.950  | 1.000  | 1.050  |
 | | | ('Sch',)|1.000  | 1.000  | 1.000  |
 |Voltage complementary to temperature, offset at zero celsius|vctat\_intercept | Spec | 200.000 mV |  | 1200.000 mV |
-| | | ('Sch',)|750.503 mV | 750.503 mV | 750.503 mV |
+| | | ('Sch',)|750.436 mV | 750.436 mV | 750.436 mV |
 |Voltage complementary to temperature, increase per kelvin|vctat\_slope | Spec | 0.500 mV/K |  | 2.000 mV/K |
-| | | ('Sch',)|-1.767 mV/K | -1.767 mV/K | -1.767 mV/K |
+| | | ('Sch',)|-1.766 mV/K | -1.766 mV/K | -1.766 mV/K |
 |Voltage complementary to temperature, Pearson correlation coefficient|vctat\_rvalue | Spec | 0.950  | 1.000  | 1.050  |
 | | | ('Sch',)|-1.000  | -1.000  | -1.000  |
 |Active current at 25 celsius|i\_act\_25 | Spec | 5.000 uA | 30.000 uA | 100.000 uA |

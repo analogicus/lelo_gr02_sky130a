@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 import scipy as sp
 import numpy as np
 
-DO_PLOT = True
-
+DO_PLOT = False
 
 def main(name):
 
