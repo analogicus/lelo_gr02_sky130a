@@ -182,13 +182,13 @@ The resistor and and diode cells are placed in between the powergating transisto
 
 
 ### Oscillator Layout
-The osciallator layouy consists of two main parts: The comparator and the flip flop making up the bridge to the digital section of the chip.
+The oscillator layout consists of two main parts: the comparator and the flip-flop making up the bridge to the digital section of the chip.
 
-The comparator, similarly to the bandgap explained above, relies on layout symmetry to achive highly matching device characteristics for the current mirrors and differential inputs thus reducing the circuits error due to manufacturing imprecisions.
-The flip flop, capacitor and power gating transistors do not require such suffisticated placement making room for the digital design.
+The comparator, similarly to the bandgap explained above, relies on layout symmetry to achieve highly matching device characteristics for the current mirrors and differential inputs thus reducing the circuit's error due to manufacturing imprecisions.
+The flip-flop, capacitor and power gating transistors do not require such sophisticated placement, making room for the digital design.
 
 ### Digital Circuit Layout
-The digital circuit layout is done using a librelane flow configured in the `rtl/config.json` file. `rtl/pin_order.cfg` contains the input and output pins and their rough placement. Running the flow creates folder `rtl/runs/RUN_<date>/final` containing the designs performance metrics in `metrics.csv` and layout in `mag/sensor.mag`.
+The digital circuit layout is done using a librelane flow configured in the `rtl/config.json` file. `rtl/pin_order.cfg` contains the input and output pins and their rough placement. Running the flow creates folder `rtl/runs/RUN_<date>/final` containing the designs' performance metrics in `metrics.csv` and layout in `mag/sensor.mag`. The layout size is constrained using the config file to fit in the available area.
 
 # What
 
