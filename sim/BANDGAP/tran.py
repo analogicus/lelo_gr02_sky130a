@@ -6,7 +6,6 @@ import numpy as np
 
 DO_PLOT = True
 
-
 def main(name):
 
   yamlfile = name + ".yaml"

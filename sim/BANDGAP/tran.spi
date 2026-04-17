@@ -45,7 +45,7 @@ VPTAT I_PTAT VSS 0.5
 * NGSPICE control
 *----------------------------------------------------------------
 .control
-set num_threads=8
+set num_threads=16
 set color0=white
 set color1=black
 unset askquit

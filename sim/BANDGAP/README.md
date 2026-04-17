@@ -8,36 +8,60 @@ Check transient operation
 
 |**Name**|**Parameter**|**Description**| |**Min**|**Typ**|**Max**| Unit|
 |:---|:---|:---|---:|:---:|:---:|:---:| ---:|
-|**Current proportial to temperature, offset at zero celsius**|**iptat\_intercept** || **Spec**  | **10.000** | **0.000** | **200.000** | **uA** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | <span style='color:red'>**2.417**</span> |  | |
-| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|11.651 | 61.719 | 141.958 | |
-| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|49.879 | 61.099 | 72.319 | |
-|**Current proportial to temperature, increase per kelvin**|**iptat\_slope** || **Spec**  | **0.100** | **0.000** | **0.900** | **uA/K** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | <span style='color:red'>**0.006**</span> |  | |
-| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|0.415 | 0.540 | 0.705 | |
-| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|0.531 | 0.630 | 0.728 | |
+|**Current proportial to temperature, offset at zero celsius**|**iptat\_intercept** || **Spec**  | **0.050** | **0.000** | **10.000** | **uA** |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 2.417 |  | |
+| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|2.120 | 2.433 | 2.816 | |
+| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|0.439 | 2.578 | 4.717 | |
+| | | |<a href='results/tran_Lay_typical.html'>Lay_typ</a>| | 2.417 |  | |
+| | | |<a href='results/tran_Lay_etc.html'>Lay_etc</a>|2.120 | 2.433 | 2.816 | |
+| | | |<a href='results/tran_Lay_mc.html'>Lay_3std</a>|0.073 | 2.616 | 5.159 | |
+|**Current proportial to temperature, increase per kelvin**|**iptat\_slope** || **Spec**  | **0.001** | **0.000** | **0.010** | **uA/K** |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 0.006 |  | |
+| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|0.005 | 0.006 | 0.006 | |
+| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|0.003 | 0.005 | 0.008 | |
+| | | |<a href='results/tran_Lay_typical.html'>Lay_typ</a>| | 0.006 |  | |
+| | | |<a href='results/tran_Lay_etc.html'>Lay_etc</a>|0.005 | 0.006 | 0.006 | |
+| | | |<a href='results/tran_Lay_mc.html'>Lay_3std</a>|0.001 | 0.005 | 0.009 | |
 |**Current proportial to temperature, Pearson correlation coefficient**|**iptat\_rvalue** || **Spec**  | **0.950** | **1.000** | **1.050** |  |
 | | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 1.000 |  | |
-| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|0.984 | 0.992 | 1.000 | |
-| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|0.987 | 0.989 | 0.992 | |
+| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|1.000 | 1.000 | 1.000 | |
+| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|1.000 | 1.000 | 1.000 | |
+| | | |<a href='results/tran_Lay_typical.html'>Lay_typ</a>| | 1.000 |  | |
+| | | |<a href='results/tran_Lay_etc.html'>Lay_etc</a>|1.000 | 1.000 | 1.000 | |
+| | | |<a href='results/tran_Lay_mc.html'>Lay_3std</a>|<span style='color:red'>**0.346**</span> | 0.962 | <span style='color:red'>**1.578**</span> | |
 |**Voltage complementary to temperature, offset at zero celsius**|**vctat\_intercept** || **Spec**  | **200.000** | **0.000** | **1200.000** | **mV** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 750.503 |  | |
-| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|702.661 | 735.409 | 755.578 | |
-| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|732.979 | 736.342 | 739.705 | |
-|**Voltage complementary to temperature, increase per kelvin**|**vctat\_slope** || **Spec**  | **0.500** | **0.000** | **2.000** | **mV/K** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | <span style='color:red'>**-1.767**</span> |  | |
-| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|1.070 | 1.257 | 1.324 | |
-| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|1.196 | 1.251 | 1.307 | |
-|**Voltage complementary to temperature, Pearson correlation coefficient**|**vctat\_rvalue** || **Spec**  | **0.950** | **1.000** | **1.050** |  |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | <span style='color:red'>**-1.000**</span> |  | |
-| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|0.984 | 0.989 | 0.993 | |
-| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|0.986 | 0.988 | 0.991 | |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 750.436 |  | |
+| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|749.855 | 750.484 | 751.128 | |
+| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|732.593 | 752.841 | 773.090 | |
+| | | |<a href='results/tran_Lay_typical.html'>Lay_typ</a>| | 750.436 |  | |
+| | | |<a href='results/tran_Lay_etc.html'>Lay_etc</a>|749.854 | 750.484 | 751.128 | |
+| | | |<a href='results/tran_Lay_mc.html'>Lay_3std</a>|721.280 | 751.140 | 780.999 | |
+|**Voltage complementary to temperature, increase per kelvin**|**vctat\_slope** || **Spec**  | **-2.000** | **0.000** | **-0.500** | **mV/K** |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | -1.766 |  | |
+| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|-1.772 | -1.765 | -1.750 | |
+| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|-1.780 | -1.765 | -1.750 | |
+| | | |<a href='results/tran_Lay_typical.html'>Lay_typ</a>| | -1.766 |  | |
+| | | |<a href='results/tran_Lay_etc.html'>Lay_etc</a>|-1.772 | -1.765 | -1.750 | |
+| | | |<a href='results/tran_Lay_mc.html'>Lay_3std</a>|-1.782 | -1.765 | -1.748 | |
+|**Voltage complementary to temperature, Pearson correlation coefficient**|**vctat\_rvalue** || **Spec**  | **-1.050** | **-1.000** | **-0.950** |  |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | -1.000 |  | |
+| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|-1.000 | -1.000 | -1.000 | |
+| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|-1.000 | -1.000 | -1.000 | |
+| | | |<a href='results/tran_Lay_typical.html'>Lay_typ</a>| | -1.000 |  | |
+| | | |<a href='results/tran_Lay_etc.html'>Lay_etc</a>|-1.000 | -1.000 | -1.000 | |
+| | | |<a href='results/tran_Lay_mc.html'>Lay_3std</a>|-1.000 | -1.000 | -1.000 | |
 |**Active current at 25 celsius**|**i\_act\_25** || **Spec**  | **5.000** | **30.000** | **100.000** | **uA** |
 | | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 52.167 |  | |
-| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>| |  |  | |
-| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>| |  |  | |
-|**Leakage current at 25 celsius**|**i\_leak\_25** || **Spec**  | **0.100** | **1.000** | **1.000** | **nA** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 0.339 |  | |
-| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>| |  |  | |
-| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>| |  |  | |
+| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|40.888 | 51.259 | 66.332 | |
+| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|46.879 | 52.581 | 58.282 | |
+| | | |<a href='results/tran_Lay_typical.html'>Lay_typ</a>| | 52.168 |  | |
+| | | |<a href='results/tran_Lay_etc.html'>Lay_etc</a>|40.888 | 51.259 | 66.332 | |
+| | | |<a href='results/tran_Lay_mc.html'>Lay_3std</a>|46.354 | 52.533 | 58.711 | |
+|**Leakage current at 25 celsius**|**i\_leak\_25** || **Spec**  | **-0.010** | **1.000** | **1.000** | **nA** |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 0.330 |  | |
+| | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|-0.008 | 0.271 | 0.594 | |
+| | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|0.290 | 0.330 | 0.370 | |
+| | | |<a href='results/tran_Lay_typical.html'>Lay_typ</a>| | 0.594 |  | |
+| | | |<a href='results/tran_Lay_etc.html'>Lay_etc</a>|0.476 | 0.616 | <span style='color:red'>**9.031**</span> | |
+| | | |<a href='results/tran_Lay_mc.html'>Lay_3std</a>|<span style='color:red'>**-0.923**</span> | 0.696 | <span style='color:red'>**2.316**</span> | |
 

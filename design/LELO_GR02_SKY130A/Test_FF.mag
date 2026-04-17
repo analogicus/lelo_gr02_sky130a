@@ -1,0 +1,33 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1776117600
+<< checkpaint >>
+rect 0 0 1980 3840
+<< locali >>
+rect 630 3730 810 3790
+rect 270 450 450 510
+rect 270 3010 450 3070
+rect 630 3410 810 3470
+<< metal3 >>
+rect 1170 0 1346 3840
+rect 630 0 806 3840
+use JNWTR_DFRNQNX1_CV x1 ../JNW_TR_SKY130A
+transform 1 0 0 0 1 0
+box 0 0 1980 3840
+<< labels >>
+flabel locali s 630 3730 810 3790 0 FreeSans 400 0 0 0 Q
+port 1 nsew signal bidirectional
+flabel locali s 270 450 450 510 0 FreeSans 400 0 0 0 CK
+port 2 nsew signal bidirectional
+flabel metal3 s 1170 0 1346 3840 0 FreeSans 400 0 0 0 VDD_1V8
+port 3 nsew power bidirectional
+flabel locali s 270 3010 450 3070 0 FreeSans 400 0 0 0 RN
+port 4 nsew signal bidirectional
+flabel metal3 s 630 0 806 3840 0 FreeSans 400 0 0 0 AVSS
+port 5 nsew ground bidirectional
+flabel locali s 630 3410 810 3470 0 FreeSans 400 0 0 0 QN
+port 6 nsew signal bidirectional
+<< properties >>
+string FIXED_BBOX 0 0 1980 3840
+<< end >>

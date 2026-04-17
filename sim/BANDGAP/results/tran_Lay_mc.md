@@ -1,22 +1,22 @@
-### Summary tran_Sch_mc
+### Summary tran_Lay_mc
 
-For details see <a href='tran_Sch_mc.html'>tran_Sch_mc.html</a>
+For details see <a href='tran_Lay_mc.html'>tran_Lay_mc.html</a>
 
 |**Name**|**Parameter**|**View**|**Min** | **Typ** | **Max**|
 |:---|:---|:---:|:---:|:---:|:---:|
 |Current proportial to temperature, offset at zero celsius|iptat\_intercept | Spec | 10.000 uA |  | 200.000 uA |
-| | | ('Sch',)|1.492 uA | 2.508 uA | 4.094 uA |
+| | | ('Lay',)|1.608 uA | 2.603 uA | 5.680 uA |
 |Current proportial to temperature, increase per kelvin|iptat\_slope | Spec | 0.100 uA/K |  | 0.900 uA/K |
-| | | ('Sch',)|0.003 uA/K | 0.006 uA/K | 0.007 uA/K |
+| | | ('Lay',)|-0.000 uA/K | 0.006 uA/K | 0.007 uA/K |
 |Current proportial to temperature, Pearson correlation coefficient|iptat\_rvalue | Spec | 0.950  | 1.000  | 1.050  |
-| | | ('Sch',)|1.000  | 1.000  | 1.000  |
+| | | ('Lay',)|-0.125  | 1.000  | 1.000  |
 |Voltage complementary to temperature, offset at zero celsius|vctat\_intercept | Spec | 200.000 mV |  | 1200.000 mV |
-| | | ('Sch',)|742.519 mV | 753.904 mV | 768.245 mV |
+| | | ('Lay',)|731.359 mV | 752.872 mV | 772.019 mV |
 |Voltage complementary to temperature, increase per kelvin|vctat\_slope | Spec | 0.500 mV/K |  | 2.000 mV/K |
-| | | ('Sch',)|-1.775 mV/K | -1.766 mV/K | -1.754 mV/K |
+| | | ('Lay',)|-1.775 mV/K | -1.765 mV/K | -1.747 mV/K |
 |Voltage complementary to temperature, Pearson correlation coefficient|vctat\_rvalue | Spec | 0.950  | 1.000  | 1.050  |
-| | | ('Sch',)|-1.000  | -1.000  | -1.000  |
+| | | ('Lay',)|-1.000  | -1.000  | -1.000  |
 |Active current at 25 celsius|i\_act\_25 | Spec | 5.000 uA | 30.000 uA | 100.000 uA |
-| | | ('Sch',)|48.494 uA | 52.367 uA | 57.318 uA |
+| | | ('Lay',)|48.413 uA | 52.411 uA | 56.571 uA |
 |Leakage current at 25 celsius|i\_leak\_25 | Spec | 0.100 nA | 1.000 nA | 1.000 nA |
-| | | ('Sch',)|0.301 nA | 0.330 nA | 0.352 nA |
+| | | ('Lay',)|0.537 nA | 0.601 nA | 3.553 nA |
