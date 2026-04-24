@@ -45,16 +45,15 @@ N 520 560 560 560 {lab=VSS}
 N 460 510 480 510 {lab=PWRUP_B_1V8}
 N 560 510 560 560 {lab=VSS}
 N 520 510 560 510 {lab=VSS}
-N 520 450 520 480 {lab=POWERGATING_NMOS}
+N 520 450 520 480 {lab=VSS}
 N 510 -290 510 -270 {lab=POWERGATING_PMOS}
 N 510 -270 540 -270 {lab=POWERGATING_PMOS}
-N 520 450 570 450 {lab=POWERGATING_NMOS}
 N 930 -160 960 -160 {lab=Vout}
 N 280 -160 300 -160 {lab=VDD_1V8}
 N 510 -170 510 -160 {lab=Vout}
 N 510 -160 510 -140 {lab=Vout}
 N 570 340 570 350 {lab=#net1}
-N 520 440 520 450 {lab=POWERGATING_NMOS}
+N 520 440 520 450 {lab=VSS}
 N 570 130 570 150 {lab=#net2}
 N 570 230 570 260 {lab=#net1}
 N 450 110 450 240 {lab=V_CTAT}
@@ -64,6 +63,7 @@ N 480 110 490 110 {lab=V_CTAT}
 N 490 90 490 100 {lab=V_CTAT}
 N 530 90 530 110 {lab=#net2}
 N 530 110 540 110 {lab=#net2}
+N 520 450 560 510 {lab=VSS}
 C {devices/ipin.sym} 210 220 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 210 330 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} 210 260 0 0 {name=p3 lab=PWRUP_B_1V8}
@@ -112,8 +112,6 @@ C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 340 -160 0 1 {name=x1[1:0]
 C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 930 -160 0 1 {name=x3[1:0]}
 C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 660 -160 0 0 {name=x4}
 C {LELO_ATR_SKY130A/LELOATR_NCH_8C1F2.sym} 480 510 0 0 {name=x6}
-C {devices/lab_pin.sym} 570 450 0 1 {name=p28 sig_type=std_logic lab=POWERGATING_NMOS
-}
 C {devices/lab_pin.sym} 540 -270 0 1 {name=p25 sig_type=std_logic lab=POWERGATING_PMOS}
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 510 -180 0 0 {name=x5}
 C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} 570 150 1 0 {name=x1 }
