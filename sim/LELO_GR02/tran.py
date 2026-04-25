@@ -38,7 +38,7 @@ def main(name):
     obj["freq_slope"]     = float(lm.slope)
     obj["freq_rvalue"]    = float(lm.rvalue)
 
-    error = np.array([abs(freq - (lm.intercept + lm.slope * temp))
+    error = np.array([(freq - (lm.intercept + lm.slope * temp))
                       for temp, freq in zip(temps, freqs)])
     max_abs_err = max(np.abs(error))
     fs = max(freqs) - min(freqs)

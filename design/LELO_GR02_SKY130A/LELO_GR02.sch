@@ -21,7 +21,7 @@ C {devices/ipin.sym} 270 -510 0 0 {name=p3 lab=PWRUP_1V8}
 C {devices/opin.sym} 1400 -380 0 0 {name=p29 lab=OSC_TEMP_1V8}
 C {LELO_GR02_SKY130A/BANDGAP.sym} 540 -140 0 0 {name=x1}
 C {devices/lab_pin.sym} 320 -290 0 0 {name=p4 sig_type=std_logic lab=PWRUP_N_1V8}
-C {devices/lab_pin.sym} 320 -230 0 0 {name=p5 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 320 -260 0 0 {name=p5 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 320 -320 0 0 {name=p6 sig_type=std_logic lab=VDD_1V8}
 C {LELO_GR02_SKY130A/OSCILLATOR.sym} 1400 -200 0 0 {name=x2
 }
@@ -52,5 +52,4 @@ C {devices/lab_pin.sym} 650 -440 0 1 {name=p11 sig_type=std_logic lab=PWRUP_N_1V
 
 
 }
-C {devices/lab_pin.sym} 320 -260 0 0 {name=p12 sig_type=std_logic lab=PWRUP_B_1V8}
 C {devices/lab_pin.sym} 940 -260 0 0 {name=p13 sig_type=std_logic lab=PWRUP_B_1V8}

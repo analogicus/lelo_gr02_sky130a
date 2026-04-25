@@ -41,10 +41,6 @@ N 510 -140 510 -110 {lab=Vout}
 N 450 110 480 110 {lab=V_CTAT}
 N 540 110 570 110 {lab=#net2}
 N 570 110 700 110 {lab=#net2}
-N 520 560 560 560 {lab=VSS}
-N 460 510 480 510 {lab=PWRUP_B_1V8}
-N 560 510 560 560 {lab=VSS}
-N 520 510 560 510 {lab=VSS}
 N 520 450 520 480 {lab=VSS}
 N 510 -290 510 -270 {lab=POWERGATING_PMOS}
 N 510 -270 540 -270 {lab=POWERGATING_PMOS}
@@ -63,13 +59,11 @@ N 480 110 490 110 {lab=V_CTAT}
 N 490 90 490 100 {lab=V_CTAT}
 N 530 90 530 110 {lab=#net2}
 N 530 110 540 110 {lab=#net2}
-N 520 450 560 510 {lab=VSS}
-C {devices/ipin.sym} 210 220 0 0 {name=p1 lab=VDD_1V8}
+N 520 480 520 540 {lab=VSS}
+C {devices/ipin.sym} 210 270 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 210 330 0 0 {name=p2 lab=VSS}
-C {devices/ipin.sym} 210 260 0 0 {name=p3 lab=PWRUP_B_1V8}
 C {devices/opin.sym} 920 -110 0 0 {name=p4 lab=I_PTAT}
 C {devices/opin.sym} 310 140 0 0 {name=p5 lab=V_CTAT}
-C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} 470 -320 0 0 {name=xpb4}
 C {devices/lab_pin.sym} 440 -320 0 0 {name=p8 sig_type=std_logic lab=PWRUP_N_1V8
 
 
@@ -104,14 +98,10 @@ C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} 420 180 0 0 {name=x2}
 C {cborder/border_xs.sym} 0 610 0 0 {
 user="Group 2"
 company=""}
-C {devices/lab_pin.sym} 460 510 0 0 {name=p24 sig_type=std_logic lab=PWRUP_B_1V8
-
-}
-C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 340 -160 0 1 {name=x1[1:0]
+C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 340 -160 0 1 {name=x3
 }
 C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 930 -160 0 1 {name=x3[1:0]}
 C {LELO_ATR_SKY130A/LELOATR_PCH_2C1F2.sym} 660 -160 0 0 {name=x4}
-C {LELO_ATR_SKY130A/LELOATR_NCH_8C1F2.sym} 480 510 0 0 {name=x6}
 C {devices/lab_pin.sym} 540 -270 0 1 {name=p25 sig_type=std_logic lab=POWERGATING_PMOS}
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 510 -180 0 0 {name=x5}
 C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} 570 150 1 0 {name=x1 }
@@ -121,8 +111,8 @@ C {devices/lab_pin.sym} 210 300 0 1 {name=p6 sig_type=std_logic lab=PWRUP_N_1V8
 
 
 }
-C {devices/lab_pin.sym} 210 260 0 1 {name=p7 sig_type=std_logic lab=PWRUP_B_1V8}
-C {devices/lab_pin.sym} 210 220 0 1 {name=p11 sig_type=std_logic lab=VDD_1V8
+C {devices/lab_pin.sym} 210 270 0 1 {name=p11 sig_type=std_logic lab=VDD_1V8
 }
 C {devices/lab_pin.sym} 210 330 0 1 {name=p20 sig_type=std_logic lab=VSS
 }
+C {JNW_ATR_SKY130A/JNWATR_PCH_8C1F2.sym} 470 -320 0 0 {name=x6 }
