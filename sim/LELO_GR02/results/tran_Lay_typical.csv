@@ -1,0 +1,2 @@
+,freq_intercept,freq_slope,freq_rvalue,freq_max_abs_err_per_fs,i_act_25,i_leak_25,name,type,time,OK
+0,2.528904888077608,0.012210463406680045,0.9999760588948995,0.003522994167209146,57.27031,2.7194510000000003,tran_LayGtKttTtVt,Lay,Sun Apr 26 13:57:44 2026,False

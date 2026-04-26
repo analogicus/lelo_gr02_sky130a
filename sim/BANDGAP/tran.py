@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import scipy as sp
 import numpy as np
 
-DO_PLOT = True
+DO_PLOT = False
 
 def main(name):
 
@@ -90,7 +90,7 @@ def main(name):
     axs[2,0].set_ylabel("Current [A]")
 
     axs[2,1].plot(temps, leakage_vals, color='brown')
-    axs[2,1].set_title("Lekage Current")
+    axs[2,1].set_title("Leakage Current")
     axs[2,1].set_xlabel("Temperature [C]")
     axs[2,1].set_ylabel("Current [A]")
 

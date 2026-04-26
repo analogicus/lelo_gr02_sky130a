@@ -9,7 +9,7 @@ Check transient operation
 |**Name**|**Parameter**|**Description**| |**Min**|**Typ**|**Max**| Unit|
 |:---|:---|:---|---:|:---:|:---:|:---:| ---:|
 |**Oscillation frequency, offset at zero celsius**|**freq\_intercept** || **Spec**  | **1.000** | **0.000** | **10.000** | **MHz** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 1.820 |  | |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 1.819 |  | |
 | | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|3.442 | 4.510 | 5.862 | |
 | | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|1.749 | 4.339 | 6.928 | |
 |**Oscillation frequency, increase per kelvin**|**freq\_slope** || **Spec**  | **0.005** | **0.000** | **0.050** | **MHz** |
@@ -25,11 +25,11 @@ Check transient operation
 | | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>|0.030 | 0.048 | 0.081 | |
 | | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>|<span style='color:red'>**-0.005**</span> | 0.038 | 0.081 | |
 |**Active current at 25 celsius**|**i\_act\_25** || **Spec**  | **5.000** | **30.000** | **100.000** | **uA** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 56.878 |  | |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 56.868 |  | |
 | | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>| |  |  | |
 | | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>| |  |  | |
 |**Leakage current at 25 celsius**|**i\_leak\_25** || **Spec**  | **0.100** | **1.000** | **1.000** | **nA** |
-| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 0.752 |  | |
+| | | |<a href='results/tran_Sch_typical.html'>Sch_typ</a>| | 0.833 |  | |
 | | | |<a href='results/tran_Sch_etc.html'>Sch_etc</a>| |  |  | |
 | | | |<a href='results/tran_Sch_mc.html'>Sch_3std</a>| |  |  | |
 
