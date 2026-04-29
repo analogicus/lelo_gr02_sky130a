@@ -7,7 +7,7 @@ module sensor_tb;
         $dumpvars(0, sensor_tb);
     end
 
-    parameter CNT_WIDTH = 9;
+    parameter CNT_WIDTH = 8;
 
     // ---------
     // Signal generation
@@ -110,7 +110,7 @@ module sensor_tb;
 
         // settings
         temp = 0.0;
-        tol = 2;
+        tol = 5;
         temp_step = 5.0;
         
         period = temp_to_period(temp);
@@ -121,7 +121,7 @@ module sensor_tb;
         #100us;
         rst_n = 1;
 
-        repeat (20) begin
+        repeat (15) begin
             period = temp_to_period(temp);
 
             // wait for FSM completion

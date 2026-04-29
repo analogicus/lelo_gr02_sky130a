@@ -5,9 +5,9 @@ For details see <a href='tran_Lay_typical.html'>tran_Lay_typical.html</a>
 |**Name**|**Parameter**|**View**|**Min** | **Typ** | **Max**|
 |:---|:---|:---:|:---:|:---:|:---:|
 |Oscillation frequency, offset at zero celsius|freq\_intercept | Spec | 1.000 MHz |  | 10.000 MHz |
-| | | ('Lay',)|2.529 MHz | 2.529 MHz | 2.529 MHz |
+| | | ('Lay',)|1.517 MHz | 1.517 MHz | 1.517 MHz |
 |Oscillation frequency, increase per kelvin|freq\_slope | Spec | 0.005 MHz |  | 0.050 MHz |
-| | | ('Lay',)|0.012 MHz | 0.012 MHz | 0.012 MHz |
+| | | ('Lay',)|0.007 MHz | 0.007 MHz | 0.007 MHz |
 |Oscillation frequency, Pearson correlation coefficient|freq\_rvalue | Spec | 0.950  | 1.000  | 1.050  |
 | | | ('Lay',)|1.000  | 1.000  | 1.000  |
 |Maximum error from straight line, relative to full scale|freq\_max\_abs\_err\_per\_fs | Spec |  |  | 1.010  |
