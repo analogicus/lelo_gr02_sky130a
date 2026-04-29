@@ -4,7 +4,7 @@ temperatures: 0 10 25 40 55 70
 
 t_start: 3us
 t_step: 0.5ns
-t_stop: 22us
+t_stop: 30us
 
 
 t_start_i_active: 1u
@@ -13,6 +13,6 @@ t_stop_i_active:  19.5u
 PWRUP_Off: 20u
 
 t_start_i_leak: 20.5u
-t_stop_i_leak:  21.5u
+t_stop_i_leak:  30u
 
 leak_temp: 25
