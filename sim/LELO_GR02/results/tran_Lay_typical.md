@@ -15,4 +15,4 @@ For details see <a href='tran_Lay_typical.html'>tran_Lay_typical.html</a>
 |Active current at 25 celsius|i\_act\_25 | Spec | 5.000 uA | 30.000 uA | 100.000 uA |
 | | | ('Lay',)|57.279 uA | 57.279 uA | 57.279 uA |
 |Leakage current at 25 celsius|i\_leak\_25 | Spec | 0.100 nA | 1.000 nA | 1.000 nA |
-| | | ('Lay',)|0.818 nA | 0.818 nA | 0.818 nA |
+| | | ('Lay',)|0.830 nA | 0.830 nA | 0.830 nA |
