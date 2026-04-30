@@ -5,15 +5,15 @@ V {}
 S {}
 E {}
 B 2 160 -170 960 230 {flags=graph
-y1=0.097222222
-y2=1.4861111
+y1=-0.1805557
+y2=1.2083333
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-0.0014734898
-x2=0.018563505
+x1=-9.3783457e-06
+x2=8.9939339e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -34,25 +34,18 @@ press ctrl+left_click on "load waves" to see waves
 N -470 -150 -470 -130 {lab=TB_VIN}
 N -310 -150 -310 -130 {lab=TB_VIP}
 N -140 -150 -140 -130 {lab=TB_VDD}
-N -230 -10 -230 10 {lab=TB_VOUT}
-N -250 180 -250 190 {lab=TB_VIN}
-N -260 190 -250 190 {lab=TB_VIN}
-N -210 180 -210 190 {lab=TB_VIP}
-N -210 190 -200 190 {lab=TB_VIP}
-N -280 190 -260 190 {lab=TB_VIN}
-N -200 190 -180 190 {lab=TB_VIP}
-N -180 140 -160 140 {lab=0}
-N -310 140 -280 140 {lab=TB_VDD}
-N -290 110 -270 110 {lab=0}
-C {LELO_GR02_SKY130A/BANDGAP_OPAMP.sym} -130 240 0 0 {name=x1}
-C {devices/lab_pin.sym} -160 140 0 1 {name=p1 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} -290 110 0 0 {name=p2 sig_type=std_logic lab=0}
+N -80 100 -60 100 {lab=TB_VDD}
+N -50 200 -50 220 {lab=0}
+N -80 200 -50 200 {lab=0}
+N -50 200 -30 100 {lab=0}
+N -30 100 -0 100 {lab=0}
+C {devices/lab_pin.sym} -50 220 0 1 {name=p1 sig_type=std_logic lab=0}
 C {devices/vsource.sym} -310 -100 0 0 {name=V1 value="sin(0.5 0.5m 10k)" savecurrent=false}
 C {devices/lab_pin.sym} -310 -70 0 0 {name=p3 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -310 -150 0 0 {name=p4 sig_type=std_logic lab=TB_VIP}
-C {devices/lab_pin.sym} -310 140 0 0 {name=p5 sig_type=std_logic lab=TB_VDD}
-C {devices/lab_pin.sym} -180 190 0 1 {name=p6 sig_type=std_logic lab=TB_VIP}
-C {devices/lab_pin.sym} -280 190 0 0 {name=p7 sig_type=std_logic lab=TB_VIN}
+C {devices/lab_pin.sym} -80 100 0 0 {name=p5 sig_type=std_logic lab=TB_VDD}
+C {devices/lab_pin.sym} -120 170 2 1 {name=p6 sig_type=std_logic lab=TB_VIP}
+C {devices/lab_pin.sym} -120 130 0 0 {name=p7 sig_type=std_logic lab=TB_VIN}
 C {devices/vsource.sym} -470 -100 0 0 {name=V2 value=0.5 savecurrent=false}
 C {devices/lab_pin.sym} -470 -70 0 0 {name=p8 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -470 -150 0 0 {name=p9 sig_type=std_logic lab=TB_VIN}
@@ -88,4 +81,5 @@ C {devices/vsource.sym} -140 -100 0 0 {name=V3 value= 1.8 savecurrent=false}
 C {devices/lab_pin.sym} -140 -70 0 0 {name=p11 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -140 -150 0 0 {name=p12 sig_type=std_logic lab=TB_VDD}
 C {devices/lab_pin.sym} -10 -150 0 1 {name=p13 sig_type=std_logic lab=TB_VOUT}
-C {devices/lab_pin.sym} -230 -10 0 1 {name=p14 sig_type=std_logic lab=TB_VOUT}
+C {devices/lab_pin.sym} 50 150 0 1 {name=p14 sig_type=std_logic lab=TB_VOUT}
+C {LELO_GR02_SKY130A/COMPARATOR.sym} -350 390 0 0 {name=x1}

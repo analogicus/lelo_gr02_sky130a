@@ -11,7 +11,7 @@ For details see <a href='tran_Lay_typical.html'>tran_Lay_typical.html</a>
 |Current proportial to temperature, Pearson correlation coefficient|iptat\_rvalue | Spec | 0.950  | 1.000  | 1.050  |
 | | | ('Lay',)|1.000  | 1.000  | 1.000  |
 |Voltage complementary to temperature, offset at zero celsius|vctat\_intercept | Spec | 200.000 mV |  | 1200.000 mV |
-| | | ('Lay',)|726.300 mV | 726.300 mV | 726.300 mV |
+| | | ('Lay',)|726.299 mV | 726.299 mV | 726.299 mV |
 |Voltage complementary to temperature, increase per kelvin|vctat\_slope | Spec | -2.000 mV/K |  | -0.500 mV/K |
 | | | ('Lay',)|-1.861 mV/K | -1.861 mV/K | -1.861 mV/K |
 |Voltage complementary to temperature, Pearson correlation coefficient|vctat\_rvalue | Spec | -1.050  | -1.000  | -0.950  |
@@ -19,4 +19,4 @@ For details see <a href='tran_Lay_typical.html'>tran_Lay_typical.html</a>
 |Active current at 25 celsius|i\_act\_25 | Spec | 5.000 uA | 30.000 uA | 100.000 uA |
 | | | ('Lay',)|42.423 uA | 42.423 uA | 42.423 uA |
 |Leakage current at 25 celsius|i\_leak\_25 | Spec | -0.010 nA | 1.000 nA | 1.000 nA |
-| | | ('Lay',)|0.957 nA | 0.957 nA | 0.957 nA |
+| | | ('Lay',)|0.244 nA | 0.244 nA | 0.244 nA |

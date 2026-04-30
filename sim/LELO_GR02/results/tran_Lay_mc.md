@@ -13,6 +13,6 @@ For details see <a href='tran_Lay_mc.html'>tran_Lay_mc.html</a>
 |Maximum error from straight line, relative to full scale|freq\_max\_abs\_err\_per\_fs | Spec |  |  | 1.010  |
 | | | ('Lay',)|0.001  | 0.005  | 0.200  |
 |Active current at 25 celsius|i\_act\_25 | Spec | 5.000 uA | 30.000 uA | 100.000 uA |
-| | | ('Lay',)|50.718 uA | 57.176 uA | 62.618 uA |
+| | | ('Lay',)|50.718 uA | 57.177 uA | 62.618 uA |
 |Leakage current at 25 celsius|i\_leak\_25 | Spec | 0.100 nA | 1.000 nA | 1.000 nA |
-| | | ('Lay',)|1.571 nA | 2.178 nA | 2.826 nA |
+| | | ('Lay',)|0.592 nA | 0.771 nA | 1.052 nA |
