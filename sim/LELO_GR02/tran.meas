@@ -22,7 +22,44 @@ meas TRAN T1_$vtemp when V(osc_temp_1v8)=("Vpmx_$vtemp"+"VPmn_$vtemp")/2 from={t
 meas TRAN T2_$vtemp when V(osc_temp_1v8)=("Vpmx_$vtemp"+"VPmn_$vtemp")/2 from={t_start_i_active} rise=11
 meas tran i_act_$vtemp    AVG i(vdd)     from = {t_start_i_active}  to = {t_stop_i_active}
 meas tran i_leak_$vtemp   AVG i(vdd)     from = {t_start_i_leak}    to = {t_stop_i_leak}
+
+meas tran t_iptat_vctat when V(xdut.oscillator_0.i_ptat)=V(xdut.oscillator_0.v_ctat) from={t_start_i_active} rise=11
+meas tran t_ck_16 when V(xdut.oscillator_0.x6.ck)=1.6 from=t_iptat_vctat rise=1
+let td_iptat_to_ck = t_ck_16 - t_iptat_vctat
+print td_iptat_to_ck
+
+let k = 1
+let td_sum = 0
+let td_count = 0
+
+repeat 10000
+
+  meas tran t_iptat_vctat when V(xdut.oscillator_0.i_ptat)=V(xdut.oscillator_0.v_ctat) from={t_start_i_active} rise=$&k
+
+  if (t_iptat_vctat > {t_stop_i_active})
+    break
+  end
+
+  meas tran t_ck_16 when V(xdut.oscillator_0.x6.ck)=1.6 from=t_iptat_vctat rise=1
+
+  if (t_ck_16 > {t_stop_i_active})
+    break
+  end
+
+  let td_iptat_to_ck = t_ck_16 - t_iptat_vctat
+  let td_sum = td_sum + td_iptat_to_ck
+  let td_count = td_count + 1
+
+  let k = k + 1
 end
+
+let td_avg_iptat_to_ck = td_sum / td_count
+
+print td_count
+print td_avg_iptat_to_ck
+
+end
+
 
 echo "MEAS_END"
 .endc

@@ -42,7 +42,9 @@ VPWB PWRUP_1V8 VSS  pwl 0 {AVDD} {PWRUP_Off} {AVDD} {{PWRUP_Off}+ 0.1u} 0
 .save v(PWRUP_1V8)
 .save v(PWRUP_N_1V8)
 .save v(PWRUP_B_1V8)
-
+.save v(xdut.oscillator_0.v_ctat)
+.save v(xdut.oscillator_0.i_ptat)
+.save v(xdut.oscillator_0.x6.ck)
 
 *----------------------------------------------------------------
 * NGSPICE control
