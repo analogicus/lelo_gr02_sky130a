@@ -36,17 +36,22 @@ module sensor_tb;
 
     // set up lookup table
     // loading from csv does not seem to play nicely with icarus iverilog
-    parameter POINTS = 5;
+    parameter POINTS = 8;
     real temp_table[POINTS-1:0];
     real period_table[POINTS-1:0];
+    real freq_table[POINTS-1:0];
 
     // lookup table
     initial begin
-        temp_table[0] =  0.0;   period_table[0] = 1000.0;
-        temp_table[1] =  20.0;  period_table[1] = 500.0;
-        temp_table[2] =  40.0;  period_table[2] = 400.0;
-        temp_table[3] =  60.0;  period_table[3] = 300.0;
-        temp_table[4] =  80.0;  period_table[4] = 100.0;
+        temp_table[0] =  0.0;   period_table[0] = 657.9;
+        temp_table[1] =  10.0;  period_table[1] = 627.8; 
+        temp_table[2] =  20.0;  period_table[2] = 600.2; 
+        temp_table[3] =  30.0;  period_table[3] = 575.0; 
+        temp_table[4] =  40.0;  period_table[4] = 551.9; 
+        temp_table[5] =  50.0;  period_table[5] = 530.5; 
+        temp_table[6] =  60.0;  period_table[6] = 510.7; 
+        temp_table[7] =  70.0;  period_table[7] = 492.4; 
+
     end
 
     // linear interpolation
@@ -110,8 +115,8 @@ module sensor_tb;
 
         // settings
         temp = 0.0;
-        tol = 5;
-        temp_step = 5.0;
+        tol = 2;
+        temp_step = 10.0;
         
         period = temp_to_period(temp);
         rst_n = 0;
@@ -121,7 +126,7 @@ module sensor_tb;
         #100us;
         rst_n = 1;
 
-        repeat (15) begin
+        repeat (8) begin
             period = temp_to_period(temp);
 
             // wait for FSM completion
